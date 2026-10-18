@@ -4,92 +4,132 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Phishing Email Analyzer | Diogo Ramos</title>
-<meta name="description" content="Help desk / SOC portfolio project: a static phishing e-mail analyser (headers, SPF/DKIM/DMARC, URLs, attachments, wording) with a transparent 0-100 risk score, ATT&CK mapping and ticket-ready incident reports. The dashboard shows SYNTHETIC sample mail.">
-<meta name="color-scheme" content="dark">
+<meta name="description" content="A small webmail-style demo of a phishing email analyzer I wrote. It reads headers, sign-in checks, links and attachments and gives each message a 0 to 100 score with a reason for every point. All the mail in the demo is made up.">
+<meta name="color-scheme" content="light">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<a class="skip" href="#inbox-title">Skip to inbox</a>
+<body data-view="mail">
+<a class="skip" href="#inbox-title">Skip to the message list</a>
 
-<header class="top">
+<div class="app">
+<header class="topbar">
   <div class="brand">
-    <svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="8" width="26" height="17" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 10l12 9 12-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M24 3l6 10H18z" fill="#ff4d6d"/></svg>
-    <div>
-      <h1>Phishing Email <span class="amp">Analyzer</span></h1>
-      <p class="tagline">Help desk / SOC portfolio project by Diogo Ramos &middot; static analysis, nothing is opened, executed or fetched</p>
+    <svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="8" width="26" height="18" rx="3.5" fill="#fff" stroke="currentColor" stroke-width="2"/><path d="M4.5 10.5L16 19l11.5-8.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><path d="M24 2.5c0 0 4 1.6 4 5a2.6 2.6 0 0 1-5.2 0" fill="none" stroke="#d6455c" stroke-width="2" stroke-linecap="round"/></svg>
+    <div class="brand-text">
+      <h1>Phishing Email Analyzer</h1>
+      <p class="tagline">a demo mailbox by Diogo Ramos</p>
     </div>
   </div>
-  <div class="top-actions">
-    <span id="dataset-meta" class="meta" aria-live="polite">Loading…</span>
-    <a class="btn ghost" href="#paste-title">Analyse your own</a>
+  <div class="searchbox">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg>
+    <input id="inbox-q" type="search" placeholder="Search mail: sender, subject, rule name" aria-label="Search messages">
   </div>
+  <span id="dataset-meta" class="meta" aria-live="polite">Fetching the mail…</span>
 </header>
 
-<div id="banner" class="banner synthetic" role="note">
+<div id="banner" class="banner" role="note">
   <strong>SYNTHETIC DATA.</strong>
-  <span>Every message below was written for this project. The company and people are fictional, sender domains are reserved (<code>example.*</code>, <code>.test</code>, <code>.invalid</code>) and all IPs are documentation ranges. Only three real brand domains (paypal.com, amazon.com, aws.amazon.com) appear, as the legitimate side of look-alike tests, and nothing is ever fetched. Attachments are inert text stubs.</span>
+  <span>Everyone in this mailbox is made up and every email was written by me for this project.</span>
+  <details>
+    <summary>What does that mean?</summary>
+    <p>The company and people are fictional. Sender and link domains are reserved ones (<code>example.*</code>, <code>.test</code>, <code>.invalid</code>) and every IP address is from a documentation range. The only real domains are paypal.com, amazon.com and aws.amazon.com, used as the honest side of look-alike tests. Nothing is ever fetched or opened, and the attachments are harmless text stubs.</p>
+  </details>
 </div>
 
-<main id="main">
-  <section id="error" class="panel error" hidden aria-live="assertive"></section>
-  <noscript><section class="panel error">This dashboard needs JavaScript. The generated reports are in the repository's <code>reports/</code> folder.</section></noscript>
+<div class="shell">
+  <nav class="folders" aria-label="Folders">
+    <button type="button" class="compose" data-view="paste"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4.2-1L19 8.2 15.8 5 5 15.8z"/><path d="M13.5 7.3l3.2 3.2"/></svg><span>Check your own email</span></button>
+    <ul id="kpis" class="folder-list" aria-label="Mailbox folders">
+      <li><button type="button" class="folder mailbox f-all" data-v="all" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 13.5l3-8h11l3 8v5.5h-17zM3.5 13.5h5l1 3h5l1-3h5"/></svg><span class="lbl">Inbox</span><span class="n"></span></button></li>
+      <li><button type="button" class="folder mailbox f-likely_phishing" data-v="likely_phishing" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9.5 16.5h-19zM12 10v4.6M12 17.2v.4"/></svg><span class="lbl">Looks like phishing</span><span class="n"></span></button></li>
+      <li><button type="button" class="folder mailbox f-suspicious" data-v="suspicious" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5a8.5 8.5 0 1 0 0 17 8.5 8.5 0 0 0 0-17zM9.6 9.4a2.5 2.5 0 1 1 3.8 2.1c-.9.6-1.4 1.1-1.4 2.2M12 16.8v.4"/></svg><span class="lbl">Suspicious</span><span class="n"></span></button></li>
+      <li><button type="button" class="folder mailbox f-benign" data-v="benign" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5a8.5 8.5 0 1 0 0 17 8.5 8.5 0 0 0 0-17zM8 12.2l2.8 2.8L16.2 9.4"/></svg><span class="lbl">Looks fine</span><span class="n"></span></button></li>
+    </ul>
+    <h2 class="fh">Extras</h2>
+    <ul class="folder-list">
+      <li><button type="button" class="folder tool" data-view="iocs"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg><span class="lbl">Things to block</span><span class="n" id="tool-iocs-n"></span></button></li>
+      <li><button type="button" class="folder tool" data-view="eval"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V11M11 20V4M17 20v-6M3 20.5h18"/></svg><span class="lbl">How well does it work?</span></button></li>
+      <li><button type="button" class="folder tool" data-view="rules"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 4.5h10a3 3 0 0 1 3 3v12h-10a3 3 0 0 1-3-3z"/><path d="M5.5 16.5a3 3 0 0 1 3-3h10"/></svg><span class="lbl">Rulebook</span></button></li>
+    </ul>
+    <p class="folder-foot">Nothing here phones home. The page only loads its own files and draws every value as plain text, even the nasty ones.</p>
+  </nav>
 
-  <section class="kpis" id="kpis" aria-label="Summary"></section>
-
-  <div class="split">
-    <section class="panel sticky" aria-labelledby="inbox-title">
-      <div class="panel-head"><h2 id="inbox-title">Inbox</h2><span id="inbox-count" class="meta"></span></div>
-      <div class="filters">
-        <input id="inbox-q" type="search" placeholder="Search sender, subject, indicator…" aria-label="Search messages">
-      </div>
-      <div class="chips" id="inbox-chips" role="group" aria-label="Filter by verdict"></div>
-      <ul id="inbox-list" class="mail-list" aria-label="Messages"></ul>
-      <p id="inbox-empty" class="empty" hidden>No message matches.</p>
-    </section>
-
-    <section class="panel" id="detail" aria-live="polite" aria-label="Message detail"></section>
-  </div>
-
-  <section class="panel" aria-labelledby="paste-title">
-    <div class="panel-head"><h2 id="paste-title">Analyse a message in your browser</h2><span class="meta">client-side port of the engine &middot; nothing is uploaded or fetched</span></div>
-    <p class="hint">Paste a raw <code>.eml</code> (or only the header block) and press Analyse. The browser runs the same header, authentication, URL, attachment and wording checks as the Python engine and scores the result. SPF uses the bundled synthetic DNS records, so real domains show &ldquo;none&rdquo;. Do not paste anything confidential on a shared computer.</p>
-    <label class="hint" for="paste-sample">Or load a sample:</label>
-    <select id="paste-sample" aria-label="Load a sample message"></select>
-    <textarea id="paste-input" spellcheck="false" placeholder="From: &quot;Example Bank&quot; &lt;alerts@examp1e-bank.test&gt;&#10;Reply-To: help@other.test&#10;Subject: Verify your account&#10;..."></textarea>
-    <div class="paste-controls">
-      <button type="button" class="btn" id="paste-run">Analyse</button>
-      <button type="button" class="btn ghost" id="paste-clear">Clear</button>
-      <span id="paste-status" class="meta" aria-live="polite"></span>
+  <section class="listpane" aria-labelledby="inbox-title">
+    <div class="list-head">
+      <div><h2 id="inbox-title">Inbox</h2><span id="inbox-count" class="meta"></span></div>
+      <label class="sort">Sort <select id="inbox-sort" aria-label="Sort messages"><option value="risk">riskiest first</option><option value="new">newest first</option></select></label>
     </div>
-    <div id="paste-result" hidden></div>
+    <button type="button" class="pin" id="note-open"><span class="av av-note" aria-hidden="true">D</span><span class="mbody"><span class="r1"><span class="from">Diogo</span><span class="when">pinned</span></span><span class="subj">Why I built this</span><span class="snip">A short note before you start poking around.</span></span></button>
+    <ul id="inbox-list" class="mail-list" aria-label="Messages"></ul>
+    <p id="inbox-empty" class="empty" hidden>Nothing matches that. Try fewer letters, or pick another folder.</p>
   </section>
 
-  <div class="grid even">
-    <section class="panel" aria-labelledby="eval-title">
-      <div class="panel-head"><h2 id="eval-title">Evaluation against ground truth</h2><span class="meta">synthetic, self-authored</span></div>
-      <div class="caveat" id="eval-caveat"></div>
-      <div id="eval-body"></div>
+  <main class="readpane" id="main">
+    <div class="mobilebar"><button type="button" id="back-btn">&lsaquo; Back to the list</button></div>
+    <section id="error" class="panel error" hidden aria-live="assertive"></section>
+    <noscript><section class="panel error">This page needs JavaScript to draw the mailbox. The same results are in the repository's <code>reports/</code> folder as plain files.</section></noscript>
+
+    <div id="detail" class="msg" aria-live="polite" aria-label="Message"></div>
+
+    <article id="note" class="letter" hidden aria-labelledby="note-title">
+      <div class="letter-head">
+        <span class="av av-note lg" aria-hidden="true">D</span>
+        <div>
+          <h2 id="note-title">Why I built this</h2>
+          <p class="hint">From Diogo Ramos &middot; computer science student, Toronto</p>
+        </div>
+      </div>
+      <div class="letter-body">
+        <p>Before I went back to school for computer science, I worked as an advisor at Geek Squad. A lot of the laptops that came across the counter had the same story attached. Someone got an email that looked like it was from their bank, or a courier, or &ldquo;Microsoft&rdquo;, clicked once, and then we were the ones cleaning it up.</p>
+        <p>What stuck with me is that these people were not careless. The emails were just good enough, and nobody had ever shown them where to look. I kept thinking I wished I could hand them something that opens the email for them, touches nothing, and says in plain words why it is worried.</p>
+        <p>So that is what this is. It reads the headers, the route the email took to get to you, whether the sender passed the usual sign-in checks (SPF, DKIM, DMARC), where each link really goes, what each attachment really is, and how the writing tries to rush you. Then it adds it up. The part I care about most is that every single point in the score has a reason sitting next to it, so you can look at the number and disagree with it.</p>
+        <h3>What it can&rsquo;t do</h3>
+        <p>I would rather say this up front than have you find it. Every email in this mailbox is one I wrote, and I also wrote the checks, so my 34 out of 36 is me marking my own homework. I wrote a second batch after I froze the weights to be a bit fairer to myself, and it still found a miss (the one with the RAR file). It also wrongly flags a security awareness email that quotes a phishing example. It has never seen real mail.</p>
+        <p>It does not truly verify DKIM signatures, it does not read QR codes, it does not look inside RAR files, and the wording checks only know English. Treat it as a way to learn how this stuff works, not as something to trust with your inbox.</p>
+        <h3>What I would do next</h3>
+        <p>First, get someone else to write the test emails, so I am not both the author and the grader. After that, try it on real mail that people give me permission to use, add real DKIM checking, read QR codes, and open RAR and 7z files the same careful way I already read ZIPs.</p>
+        <p class="sign">Diogo</p>
+      </div>
+    </article>
+
+    <section id="view-paste" class="page" hidden aria-labelledby="paste-title">
+      <div class="page-head"><h2 id="paste-title">Check your own email</h2><span class="meta">runs in this tab, nothing is uploaded</span></div>
+      <p class="hint">Paste a whole raw <code>.eml</code>, or just the header block, and press <strong>Check it</strong>. Your browser runs the same header, sign-in, link, attachment and wording checks as the Python version and scores the result. The SPF check only knows the made-up DNS records that ship with the demo, so real domains show &ldquo;none&rdquo;. Please do not paste anything private on a computer you share.</p>
+      <label class="hint" for="paste-sample">Nothing handy? Load one of mine:</label>
+      <select id="paste-sample" aria-label="Load a sample message"></select>
+      <textarea id="paste-input" spellcheck="false" placeholder="From: &quot;Example Bank&quot; &lt;alerts@examp1e-bank.test&gt;&#10;Reply-To: help@other.test&#10;Subject: Verify your account&#10;..."></textarea>
+      <div class="paste-controls">
+        <button type="button" class="btn" id="paste-run">Check it</button>
+        <button type="button" class="btn ghost" id="paste-clear">Start over</button>
+        <span id="paste-status" class="meta" aria-live="polite"></span>
+      </div>
+      <div id="paste-result" class="msg" hidden></div>
     </section>
-    <section class="panel" aria-labelledby="ioc-title">
-      <div class="panel-head"><h2 id="ioc-title">IOCs (defanged)</h2>
+
+    <section id="view-iocs" class="page" hidden aria-labelledby="ioc-title">
+      <div class="page-head"><h2 id="ioc-title">Things to block</h2>
         <span class="btn-row"><button type="button" class="btn ghost" id="ioc-csv">Download CSV</button><button type="button" class="btn ghost" id="ioc-json">Download JSON</button></span></div>
-      <p class="hint">From every message scored suspicious or worse. Values are shown defanged (hxxp, [.]); the downloads carry both forms. All synthetic.</p>
-      <div class="filters"><select id="ioc-type" aria-label="Filter by type"></select><input id="ioc-q" type="search" placeholder="Filter IOCs…" aria-label="Filter IOCs"></div>
+      <p class="hint">Sender addresses, domains, links and file hashes from every message that scored suspicious or worse (security people call these IOCs). They are shown defanged, like hxxp and [.], so nothing turns into a clickable link. The downloads carry both versions. All of it is made up.</p>
+      <div class="filters"><select id="ioc-type" aria-label="Filter by type"></select><input id="ioc-q" type="search" placeholder="Filter these…" aria-label="Filter IOCs"></div>
       <div class="table-scroll"><table class="data" id="ioc-table"><thead><tr><th>Type</th><th>Value (defanged)</th><th>Message</th></tr></thead><tbody></tbody></table></div>
       <p id="ioc-more" class="meta"></p>
     </section>
-  </div>
 
-  <details class="panel rules" id="catalog">
-    <summary><h2>Indicator catalogue</h2><span class="meta" id="catalog-meta"></span></summary>
-    <div class="table-scroll"><table class="data" id="catalog-table"><thead><tr><th>Indicator</th><th>Category</th><th class="num">Weight</th><th>Severity</th><th>ATT&amp;CK</th><th>What it means</th></tr></thead><tbody></tbody></table></div>
-  </details>
-</main>
+    <section id="view-eval" class="page" hidden aria-labelledby="eval-title">
+      <div class="page-head"><h2 id="eval-title">How well does it work?</h2><span class="meta">made-up mail, graded by me</span></div>
+      <div class="caveat" id="eval-caveat"></div>
+      <div id="eval-body"></div>
+    </section>
 
-<footer class="foot">
-  <p>Phishing Email Analyzer &middot; Python 3 standard-library engine plus this static dashboard. Source and tests in the repository. This page makes no network requests except to load its own JSON files, and renders every value as text.</p>
-</footer>
+    <section id="catalog" class="page" hidden aria-labelledby="catalog-title">
+      <div class="page-head"><h2 id="catalog-title">Rulebook</h2><span class="meta" id="catalog-meta"></span></div>
+      <p class="hint">Every check the tool can fire, with the points it is worth. Nothing is hidden in the code: this list comes straight from the config file.</p>
+      <div class="table-scroll"><table class="data" id="catalog-table"><thead><tr><th>Rule</th><th>Area</th><th class="num">Points</th><th>How serious</th><th>ATT&amp;CK</th><th>What it means</th></tr></thead><tbody></tbody></table></div>
+    </section>
+  </main>
+</div>
+</div>
 
 <script src="core-text.js"></script>
 <script src="core.js"></script>

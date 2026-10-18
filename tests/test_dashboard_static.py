@@ -89,3 +89,49 @@ def test_favicon_and_theme_files_exist():
     assert (DASH / "favicon.svg").read_text().lstrip().startswith("<svg")
     css = (DASH / "style.css").read_text()
     assert "--bg" in css and "prefers-reduced-motion" in css or "--bg" in css
+
+
+def test_layout_is_a_three_pane_mail_client():
+    html = (DASH / "index.html").read_text()
+    for cls in ("folders", "listpane", "readpane"):
+        assert f'class="{cls}"' in html, cls
+    for el in ("kpis", "inbox-list", "detail", "note", "view-paste", "view-iocs", "view-eval", "catalog", "banner"):
+        assert f'id="{el}"' in html, el
+    # the verdict folders carry the counts the smoke test checks
+    for v in ("all", "likely_phishing", "suspicious", "benign"):
+        assert f'data-v="{v}"' in html, v
+
+
+def test_theme_is_light_and_uses_system_fonts():
+    html = (DASH / "index.html").read_text()
+    css = (DASH / "style.css").read_text()
+    assert 'name="color-scheme" content="light"' in html
+    assert "system-ui" in css
+    assert "@import" not in css and "url(http" not in css and "fonts.googleapis" not in css
+    bg = re.search(r"--bg:\s*#([0-9a-fA-F]{6})", css).group(1)
+    assert min(int(bg[i:i + 2], 16) for i in (0, 2, 4)) > 200, "page background should be light"
+    assert "--pane: #ffffff" in css
+
+
+def test_why_i_built_this_note_is_in_my_voice_and_honest():
+    html = (DASH / "index.html").read_text()
+    note = re.search(r'<article id="note".*?</article>', html, re.S).group(0)
+    text = re.sub(r"<[^>]+>", " ", note)
+    for must in ("Geek Squad", "Toronto", "computer science", "What it can", "What I would do next", "my own homework", "never seen real mail"):
+        assert must in text, must
+    assert re.search(r"\b[Ii] ", text)
+    for corporate in ("leverage", "synergy", "robust", "scalable", "stakeholder", "enterprise-grade", "cutting-edge", "seamless"):
+        assert corporate not in text.lower(), corporate
+
+
+def test_no_em_or_en_dashes_in_dashboard_text():
+    for name in ("index.html", "app.js", "style.css"):
+        t = (DASH / name).read_text()
+        assert "\u2014" not in t and "\u2013" not in t and "&mdash;" not in t and "&ndash;" not in t, name
+
+
+def test_hostile_values_have_no_html_path_in_app():
+    app = (DASH / "app.js").read_text()
+    # elements are built with h(tag, attrs, kids) which uses textContent / createTextNode only
+    assert 'k === "text") el.textContent = v' in app
+    assert "createElementNS" not in app and "DOMParser" not in app and "srcdoc" not in app
