@@ -66,7 +66,7 @@ def test_readme_sections_are_in_the_required_order():
         assert idx is not None, want
         pos.append(idx)
     assert pos == sorted(pos)
-    assert "```mermaid" in README and "<your-repo-url>" in README and "https://phishing-email-analyzer" in README
+    assert "```mermaid" in README and "https://github.com/SomarGuy/phishing-email-analyzer" in README and "<your-repo-url>" not in README and "https://phishing-email-analyzer" in README
 
 
 def test_readme_numbers_match_the_evaluation_and_corpus():
