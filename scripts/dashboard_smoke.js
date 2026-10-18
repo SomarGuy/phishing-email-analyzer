@@ -17,7 +17,11 @@ const VL = { benign: "looks fine", suspicious: "suspicious", likely_phishing: "l
 (async () => {
   const browser = await chromium.launch({ executablePath: process.env.CHROME || "/usr/bin/google-chrome", args: ["--no-sandbox"] });
   const errors = [], requests = [];
-  const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+  // the existing checks and screenshots run as a returning visitor who already dismissed the Start here bar
+  const dismissed = () => { try { localStorage.setItem("phishing-analyzer-guide-dismissed", "1"); } catch (e) { /* ignore */ } };
+  const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+  await ctx.addInitScript(dismissed);
+  const page = await ctx.newPage();
   page.on("console", (m) => { if (m.type() === "error") errors.push(m.text()); });
   page.on("pageerror", (e) => errors.push(String(e)));
   page.on("request", (r) => requests.push(r.url()));
@@ -180,7 +184,9 @@ const VL = { benign: "looks fine", suspicious: "suspicious", likely_phishing: "l
   assert(!/[\u2014]/.test(await page.locator("body").innerText()), "no em dash anywhere in the page");
 
   // ---- mobile
-  const m = await browser.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2 });
+  const mctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2 });
+  await mctx.addInitScript(dismissed);
+  const m = await mctx.newPage();
   m.on("pageerror", (e) => errors.push("mobile: " + e));
   m.on("console", (x) => { if (x.type() === "error") errors.push("mobile: " + x.text()); });
   await m.goto(base + "/", { waitUntil: "networkidle" });
@@ -196,6 +202,93 @@ const VL = { benign: "looks fine", suspicious: "suspicious", likely_phishing: "l
   await m.screenshot({ path: outDir + "/04-mobile-reading.png" });
   await m.click("#back-btn");
   assert(await m.locator(".listpane").isVisible(), "back button returns to the list");
+
+  // ---- the "How to use this" guide: Start here bar, remembered dismissal, and every step in the guide really works
+  async function guideWalk(vp, shot) {
+    const gctx = await browser.newContext({ viewport: vp, deviceScaleFactor: vp.width < 500 ? 2 : 1 });
+    const g = await gctx.newPage();
+    g.on("console", (x) => { if (x.type() === "error") errors.push("guide: " + x.text()); });
+    g.on("pageerror", (e) => errors.push("guide: " + e));
+    const phone = vp.width < 500;
+    const noOverflow = async (why) => assert((await g.evaluate(() => document.documentElement.scrollWidth)) <= vp.width + 2, "no horizontal overflow: " + why);
+    await g.goto(base + "/", { waitUntil: "networkidle" });
+    await g.waitForSelector("#inbox-list .mail");
+    assert(await g.locator("#start-here").isVisible(), "Start here bar shows on a first visit");
+    await noOverflow("first visit");
+    await g.click("#start-dismiss");
+    assert(await g.locator("#start-here").isHidden(), "dismiss hides the bar");
+    await g.reload({ waitUntil: "networkidle" });
+    await g.waitForSelector("#inbox-list .mail");
+    assert(await g.locator("#start-here").isHidden(), "dismissal is remembered after a reload");
+    assert(await g.locator("#guide-open").isVisible() && /How to use this/.test(await g.locator("#guide-open").textContent()), "top bar button is always visible");
+    assert(await g.locator("#guide-pin").isVisible(), "pinned message is in the list");
+    // open it three ways: top bar, pinned message, Extras folder (on a phone the folder chips are visible too)
+    await g.click("#guide-pin");
+    assert(await g.locator("#view-guide").isVisible(), "pinned message opens the guide");
+    if (phone) await g.click("#back-btn"); else await g.click('.folder[data-v="all"]');
+    await g.click('.tool[data-view="guide"]');
+    assert(await g.locator("#view-guide").isVisible(), "Extras folder opens the guide");
+    if (phone) await g.click("#back-btn"); else await g.click('.folder[data-v="all"]');
+    await g.click("#guide-open");
+    assert(await g.locator("#view-guide").isVisible(), "top bar button opens the guide");
+    assert.strictEqual(await g.evaluate(() => document.activeElement.id), "guide-title", "focus moves to the guide heading");
+    await noOverflow("guide page");
+    assert.strictEqual(await g.locator("#view-guide .walk > li").count(), 6, "six steps");
+    for (const w of ["Try this in 60 seconds", "Words you will see", "What this shows about my skills"]) assert((await g.locator("#view-guide").textContent()).includes(w), w);
+    assert((await g.locator("#view-guide .gloss dt").count()) >= 14, "glossary terms");
+    if (phone) await g.evaluate(() => document.getElementById("walk-title").scrollIntoView());
+    await g.screenshot({ path: outDir + "/" + shot });
+    // step 1: the PayPal email
+    await g.locator("#view-guide .go").nth(0).click();
+    const d1 = await g.locator("#detail").innerText();
+    assert(await g.locator("#detail").isVisible() && /Action required: unusual sign-in detected/.test(d1) && /Why it got this score/i.test(d1) && /100\s+out of 100/.test(d1) && /likely phishing/i.test(d1), "step 1: PayPal email, reasons and 100 out of 100");
+    assert(await g.locator("#detail .warn").first().isVisible(), "step 1: the red bar");
+    // steps 2 to 4: the Jump to chips named in the guide really exist and land on the right section
+    for (const [i, chip, heading, expect] of [[1, "Sign-in", /Did the sender prove who they are/i, /SPF\s+fail[\s\S]*DKIM\s+none[\s\S]*DMARC\s+fail/i], [2, "Route", /The trip this email took/i, /stop 2/i], [3, "Links", /Links \(2\)/i, /paypa1-secure\[\.\]test[\s\S]*hxxps/i]]) {
+      if (phone) await g.click("#back-btn");
+      await g.locator("#view-guide, #inbox-list").first().waitFor({ state: "attached" });
+      await g.click("#guide-open");
+      await g.locator("#view-guide .go").nth(i).click();
+      const sec = g.locator("#detail .sec", { hasText: heading }).first();
+      assert(await sec.count() === 1, "step " + (i + 1) + ": section " + chip);
+      assert(expect.test(await sec.innerText()), "step " + (i + 1) + ": " + chip + " content: " + (await sec.innerText()).slice(0, 200));
+      assert(await g.locator("#detail .jchip", { hasText: new RegExp("^" + chip + "$") }).count() === 1, "step " + (i + 1) + ": jump chip named " + chip);
+    }
+    const linkSec = await g.locator("#detail .sec", { hasText: /Links \(2\)/ }).first().innerText();
+    assert(/https:\/\/www\.paypal\.com\/verify/.test(linkSec) && /paypa1-secure/.test(linkSec), "step 4: text says paypal.com, link goes to paypa1-secure");
+    assert.strictEqual(await g.locator("#detail a[href^='http']").count(), 0, "step 4: no clickable links");
+    // step 5: the safe email
+    if (phone) await g.click("#back-btn");
+    await g.click("#guide-open");
+    await g.locator("#view-guide .go").nth(4).click();
+    const d5 = await g.locator("#detail").innerText();
+    assert(/This week: harbour dredging, new ferry timetable/.test(d5) && /Nothing fired\. That is the whole story\./.test(d5) && /0\s+out of 100/.test(d5), "step 5: safe email, nothing fired, 0 out of 100");
+    // the manual route for step 5 also works: Looks fine folder, then that email
+    if (phone) await g.click("#back-btn");
+    await g.click('.folder[data-v="benign"]');
+    await g.locator("#inbox-list .mail", { hasText: "This week: harbour dredging" }).click();
+    assert(/Nothing fired/.test(await g.locator("#detail").innerText()), "step 5: manual route");
+    // step 6: Check your own email -> load the P01 sample -> Check it
+    if (phone) await g.click("#back-btn");
+    await g.click(".compose");
+    await g.selectOption("#paste-sample", "P01-paypal-lookalike-credential");
+    assert((await g.locator("#paste-input").inputValue()).length > 500, "step 6: sample text loaded");
+    await g.click("#paste-run");
+    await g.waitForFunction(() => /Checked in/.test(document.getElementById("paste-status").textContent));
+    const st = await g.locator("#paste-status").textContent();
+    assert(/likely phishing, risk 100/.test(st), "step 6: scored live in the browser: " + st);
+    // the Start here bar returns when storage is cleared, and its button opens the guide from the keyboard
+    await g.evaluate(() => localStorage.clear());
+    await g.reload({ waitUntil: "networkidle" });
+    await g.waitForSelector("#inbox-list .mail");
+    assert(await g.locator("#start-here").isVisible(), "bar returns when storage is cleared");
+    await g.focus("#start-open"); await g.keyboard.press("Enter");
+    assert(await g.locator("#view-guide").isVisible(), "Start here button opens the guide from the keyboard");
+    assert(!/[\u2014\u2013]/.test(await g.locator("#view-guide").innerText()), "no em or en dashes in the guide");
+    await gctx.close();
+  }
+  await guideWalk({ width: 1440, height: 900 }, "09-how-to-use.png");
+  await guideWalk({ width: 390, height: 844 }, "10-how-to-use-mobile.png");
 
   assert.deepStrictEqual(errors, [], "no console errors: " + errors.join("; "));
   console.log("dashboard smoke test OK:", { messages: analysis.messages.length, iocRows: Math.min(150, s.iocs), giftSearchHits: gift });

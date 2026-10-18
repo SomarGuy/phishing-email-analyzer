@@ -72,7 +72,7 @@
   }
 
   // ------------------------------------------------------------------ views (the mail view keeps the list; the others take the room)
-  var VIEWS = { paste: "view-paste", iocs: "view-iocs", eval: "view-eval", rules: "catalog" };
+  var VIEWS = { guide: "view-guide", paste: "view-paste", iocs: "view-iocs", eval: "view-eval", rules: "catalog" };
   function setView(v) {
     document.body.setAttribute("data-view", v);
     $("detail").hidden = v !== "mail";
@@ -80,10 +80,48 @@
     Object.keys(VIEWS).forEach(function (k) { $(VIEWS[k]).hidden = v !== k; });
     Array.prototype.forEach.call(document.querySelectorAll("[data-view].tool, .compose"), function (b) { b.classList.toggle("active", b.getAttribute("data-view") === v); });
     $("note-open").classList.toggle("active", v === "about");
+    $("guide-pin").classList.toggle("active", v === "guide"); $("guide-open").classList.toggle("active", v === "guide");
     if (v === "about") { document.body.classList.add("reading"); Array.prototype.forEach.call($("inbox-list").querySelectorAll(".mail"), function (b) { b.classList.remove("active"); b.removeAttribute("aria-current"); }); }
     if (v !== "mail" && v !== "about") document.body.classList.add("reading");
     $("main").scrollTop = 0;
     window.scrollTo(0, 0);
+  }
+
+  // ------------------------------------------------------------------ guide: Start here bar, remembered dismissal, "Take me there" buttons
+  var GUIDE_KEY = "phishing-analyzer-guide-dismissed";
+  function storeGet() { try { return window.localStorage.getItem(GUIDE_KEY); } catch (e) { return null; } }
+  function storeSet() { try { window.localStorage.setItem(GUIDE_KEY, "1"); } catch (e) { /* private mode: it just comes back next visit */ } }
+  function openGuide() { setView("guide"); var hd = $("guide-title"); hd.tabIndex = -1; hd.focus({ preventScroll: true }); }
+  function dismissStart() {
+    storeSet();
+    var st = $("start-here"), had = st.contains(document.activeElement);
+    st.hidden = true;
+    if (had) $("guide-open").focus();
+  }
+  function showFolder(key, title) {
+    S.v = key; $("inbox-title").textContent = title; S.q = ""; $("inbox-q").value = "";
+    renderFolders(); renderInbox(); setView("mail");
+  }
+  function goGuide(spec) {
+    var parts = spec.split(":");
+    if (parts[0] === "paste") { setView("paste"); var pt = $("paste-title"); pt.tabIndex = -1; pt.focus({ preventScroll: true }); return; }
+    var id;
+    if (parts[0] === "benign") { showFolder("benign", "Looks fine"); id = "B01-newsletter-harbour-gazette"; }
+    else { showFolder("", "Inbox"); id = "P01-paypal-lookalike-credential"; }
+    select(id, true, true);
+    if (parts[1]) {
+      var chips = $("detail").querySelectorAll(".jchip");
+      for (var i = 0; i < chips.length; i++) if (chips[i].textContent === parts[1]) { chips[i].click(); break; }
+    }
+    $("main").focus({ preventScroll: true });
+  }
+  function wireGuide() {
+    $("start-here").hidden = !!storeGet();
+    $("guide-open").addEventListener("click", openGuide);
+    $("guide-pin").addEventListener("click", openGuide);
+    $("start-open").addEventListener("click", openGuide);
+    $("start-dismiss").addEventListener("click", dismissStart);
+    Array.prototype.forEach.call(document.querySelectorAll("#view-guide .go"), function (b) { b.addEventListener("click", function () { goGuide(b.getAttribute("data-go")); }); });
   }
 
   // ------------------------------------------------------------------ folders + message list
@@ -423,6 +461,8 @@
       var first = D.byId["P01-paypal-lookalike-credential"] || D.msgs.filter(function (x) { return x.verdict === "likely_phishing"; })[0] || D.msgs[0];
       select(D.byId[want] ? want : first.id, false, false);
       setView("mail");
+      wireGuide();
+      if (location.hash === "#guide") setView("guide");
     }).catch(function (e) { showError("I could not load the data files: " + e.message); });
   }
   boot();

@@ -25,6 +25,7 @@
     <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg>
     <input id="inbox-q" type="search" placeholder="Search mail: sender, subject, rule name" aria-label="Search messages">
   </div>
+  <button type="button" id="guide-open" class="help-btn" aria-controls="view-guide" title="A one-minute tour for first-time visitors"><span class="q" aria-hidden="true">?</span><span class="t">How to use this</span></button>
   <span id="dataset-meta" class="meta" aria-live="polite">Fetching the mail…</span>
 </header>
 
@@ -35,6 +36,12 @@
     <summary>What does that mean?</summary>
     <p>The company and people are fictional. Sender and link domains are reserved ones (<code>example.*</code>, <code>.test</code>, <code>.invalid</code>) and every IP address is from a documentation range. The only real domains are paypal.com, amazon.com and aws.amazon.com, used as the honest side of look-alike tests. Nothing is ever fetched or opened, and the attachments are harmless text stubs.</p>
   </details>
+</div>
+
+<div id="start-here" class="startbar" role="region" aria-label="Start here" hidden>
+  <span class="sq" aria-hidden="true">?</span>
+  <p><strong>Start here.</strong> This is a mailbox of made-up emails, so click anything. The guide takes about a minute and tells you what to click and what to look at.</p>
+  <span class="sa"><button type="button" id="start-open" class="btn sm">Open the 60-second guide</button><button type="button" id="start-dismiss" class="btn ghost sm">Dismiss</button></span>
 </div>
 
 <div class="shell">
@@ -48,6 +55,7 @@
     </ul>
     <h2 class="fh">Extras</h2>
     <ul class="folder-list">
+      <li><button type="button" class="folder tool" data-view="guide"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.6 9.6a2.5 2.5 0 1 1 3.8 2.1c-.9.6-1.4 1.1-1.4 2.2M12 16.8v.4"/></svg><span class="lbl">How to use this</span></button></li>
       <li><button type="button" class="folder tool" data-view="iocs"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg><span class="lbl">Things to block</span><span class="n" id="tool-iocs-n"></span></button></li>
       <li><button type="button" class="folder tool" data-view="eval"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V11M11 20V4M17 20v-6M3 20.5h18"/></svg><span class="lbl">How well does it work?</span></button></li>
       <li><button type="button" class="folder tool" data-view="rules"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 4.5h10a3 3 0 0 1 3 3v12h-10a3 3 0 0 1-3-3z"/><path d="M5.5 16.5a3 3 0 0 1 3-3h10"/></svg><span class="lbl">Rulebook</span></button></li>
@@ -60,12 +68,13 @@
       <div><h2 id="inbox-title">Inbox</h2><span id="inbox-count" class="meta"></span></div>
       <label class="sort">Sort <select id="inbox-sort" aria-label="Sort messages"><option value="risk">riskiest first</option><option value="new">newest first</option></select></label>
     </div>
+    <button type="button" class="pin" id="guide-pin"><span class="av av-guide" aria-hidden="true">?</span><span class="mbody"><span class="r1"><span class="from">Diogo</span><span class="when">pinned</span></span><span class="subj">How to use this demo</span><span class="snip">A one-minute tour: what to click and what to look at.</span></span></button>
     <button type="button" class="pin" id="note-open"><span class="av av-note" aria-hidden="true">D</span><span class="mbody"><span class="r1"><span class="from">Diogo</span><span class="when">pinned</span></span><span class="subj">Why I built this</span><span class="snip">A short note before you start poking around.</span></span></button>
     <ul id="inbox-list" class="mail-list" aria-label="Messages"></ul>
     <p id="inbox-empty" class="empty" hidden>Nothing matches that. Try fewer letters, or pick another folder.</p>
   </section>
 
-  <main class="readpane" id="main">
+  <main class="readpane" id="main" tabindex="-1">
     <div class="mobilebar"><button type="button" id="back-btn">&lsaquo; Back to the list</button></div>
     <section id="error" class="panel error" hidden aria-live="assertive"></section>
     <noscript><section class="panel error">This page needs JavaScript to draw the mailbox. The same results are in the repository's <code>reports/</code> folder as plain files.</section></noscript>
@@ -92,6 +101,50 @@
         <p class="sign">Diogo</p>
       </div>
     </article>
+
+    <section id="view-guide" class="page" hidden aria-labelledby="guide-title">
+      <div class="page-head"><h2 id="guide-title">How to use this</h2><span class="meta">about a minute</span></div>
+      <p class="guide-lede">This is a phishing email analyzer I wrote. It opens an email without touching anything in it, checks the headers, the sign-in results (SPF, DKIM, DMARC), the links and the attachments, and gives it a score from 0 to 100 with a reason for every point. I built it because, back when I worked at Geek Squad, a lot of the laptops on the counter had one convincing email behind them. Everyone in this mailbox is made up, and nothing is ever opened or fetched.</p>
+
+      <div class="sec">
+        <h3 id="walk-title">Try this in 60 seconds</h3>
+        <ol class="walk" role="list" aria-labelledby="walk-title">
+          <li><p><b>Open the email from "PayPal Security", subject "Action required: unusual sign-in detected".</b> It is near the top of the Inbox (the button opens it for you). Read the red bar, then "Why it got this score". Every line has points, a plain reason and the evidence, and the total is 100 out of 100, "likely phishing".</p><button type="button" class="btn ghost sm go" data-go="p01">Take me there</button></li>
+          <li><p><b>Click "Sign-in" in the "Jump to" row.</b> SPF is a fail, DKIM is none and DMARC is a fail. Those are three checks on whether the sender proved who they are, and this one proved nothing.</p><button type="button" class="btn ghost sm go" data-go="p01:Sign-in">Take me there</button></li>
+          <li><p><b>Click "Route".</b> "The trip this email took" lists every server the message passed through (the header hops), oldest first, with the time from each server's own header.</p><button type="button" class="btn ghost sm go" data-go="p01:Route">Take me there</button></li>
+          <li><p><b>Click "Links".</b> The text says https://www.paypal.com/verify but the link really goes to paypa1-secure[.]test, with a number 1 where the l should be. Links are shown defanged (hxxps and [.]) and are never clickable.</p><button type="button" class="btn ghost sm go" data-go="p01:Links">Take me there</button></li>
+          <li><p><b>Compare it with a safe one.</b> Click "Looks fine" on the left, then the email "This week: harbour dredging, new ferry timetable" from Harbour Gazette. It says "Nothing fired. That is the whole story." and scores 0 out of 100.</p><button type="button" class="btn ghost sm go" data-go="benign">Take me there</button></li>
+          <li><p><b>Click "Check your own email" at the top left, pick "P01-paypal-lookalike-credential" under "Nothing handy? Load one of mine:" and press "Check it".</b> Your browser runs the same checks and scores it on the spot. You can paste your own email text instead, and nothing is uploaded.</p><button type="button" class="btn ghost sm go" data-go="paste">Take me there</button></li>
+        </ol>
+      </div>
+
+      <div class="sec">
+        <h3 id="gloss-title">Words you will see</h3>
+        <dl class="gloss" aria-labelledby="gloss-title">
+          <div><dt>Phishing</dt><dd>A fake message built to trick you into handing over a password, money or access.</dd></div>
+          <div><dt>Headers</dt><dd>The details at the top of every email that most people never see: who sent it, the route it took and which checks it passed.</dd></div>
+          <div><dt>Header hops</dt><dd>Each mail server the message passed through on its way to you. Every one adds a line with a time, so the route can be read back oldest first.</dd></div>
+          <div><dt>SPF</dt><dd>Checks that the server that sent the email is allowed to send for that domain.</dd></div>
+          <div><dt>DKIM</dt><dd>A digital signature that shows the email really came from the domain's owner and was not changed on the way. This tool reads the result the mail server recorded and does not check signatures itself.</dd></div>
+          <div><dt>DMARC</dt><dd>The domain's rule for what to do when SPF and DKIM do not line up with the From address you can see. A fail is a strong sign of spoofing.</dd></div>
+          <div><dt>Spoofing</dt><dd>Making an email look like it came from someone else.</dd></div>
+          <div><dt>Look-alike domain</dt><dd>A web address that is one character off a real one, like paypa1 with a one instead of an l.</dd></div>
+          <div><dt>Display name</dt><dd>The friendly name next to the address. Anyone can set it to "PayPal Security", so the address behind it matters more.</dd></div>
+          <div><dt>Reply-To</dt><dd>Where your reply will go. It can quietly differ from who the email says it is from.</dd></div>
+          <div><dt>Defanged</dt><dd>A link written as hxxps and [.] so it cannot be clicked by accident.</dd></div>
+          <div><dt>IOC (indicator of compromise)</dt><dd>A sender address, domain, link or file fingerprint that is worth blocking. They are listed under "Things to block".</dd></div>
+          <div><dt>BEC (business email compromise)</dt><dd>A scam where someone poses as a boss or a supplier to get money moved, often with no link or attachment at all.</dd></div>
+          <div><dt>HTML smuggling</dt><dd>An attachment that builds the harmful file inside your browser, so nothing obviously bad was ever attached.</dd></div>
+          <div><dt>Score and verdict</dt><dd>0 to 100. From 25 it is "Suspicious" and from 55 it is "Looks like phishing". Below that it is "Looks fine".</dd></div>
+          <div><dt>MITRE ATT&amp;CK</dt><dd>A public catalogue of attacker techniques with IDs like T1566. Each message is tagged with the ones it matches.</dd></div>
+        </dl>
+      </div>
+
+      <div class="skills">
+        <h3>What this shows about my skills</h3>
+        <p>I can read an email's headers and explain SPF, DKIM and DMARC to someone who is not technical, which is what a help desk gets asked all the time. I turn a pile of signals into a score, a reason for each point and a ticket note someone else can act on, and I say where it falls short: it missed one email in my second test set and it wrongly flags an awareness email that quotes a phishing example.</p>
+      </div>
+    </section>
 
     <section id="view-paste" class="page" hidden aria-labelledby="paste-title">
       <div class="page-head"><h2 id="paste-title">Check your own email</h2><span class="meta">runs in this tab, nothing is uploaded</span></div>

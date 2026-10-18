@@ -135,3 +135,78 @@ def test_hostile_values_have_no_html_path_in_app():
     # elements are built with h(tag, attrs, kids) which uses textContent / createTextNode only
     assert 'k === "text") el.textContent = v' in app
     assert "createElementNS" not in app and "DOMParser" not in app and "srcdoc" not in app
+
+
+# ---- the "How to use this" guide
+
+def _guide_html():
+    html = (DASH / "index.html").read_text()
+    return html, re.search(r'<section id="view-guide".*?</section>', html, re.S).group(0)
+
+
+def test_guide_has_entry_points_a_start_here_bar_and_the_expected_parts():
+    html, guide = _guide_html()
+    for el in ("guide-open", "guide-pin", "start-here", "start-open", "start-dismiss", "guide-title", "walk-title", "gloss-title"):
+        assert f'id="{el}"' in html, el
+    assert 'data-view="guide"' in html, "Extras folder entry"
+    assert guide.count('class="btn ghost sm go"') == 6 and guide.count("<li>") == 6, "six steps with a Take me there button each"
+    for words in ("Try this in 60 seconds", "Words you will see", "What this shows about my skills"):
+        assert words in guide, words
+    terms = re.findall(r"<dt>(.*?)</dt>", guide)
+    for term in ("SPF", "DKIM", "DMARC", "Header hops", "Spoofing", "Defanged"):
+        assert any(t.startswith(term) for t in terms), term
+
+
+def test_guide_steps_name_real_data_and_ui():
+    html, guide = _guide_html()
+    an = json.loads((DASH / "data" / "analysis.json").read_text())
+    by_id = {m["id"]: m for m in an["messages"]}
+    p01 = by_id["P01-paypal-lookalike-credential"]
+    assert "PayPal Security" in guide
+    assert p01["subject"] in guide.replace("&amp;", "&") and p01["score"] == 100 and p01["verdict"] == "likely_phishing"
+    benign = by_id["B01-newsletter-harbour-gazette"]
+    assert benign["subject"] in guide and benign["score"] == 0
+    for chip in ("Sign-in", "Route", "Links"):
+        assert f'"{chip}"' in guide
+    app = (DASH / "app.js").read_text()
+    assert all(f'"{chip}"' in app or chip in app for chip in ("Sign-in", "Route", "Links"))
+    emls = json.loads((DASH / "data" / "emls.json").read_text())
+    for go in re.findall(r'data-go="([^"]+)"', guide):
+        if go.startswith("p01"):
+            assert "P01-paypal-lookalike-credential" in emls
+
+
+def test_guide_dismissal_is_remembered_in_local_storage_and_never_blocks_the_page():
+    app = (DASH / "app.js").read_text()
+    assert "phishing-analyzer-guide-dismissed" in app
+    assert re.search(r"try\s*\{[^}]*localStorage", app), "storage access is wrapped in try/catch"
+    html, _ = _guide_html()
+    assert re.search(r'<[^>]+id="start-here"[^>]*\bhidden\b', html), "bar starts hidden and only shows when not dismissed"
+    assert 'role="region" aria-label="Start here"' in html
+
+
+def test_guide_copy_is_plain_and_has_no_dashes_or_buzzwords():
+    _, guide = _guide_html()
+    text = re.sub(r"<[^>]+>", " ", guide).lower()
+    assert "\u2014" not in guide and "\u2013" not in guide
+    for bad in ("leverage", "synergy", "robust", "scalable", "stakeholder", "enterprise-grade", "cutting-edge", "seamless", "vibe", "results-driven", "passionate"):
+        assert bad not in text, bad
+
+
+def test_guide_is_keyboard_and_screen_reader_friendly():
+    html, _ = _guide_html()
+    css = (DASH / "style.css").read_text()
+    assert 'id="main" tabindex="-1"' in html
+    assert "ol class=\"walk\" role=\"list\"" in html
+    assert "#main:focus" in css and "focus-visible" in css
+    assert "(max-width" in css and ".startbar" in css and ".walk" in css
+
+
+def test_readme_has_a_how_to_use_section_that_matches_the_guide():
+    readme = (ROOT / "README.md").read_text()
+    section = re.search(r"## How to use the demo\n(.*?)\n## ", readme, re.S).group(1)
+    assert "Try this in 60 seconds" in section and "PayPal Security" in section and "Check it" in section
+    assert "\u2014" not in section and "\u2013" not in section
+    assert len(re.findall(r"^\d\. ", section, re.M)) == 6
+    for shot in ("09-how-to-use.png", "10-how-to-use-mobile.png"):
+        assert shot in section and (ROOT / "screenshots" / shot).exists()
