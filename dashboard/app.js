@@ -80,7 +80,7 @@
     Object.keys(VIEWS).forEach(function (k) { $(VIEWS[k]).hidden = v !== k; });
     Array.prototype.forEach.call(document.querySelectorAll("[data-view].tool, .compose"), function (b) { b.classList.toggle("active", b.getAttribute("data-view") === v); });
     $("note-open").classList.toggle("active", v === "about");
-    $("guide-pin").classList.toggle("active", v === "guide"); $("guide-open").classList.toggle("active", v === "guide");
+    $("guide-open").classList.toggle("active", v === "guide");
     if (v === "about") { document.body.classList.add("reading"); Array.prototype.forEach.call($("inbox-list").querySelectorAll(".mail"), function (b) { b.classList.remove("active"); b.removeAttribute("aria-current"); }); }
     if (v !== "mail" && v !== "about") document.body.classList.add("reading");
     $("main").scrollTop = 0;
@@ -110,15 +110,14 @@
     else { showFolder("", "Inbox"); id = "P01-paypal-lookalike-credential"; }
     select(id, true, true);
     if (parts[1]) {
-      var chips = $("detail").querySelectorAll(".jchip");
-      for (var i = 0; i < chips.length; i++) if (chips[i].textContent === parts[1]) { chips[i].click(); break; }
+      var fs = $("detail").querySelectorAll("details.fold");
+      for (var i = 0; i < fs.length; i++) if (fs[i].getAttribute("data-key") === parts[1]) { fs[i].open = true; fs[i].scrollIntoView({ block: "start", behavior: "smooth" }); break; }
     }
     $("main").focus({ preventScroll: true });
   }
   function wireGuide() {
     $("start-here").hidden = !!storeGet();
     $("guide-open").addEventListener("click", openGuide);
-    $("guide-pin").addEventListener("click", openGuide);
     $("start-open").addEventListener("click", openGuide);
     $("start-dismiss").addEventListener("click", dismissStart);
     Array.prototype.forEach.call(document.querySelectorAll("#view-guide .go"), function (b) { b.addEventListener("click", function () { goGuide(b.getAttribute("data-go")); }); });
@@ -214,12 +213,13 @@
       h("div", { class: "warn-text" }, [h("strong", { text: b[0] }), h("span", { text: " " + b[1] })])
     ]);
   }
+  var REASONS_SHOWN = 3;
   function reasons(r) {
     var items = r.indicators.filter(function (i) { return i.points > 0; });
     if (!items.length) return h("p", { class: "muted", text: "Nothing fired. That is the whole story." });
     var ul = h("ul", { class: "reasons" });
-    items.forEach(function (i) {
-      var li = h("li", { class: "reason sev-" + (i.severity || "info") }, [
+    var all = items.map(function (i) {
+      return h("li", { class: "reason sev-" + (i.severity || "info") }, [
         h("span", { class: "pts", text: "+" + i.points }),
         h("div", null, [
           h("div", { class: "ttl", text: i.title + (i.points !== i.weight ? " (worth " + i.weight + ", trimmed by the cap)" : "") }),
@@ -227,12 +227,22 @@
           i.evidence.length ? h("div", { class: "ev", text: i.evidence.join("\n") }) : null,
           i.mitre.length ? h("div", { class: "mt" }, i.mitre.map(function (t) { return h("span", { class: "mitre-chip", text: t }); })) : null
         ])]);
-      ul.appendChild(li);
     });
     r.mitigations.forEach(function (m) {
-      ul.appendChild(h("li", { class: "reason good" }, [h("span", { class: "pts", text: String(m.points) }), h("div", null, [h("div", { class: "ttl", text: m.title }), h("div", { class: "dt", text: m.detail })])]));
+      all.push(h("li", { class: "reason good" }, [h("span", { class: "pts", text: String(m.points) }), h("div", null, [h("div", { class: "ttl", text: m.title }), h("div", { class: "dt", text: m.detail })])]));
     });
-    return ul;
+    all.forEach(function (li) { ul.appendChild(li); });
+    var rest = all.length - REASONS_SHOWN;
+    if (rest < 2) return ul;                       // one leftover is not worth a button
+    all.slice(REASONS_SHOWN).forEach(function (li) { li.hidden = true; });
+    var btn = h("button", { type: "button", class: "btn ghost sm more-reasons", "aria-expanded": "false", text: "Show the other " + rest });
+    btn.addEventListener("click", function () {
+      var open = btn.getAttribute("aria-expanded") !== "true";
+      all.slice(REASONS_SHOWN).forEach(function (li) { li.hidden = !open; });
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      btn.textContent = open ? "Show fewer" : "Show the other " + rest;
+    });
+    return h("div", null, [ul, h("p", { class: "more-row" }, [btn])]);
   }
   function breakdown(r) {
     var box = h("div", { class: "bars" });
@@ -317,9 +327,7 @@
     clear(el);
     var th = D.analysis.thresholds, truth = opts.truth;
     el.appendChild(warnBanner(r));
-    var tags = h("div", { class: "tagrow" }, [vbadge(r.verdict),
-      truth ? h("span", { class: "flag " + (truth.correct ? "f-ok" : "f-critical"), title: "what I decided the right answer was before running the tool", text: "my label: " + truth.truth.replace("likely_", "") + (truth.correct ? " ✓" : " ✗") }) : null,
-      truth ? h("span", { class: "tag", text: truth.set + " set" }) : null]);
+    var tags = h("div", { class: "tagrow" }, [vbadge(r.verdict)]);
     el.appendChild(h("div", { class: "msg-head" }, [
       avatar(r.from, true),
       h("div", { class: "who" }, [
@@ -330,25 +338,42 @@
       ]),
       gauge(r.score, th)
     ]));
-    if (truth) el.appendChild(h("p", { class: "mono-note case-note", text: r.id + " · " + truth.category + ": " + truth.description }));
-    var jumps = [];
-    function add(label, title, body, cls) { var sec = section(title, body, cls); el.appendChild(sec); jumps.push([label, sec]); }
-    var jumpRow = h("div", { class: "jump", "aria-label": "Jump to a part of this message" }, [h("span", { class: "jl", text: "Jump to" })]);
-    el.appendChild(jumpRow);
-    add("Why", "Why it got this score", reasons(r), "reasons-sec");
-    add("Points", "Where the points came from (each area has a cap so one noisy area can't take over)", breakdown(r));
-    add("Route", "The trip this email took (oldest stop first, times from each server's own header)", routeList(r));
-    add("Sign-in", "Did the sender prove who they are?", authChips(r));
-    add("Sender", "Is it really from who it says?", identityTable(r));
-    add("Links", "Links (" + r.urls.length + ")", urlTable(r));
-    add("Files", "Attachments (" + r.attachments.length + ")", attTable(r));
-    if (r.mitre.length) add("ATT&CK", "Attack techniques it matches (MITRE ATT&CK)", h("div", { class: "chip-row" }, r.mitre.map(function (m) { return h("span", { class: "mitre-chip", title: m.name, text: m.id + " " + m.name }); })));
-    add("What to do", "What I would do about it", h("ul", { class: "plain todo" }, r.response.map(function (s) { return h("li", { text: s }); })));
-    add("Block list", "Things to block from this message", iocMini(r));
+    el.appendChild(section("Why it got this score", reasons(r), "reasons-sec"));
+    var todo = r.response.map(function (s) { return h("li", { text: s }); });
+    var todoUl = h("ul", { class: "plain todo" }, todo), todoBody = todoUl;
+    if (todo.length - 3 >= 2) {
+      var more = todo.length - 3, tb = h("button", { type: "button", class: "btn ghost sm more-reasons", "aria-expanded": "false", text: "Show the other " + more });
+      todo.slice(3).forEach(function (li) { li.hidden = true; });
+      tb.addEventListener("click", function () {
+        var on = tb.getAttribute("aria-expanded") !== "true";
+        todo.slice(3).forEach(function (li) { li.hidden = !on; });
+        tb.setAttribute("aria-expanded", on ? "true" : "false"); tb.textContent = on ? "Show fewer" : "Show the other " + more;
+      });
+      todoBody = h("div", null, [todoUl, h("p", { class: "more-row" }, [tb])]);
+    }
+    el.appendChild(section("What I would do about it", todoBody));
+    // everything else sits in a row of closed folds, so the page opens calm and each detail is one click away
+    var folds = h("div", { class: "folds" });
+    function fold(label, hint, body, note, count) {
+      folds.appendChild(h("details", { class: "sec fold", "data-key": label }, [
+        h("summary", null, [h("b", { text: label }), count === undefined ? null : h("span", { class: "n", text: String(count) }), h("span", { class: "fx", text: hint })]),
+        h("div", { class: "fold-body" }, [note ? h("p", { class: "hint", text: note }) : null, body])
+      ]));
+    }
+    fold("Points", "Where the points came from", breakdown(r), "Each area has a cap so one noisy area can't take over.");
+    fold("Route", "The trip this email took", routeList(r), "Oldest stop first. Times come from each server's own header.");
+    fold("Sign-in", "Did the sender prove who they are?", authChips(r));
+    fold("Sender", "Is it really from who it says?", identityTable(r));
+    fold("Links", "Where each link really goes", urlTable(r), null, r.urls.length);
+    fold("Files", "What each attachment really is", attTable(r), null, r.attachments.length);
+    if (r.mitre.length) fold("ATT&CK", "Attack techniques it matches (MITRE ATT&CK)", h("div", { class: "chip-row" }, r.mitre.map(function (m) { return h("span", { class: "mitre-chip", title: m.name, text: m.id + " " + m.name }); })));
+    fold("Block list", "Things to block from this message", iocMini(r));
     var st = h("span", { class: "toast", "aria-live": "polite" });
-    add("Ticket note", "Note for the ticket", h("div", null, [h("pre", { class: "note", text: r.ticket_note }),
+    fold("Ticket note", "A note you can paste into a ticket", h("div", null, [h("pre", { class: "note", text: r.ticket_note }),
       h("div", { class: "btn-row mt-s" }, [h("button", { type: "button", class: "btn", text: "Copy the ticket note", onclick: function () { copyText(r.ticket_note, st); } }), st])]));
-    jumps.forEach(function (j) { jumpRow.appendChild(h("button", { type: "button", class: "jchip", text: j[0], onclick: function () { j[1].scrollIntoView({ block: "start", behavior: "smooth" }); } })); });
+    if (truth) fold("my label: " + truth.truth.replace("likely_", "") + (truth.correct ? " ✓" : " ✗"), truth.set + " set. What I decided the right answer was before running the tool", h("p", { class: "mono-note", text: r.id + " · " + truth.category + ": " + truth.description }));
+    el.appendChild(h("h3", { class: "closer", text: "Look closer" }));
+    el.appendChild(folds);
     var raw = opts.raw;
     if (raw) {
       var shown = raw.length > 30000 ? raw.slice(0, 30000) + "\n[cut off here, " + (raw.length - 30000) + " more characters]" : raw;

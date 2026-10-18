@@ -17,20 +17,19 @@ There is also a small dashboard that is set up like a webmail inbox: folders on 
 
 ## How to use the demo
 
-If you have a minute, this is the quickest way to see what the dashboard does. The same guide is built into the page: press **How to use this** in the top bar (or the pinned message at the top of the Inbox, or "How to use this" under Extras). On a first visit there is also a blue "Start here" bar that you can dismiss, and it stays dismissed on that browser.
+If you have a minute, this is the quickest way to see what the dashboard does. The same guide is built into the page: press **How to use this** in the top bar (or "How to use this" under Extras). On a first visit there is also a thin "New here?" strip that you can dismiss, and it stays dismissed on that browser.
 
 It is a phishing email analyzer. It opens an email without touching anything in it, checks the headers, the sign-in results (SPF, DKIM, DMARC), the links and the attachments, and gives it a 0 to 100 score with a reason for every point. Everyone in the mailbox is made up.
 
 **Try this in 60 seconds**
 
-1. Open the email from "PayPal Security", subject "Action required: unusual sign-in detected". Read the red bar, then "Why it got this score". The total is 100 out of 100, "likely phishing".
-2. Click "Sign-in" in the "Jump to" row. SPF is a fail, DKIM is none and DMARC is a fail.
-3. Click "Route". "The trip this email took" lists every server the message passed through (the header hops), oldest first.
-4. Click "Links". The text says `https://www.paypal.com/verify` but the link really goes to `paypa1-secure[.]test`, with a number 1 where the l should be. Links are defanged and never clickable.
-5. Click "Looks fine" on the left, then "This week: harbour dredging, new ferry timetable". It says "Nothing fired. That is the whole story." and scores 0 out of 100.
-6. Click "Check your own email", pick "P01-paypal-lookalike-credential" under "Nothing handy? Load one of mine:" and press "Check it". Your browser scores it on the spot and nothing is uploaded.
+1. Open the email from "PayPal Security", subject "Action required: unusual sign-in detected". Read the red bar, then "Why it got this score". It shows the three biggest reasons, and "Show the other 8" lists the rest. The total is 100 out of 100, "likely phishing".
+2. Under "Look closer", open "Sign-in". SPF is a fail, DKIM is none and DMARC is a fail.
+3. Open "Links", and "Route" just above it. The text says `https://www.paypal.com/verify` but the link really goes to `paypa1-secure[.]test`, with a number 1 where the l should be. Links are defanged and never clickable. "Route" lists every server the message passed through (the header hops), oldest first.
+4. Click "Looks fine" on the left, then "This week: harbour dredging, new ferry timetable". It says "Nothing fired. That is the whole story." and scores 0 out of 100.
+5. Click "Check your own email", pick "P01-paypal-lookalike-credential" under "Nothing handy? Load one of mine:" and press "Check it". Your browser scores it on the spot and nothing is uploaded.
 
-The guide also has a plain-English glossary (SPF, DKIM, DMARC, header hops, look-alike domain, defanged, IOC, BEC and more) and a short note on what the project shows about my skills. `scripts/dashboard_smoke.js` walks all six steps in a real headless Chrome at desktop and phone width, so the guide cannot drift away from the screen.
+The guide also has a plain-English glossary (SPF, DKIM, DMARC, header hops, look-alike domain, defanged, IOC, BEC and more) and a short note on what the project shows about my skills. `scripts/dashboard_smoke.js` walks all five steps in a real headless Chrome at desktop and phone width, so the guide cannot drift away from the screen.
 
 ![How to use this, desktop](screenshots/09-how-to-use.png)
 ![How to use this, phone](screenshots/10-how-to-use-mobile.png)
@@ -59,8 +58,11 @@ These are real screenshots from headless Chrome, taken by `scripts/dashboard_smo
 **The inbox: folders, message list with sender initials and verdict chips, and the reading pane with its warning banner and score gauge**
 ![Dashboard overview](screenshots/01-dashboard.png)
 
-**One message opened up: why a CEO gift-card email scores 85**
+**One message opened up: why a CEO gift-card email scores 85. It shows the three biggest reasons first; the rest of the detail sits in closed rows under "Look closer"**
 ![Message drill-down](screenshots/02-message-drilldown.png)
+
+**The "Look closer" rows opened one at a time (here "Sign-in", with the route above it)**
+![Look closer rows](screenshots/12-look-closer-open.png)
 
 **The route an email took, with a stop where the timestamps go backwards**
 ![Route of the email](screenshots/03-hop-diagram.png)
@@ -440,7 +442,7 @@ python -m pytest
 python -m pytest --cov=phishanalyzer --cov-report=term-missing
 ```
 
-**345 pytest tests**, and line coverage of the `phishanalyzer` package is measured at 100% (`pytest-cov`; the few defensive branches that cannot be reached are marked `# pragma: no cover` with a reason). Coverage only shows the code ran, not that it is right, so the tests are built around behaviour:
+**347 pytest tests**, and line coverage of the `phishanalyzer` package is measured at 100% (`pytest-cov`; the few defensive branches that cannot be reached are marked `# pragma: no cover` with a reason). Coverage only shows the code ran, not that it is right, so the tests are built around behaviour:
 
 - every indicator on hand-built messages, both where it should fire and where it should not
 - SPF mechanisms (including the lookup limit), cross-checked against the browser evaluator

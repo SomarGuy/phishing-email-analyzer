@@ -146,10 +146,10 @@ def _guide_html():
 
 def test_guide_has_entry_points_a_start_here_bar_and_the_expected_parts():
     html, guide = _guide_html()
-    for el in ("guide-open", "guide-pin", "start-here", "start-open", "start-dismiss", "guide-title", "walk-title", "gloss-title"):
+    for el in ("guide-open", "start-here", "start-open", "start-dismiss", "guide-title", "walk-title", "gloss-title"):
         assert f'id="{el}"' in html, el
     assert 'data-view="guide"' in html, "Extras folder entry"
-    assert guide.count('class="btn ghost sm go"') == 6 and guide.count("<li>") == 6, "six steps with a Take me there button each"
+    assert guide.count('class="btn ghost sm go"') == 5 and guide.count("<li>") == 5, "five steps with a Take me there button each"
     for words in ("Try this in 60 seconds", "Words you will see", "What this shows about my skills"):
         assert words in guide, words
     terms = re.findall(r"<dt>(.*?)</dt>", guide)
@@ -207,6 +207,28 @@ def test_readme_has_a_how_to_use_section_that_matches_the_guide():
     section = re.search(r"## How to use the demo\n(.*?)\n## ", readme, re.S).group(1)
     assert "Try this in 60 seconds" in section and "PayPal Security" in section and "Check it" in section
     assert "\u2014" not in section and "\u2013" not in section
-    assert len(re.findall(r"^\d\. ", section, re.M)) == 6
+    assert len(re.findall(r"^\d\. ", section, re.M)) == 5
     for shot in ("09-how-to-use.png", "10-how-to-use-mobile.png"):
         assert shot in section and (ROOT / "screenshots" / shot).exists()
+
+
+# ---- simplified message view
+
+def test_message_view_is_calm_by_default_with_the_detail_in_closed_folds():
+    app = (DASH / "app.js").read_text()
+    css = (DASH / "style.css").read_text()
+    html = (DASH / "index.html").read_text()
+    assert "REASONS_SHOWN = 3" in app and "Show the other" in app, "only the three biggest reasons show at first"
+    assert 'class: "sec fold"' in app and '"data-key": label' in app
+    for key in ("Points", "Route", "Sign-in", "Sender", "Links", "Files", "ATT&CK", "Block list", "Ticket note"):
+        assert f'fold("{key}"' in app, key
+    assert '"open"' not in app.split("function fold(")[1].split("fold(\"Points\"")[0], "folds are not opened by default"
+    assert "jchip" not in app and ".jchip" not in css, "the row of jump chips is replaced by folds"
+    assert 'id="guide-pin"' not in html and "folder-foot" not in html, "fewer extras in the inbox column"
+    assert "[hidden] { display: none !important; }" in css
+
+
+def test_start_bar_is_one_short_line():
+    html = (DASH / "index.html").read_text()
+    bar = re.search(r'<div id="start-here".*?</div>\s*\n', html, re.S).group(0)
+    assert len(re.sub(r"<[^>]+>", " ", bar).split()) < 25

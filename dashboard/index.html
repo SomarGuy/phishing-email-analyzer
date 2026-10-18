@@ -29,19 +29,19 @@
   <span id="dataset-meta" class="meta" aria-live="polite">Fetching the mail…</span>
 </header>
 
-<div id="banner" class="banner" role="note">
+<div id="banner" class="banner" role="region" aria-label="Synthetic data notice">
   <strong>SYNTHETIC DATA.</strong>
   <span>Everyone in this mailbox is made up and every email was written by me for this project.</span>
   <details>
     <summary>What does that mean?</summary>
-    <p>The company and people are fictional. Sender and link domains are reserved ones (<code>example.*</code>, <code>.test</code>, <code>.invalid</code>) and every IP address is from a documentation range. The only real domains are paypal.com, amazon.com and aws.amazon.com, used as the honest side of look-alike tests. Nothing is ever fetched or opened, and the attachments are harmless text stubs.</p>
+    <p>The company and people are fictional. Sender and link domains are reserved ones (<code>example.*</code>, <code>.test</code>, <code>.invalid</code>) and every IP address is from a documentation range. The only real domains are paypal.com, amazon.com and aws.amazon.com, used as the honest side of look-alike tests. Nothing is ever fetched or opened, and the attachments are harmless text stubs. Nothing here phones home: the page only loads its own files and draws every value as plain text, even the nasty ones.</p>
   </details>
 </div>
 
 <div id="start-here" class="startbar" role="region" aria-label="Start here" hidden>
   <span class="sq" aria-hidden="true">?</span>
-  <p><strong>Start here.</strong> This is a mailbox of made-up emails, so click anything. The guide takes about a minute and tells you what to click and what to look at.</p>
-  <span class="sa"><button type="button" id="start-open" class="btn sm">Open the 60-second guide</button><button type="button" id="start-dismiss" class="btn ghost sm">Dismiss</button></span>
+  <p><strong>New here?</strong> It is a mailbox of made-up emails, so click anything.</p>
+  <span class="sa"><button type="button" id="start-open" class="btn sm">60-second guide</button><button type="button" id="start-dismiss" class="btn ghost sm">Dismiss</button></span>
 </div>
 
 <div class="shell">
@@ -60,7 +60,6 @@
       <li><button type="button" class="folder tool" data-view="eval"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V11M11 20V4M17 20v-6M3 20.5h18"/></svg><span class="lbl">How well does it work?</span></button></li>
       <li><button type="button" class="folder tool" data-view="rules"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 4.5h10a3 3 0 0 1 3 3v12h-10a3 3 0 0 1-3-3z"/><path d="M5.5 16.5a3 3 0 0 1 3-3h10"/></svg><span class="lbl">Rulebook</span></button></li>
     </ul>
-    <p class="folder-foot">Nothing here phones home. The page only loads its own files and draws every value as plain text, even the nasty ones.</p>
   </nav>
 
   <section class="listpane" aria-labelledby="inbox-title">
@@ -68,7 +67,6 @@
       <div><h2 id="inbox-title">Inbox</h2><span id="inbox-count" class="meta"></span></div>
       <label class="sort">Sort <select id="inbox-sort" aria-label="Sort messages"><option value="risk">riskiest first</option><option value="new">newest first</option></select></label>
     </div>
-    <button type="button" class="pin" id="guide-pin"><span class="av av-guide" aria-hidden="true">?</span><span class="mbody"><span class="r1"><span class="from">Diogo</span><span class="when">pinned</span></span><span class="subj">How to use this demo</span><span class="snip">A one-minute tour: what to click and what to look at.</span></span></button>
     <button type="button" class="pin" id="note-open"><span class="av av-note" aria-hidden="true">D</span><span class="mbody"><span class="r1"><span class="from">Diogo</span><span class="when">pinned</span></span><span class="subj">Why I built this</span><span class="snip">A short note before you start poking around.</span></span></button>
     <ul id="inbox-list" class="mail-list" aria-label="Messages"></ul>
     <p id="inbox-empty" class="empty" hidden>Nothing matches that. Try fewer letters, or pick another folder.</p>
@@ -109,10 +107,9 @@
       <div class="sec">
         <h3 id="walk-title">Try this in 60 seconds</h3>
         <ol class="walk" role="list" aria-labelledby="walk-title">
-          <li><p><b>Open the email from "PayPal Security", subject "Action required: unusual sign-in detected".</b> It is near the top of the Inbox (the button opens it for you). Read the red bar, then "Why it got this score". Every line has points, a plain reason and the evidence, and the total is 100 out of 100, "likely phishing".</p><button type="button" class="btn ghost sm go" data-go="p01">Take me there</button></li>
-          <li><p><b>Click "Sign-in" in the "Jump to" row.</b> SPF is a fail, DKIM is none and DMARC is a fail. Those are three checks on whether the sender proved who they are, and this one proved nothing.</p><button type="button" class="btn ghost sm go" data-go="p01:Sign-in">Take me there</button></li>
-          <li><p><b>Click "Route".</b> "The trip this email took" lists every server the message passed through (the header hops), oldest first, with the time from each server's own header.</p><button type="button" class="btn ghost sm go" data-go="p01:Route">Take me there</button></li>
-          <li><p><b>Click "Links".</b> The text says https://www.paypal.com/verify but the link really goes to paypa1-secure[.]test, with a number 1 where the l should be. Links are shown defanged (hxxps and [.]) and are never clickable.</p><button type="button" class="btn ghost sm go" data-go="p01:Links">Take me there</button></li>
+          <li><p><b>Open the email from "PayPal Security", subject "Action required: unusual sign-in detected".</b> It is near the top of the Inbox (the button opens it for you). Read the red bar, then "Why it got this score". It shows the three biggest reasons, each with points, a plain explanation and the evidence. "Show the other 8" lists the rest. The total is 100 out of 100, "likely phishing".</p><button type="button" class="btn ghost sm go" data-go="p01">Take me there</button></li>
+          <li><p><b>Under "Look closer", open "Sign-in".</b> SPF is a fail, DKIM is none and DMARC is a fail. Those are three checks on whether the sender proved who they are, and this one proved nothing.</p><button type="button" class="btn ghost sm go" data-go="p01:Sign-in">Take me there</button></li>
+          <li><p><b>Open "Links", and "Route" just above it.</b> The text says https://www.paypal.com/verify but the link really goes to paypa1-secure[.]test, with a number 1 where the l should be. Links are shown defanged (hxxps and [.]) and are never clickable. "Route" lists every server the message passed through (the header hops), oldest first.</p><button type="button" class="btn ghost sm go" data-go="p01:Links">Take me there</button></li>
           <li><p><b>Compare it with a safe one.</b> Click "Looks fine" on the left, then the email "This week: harbour dredging, new ferry timetable" from Harbour Gazette. It says "Nothing fired. That is the whole story." and scores 0 out of 100.</p><button type="button" class="btn ghost sm go" data-go="benign">Take me there</button></li>
           <li><p><b>Click "Check your own email" at the top left, pick "P01-paypal-lookalike-credential" under "Nothing handy? Load one of mine:" and press "Check it".</b> Your browser runs the same checks and scores it on the spot. You can paste your own email text instead, and nothing is uploaded.</p><button type="button" class="btn ghost sm go" data-go="paste">Take me there</button></li>
         </ol>
