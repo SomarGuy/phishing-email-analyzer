@@ -34,6 +34,7 @@ The guide also has a plain-English glossary (SPF, DKIM, DMARC, header hops, look
 
 ![How to use this, desktop](screenshots/09-how-to-use.png)
 ![How to use this, phone](screenshots/10-how-to-use-mobile.png)
+![How to use this, live on Vercel](screenshots/11-live-how-to-use.png)
 
 ## The problem
 
