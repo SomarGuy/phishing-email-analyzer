@@ -1,0 +1,496 @@
+{
+  "synthetic": true,
+  "notice": "SYNTHETIC CORPUS. These messages were written for this project. The organisations, people, sender domains and IP addresses are fictional or reserved for documentation (RFC 2606 / RFC 5737). The only real domains are the brand domains paypal.com, amazon.com and aws.amazon.com, used as the legitimate side of look-alike and must-not-flag tests (nothing is ever fetched). Attachments are inert text stubs with magic bytes only. Nothing here is a real threat sample.",
+  "corpus_version": 1,
+  "labels": [
+    "benign",
+    "suspicious",
+    "phishing"
+  ],
+  "messages": [
+    {
+      "file": "B01-newsletter-harbour-gazette.eml",
+      "id": "B01-newsletter-harbour-gazette",
+      "label": "benign",
+      "category": "newsletter",
+      "set": "tuning",
+      "description": "Marketing newsletter through an ESP: Return-Path and tracking links on the ESP domain, DKIM aligned.",
+      "expect": [],
+      "forbid": [
+        "url_redirect_param",
+        "url_text_mismatch"
+      ]
+    },
+    {
+      "file": "B02-internal-finance-approvals.eml",
+      "id": "B02-internal-finance-approvals",
+      "label": "benign",
+      "category": "internal",
+      "set": "tuning",
+      "description": "Internal mail from the real CFO address (a protected name) about invoice approvals: protected name on the real domain must not trigger spoofing.",
+      "expect": [],
+      "forbid": [
+        "display_name_exec_spoof",
+        "combo_exec_payment"
+      ]
+    },
+    {
+      "file": "B03-hr-benefits-deadline.eml",
+      "id": "B03-hr-benefits-deadline",
+      "label": "benign",
+      "category": "internal",
+      "set": "tuning",
+      "description": "Urgent-sounding HR deadline notice, same-domain link, authenticated: urgency alone must stay below the threshold.",
+      "expect": [],
+      "forbid": [
+        "url_lookalike_domain",
+        "display_name_exec_spoof"
+      ]
+    },
+    {
+      "file": "B04-saas-password-reset.eml",
+      "id": "B04-saas-password-reset",
+      "label": "benign",
+      "category": "legit password reset",
+      "set": "tuning",
+      "description": "A genuine, user-requested password reset from a SaaS vendor: credential wording and a link to the sender's own domain.",
+      "expect": [],
+      "forbid": [
+        "url_login_keywords",
+        "url_text_mismatch"
+      ]
+    },
+    {
+      "file": "B05-shop-order-receipt.eml",
+      "id": "B05-shop-order-receipt",
+      "label": "benign",
+      "category": "receipt",
+      "set": "tuning",
+      "description": "Order confirmation with a clean PDF invoice attached.",
+      "expect": [],
+      "forbid": [
+        "attachment_magic_mismatch",
+        "attachment_executable"
+      ]
+    },
+    {
+      "file": "B06-monitoring-alert-no-msgid.eml",
+      "id": "B06-monitoring-alert-no-msgid",
+      "label": "benign",
+      "category": "legit but weird",
+      "set": "tuning",
+      "description": "Automated monitoring alert with no Message-ID header (some scripts omit it); everything else is clean.",
+      "expect": [
+        "message_id_missing"
+      ],
+      "forbid": []
+    },
+    {
+      "file": "B07-events-idn-muenchen.eml",
+      "id": "B07-events-idn-muenchen",
+      "label": "benign",
+      "category": "legit IDN",
+      "set": "tuning",
+      "description": "Legitimate internationalised domain (single-script Latin with umlaut, punycode on the wire): must not be reported as a homograph.",
+      "expect": [],
+      "forbid": [
+        "url_idn_homograph",
+        "url_text_mismatch",
+        "url_lookalike_domain"
+      ]
+    },
+    {
+      "file": "B08-event-ticket-qr.eml",
+      "id": "B08-event-ticket-qr",
+      "label": "benign",
+      "category": "legit QR",
+      "set": "tuning",
+      "description": "Event ticket with a QR image and 'scan this code at the door' wording. QR wording is weak evidence on its own.",
+      "expect": [
+        "qr_lure"
+      ],
+      "forbid": []
+    },
+    {
+      "file": "B09-courier-parcel-shortlink.eml",
+      "id": "B09-courier-parcel-shortlink",
+      "label": "benign",
+      "category": "legit shortener",
+      "set": "tuning",
+      "description": "Courier tracking mail using a URL shortener (stand-in short.test): shortener alone is a minor signal.",
+      "expect": [
+        "url_shortener"
+      ],
+      "forbid": []
+    },
+    {
+      "file": "B10-mailing-list-digest.eml",
+      "id": "B10-mailing-list-digest",
+      "label": "benign",
+      "category": "legit but weird",
+      "set": "tuning",
+      "description": "Mailing-list post: Reply-To, Return-Path and Message-ID all belong to the list, not the author's domain.",
+      "expect": [],
+      "forbid": [
+        "reply_to_mismatch",
+        "return_path_mismatch",
+        "message_id_domain_mismatch"
+      ]
+    },
+    {
+      "file": "B12-secops-awareness-quoted-phish.eml",
+      "id": "B12-secops-awareness-quoted-phish",
+      "label": "benign",
+      "category": "known hard negative",
+      "set": "tuning",
+      "description": "Internal security-awareness mail that QUOTES a defanged phishing URL as a teaching example. A static scanner cannot know it is quoted, so it over-scores this message; kept as an honest failure case.",
+      "expect": [],
+      "forbid": []
+    },
+    {
+      "file": "S01-partner-encrypted-zip.eml",
+      "id": "S01-partner-encrypted-zip",
+      "label": "suspicious",
+      "category": "borderline",
+      "set": "tuning",
+      "description": "Authenticated partner mail with a password-protected ZIP and the password in the body. Legitimate in practice, but exactly how malware evades gateways.",
+      "expect": [
+        "archive_encrypted",
+        "archive_password_hint"
+      ],
+      "forbid": []
+    },
+    {
+      "file": "S02-shared-doc-unauth-shortlink.eml",
+      "id": "S02-shared-doc-unauth-shortlink",
+      "label": "suspicious",
+      "category": "borderline",
+      "set": "tuning",
+      "description": "Unauthenticated 'shared document' notice from an unknown sender, shortened link and sign-in wording.",
+      "expect": [
+        "url_shortener",
+        "credential_lure"
+      ],
+      "forbid": []
+    },
+    {
+      "file": "S03-unknown-vendor-invoice-reply-to.eml",
+      "id": "S03-unknown-vendor-invoice-reply-to",
+      "label": "suspicious",
+      "category": "borderline",
+      "set": "tuning",
+      "description": "Invoice notice from an unknown vendor whose Reply-To goes elsewhere; no authentication results.",
+      "expect": [
+        "reply_to_mismatch",
+        "payment_lure"
+      ],
+      "forbid": []
+    },
+    {
+      "file": "P01-paypal-lookalike-credential.eml",
+      "id": "P01-paypal-lookalike-credential",
+      "label": "phishing",
+      "category": "credential phish",
+      "set": "tuning",
+      "description": "Classic brand phish: look-alike sender domain (paypa1), brand display name, text/href mismatch, failing SPF/DMARC.",
+      "expect": [
+        "sender_domain_lookalike",
+        "display_name_brand_spoof",
+        "url_text_mismatch",
+        "url_brand_in_domain",
+        "dmarc_fail"
+      ],
+      "forbid": []
+    },
+    {
+      "file": "P02-microsoft-idn-homograph.eml",
+      "id": "P02-microsoft-idn-homograph",
+      "label": "phishing",
+      "category": "homograph",
+      "set": "tuning",
+      "description": "Link to an internationalised domain that swaps Latin letters for Cyrillic lookalikes (xn--...), mailbox-full lure.",
+      "expect": [
+        "url_idn_homograph",
+        "credential_lure"
+      ],
+      "forbid": []
+    },
+    {
+      "file": "P03-docusign-html-credential-attachment.eml",
+      "id": "P03-docusign-html-credential-attachment",
+      "label": "phishing",
+      "category": "malicious attachment",
+      "set": "tuning",
+      "description": "'Signed document' HTML attachment that is really a credential-harvesting form posting to an external host.",
+      "expect": [
+        "html_attachment",
+        "html_credential_form",
+        "display_name_brand_spoof",
+        "sender_domain_lookalike"
+      ],
+      "forbid": []
+    },
+    {
+      "file": "P04-remittance-html-smuggling.eml",
+      "id": "P04-remittance-html-smuggling",
+      "label": "phishing",
+      "category": "malicious attachment",
+      "set": "tuning",
+      "description": "HTML attachment that assembles a download in the browser (Blob + atob + click): HTML smuggling.",
+      "expect": [
+        "html_attachment",
+        "html_smuggling"
+      ],
+      "forbid": []
+    },
+    {
+      "file": "P05-invoice-double-extension-exe.eml",
+      "id": "P05-invoice-double-extension-exe",
+      "label": "phishing",
+      "category": "malicious attachment",
+      "set": "tuning",
+      "description": "Executable disguised as a PDF with a double extension; magic bytes say MZ.",
+      "expect": [
+        "attachment_double_extension",
+        "attachment_executable",
+        "attachment_known_bad",
+        "spf_fail"
+      ],
+      "forbid": []
+    },
+    {
+      "file": "P06-purchase-order-macro-docm.eml",
+      "id": "P06-purchase-order-macro-docm",
+      "label": "phishing",
+      "category": "malicious attachment",
+      "set": "tuning",
+      "description": "Macro-enabled Word document (.docm containing vbaProject.bin) sent as a purchase order.",
+      "expect": [
+        "attachment_macro",
+        "enable_content_lure"
+      ],
+      "forbid": []
+    },
+    {
+      "file": "P07-scans-zip-with-scr.eml",
+      "id": "P07-scans-zip-with-scr",
+      "label": "phishing",
+      "category": "malicious attachment",
+      "set": "tuning",
+      "description": "Unencrypted ZIP whose only real content is a .pdf.scr screensaver executable.",
+      "expect": [
+        "archive_contains_executable"
+      ],
+      "forbid": []
+    },
+    {
+      "file": "P08-encrypted-zip-exe-password.eml",
+      "id": "P08-encrypted-zip-exe-password",
+      "label": "phishing",
+      "category": "malicious attachment",
+      "set": "tuning",
+      "description": "Password-protected ZIP holding an executable, password given in the message body to dodge scanners.",
+      "expect": [
+        "archive_encrypted",
+        "archive_password_hint"
+      ],
+      "forbid": []
+    },
+    {
+      "file": "P09-ceo-gift-card-bec.eml",
+      "id": "P09-ceo-gift-card-bec",
+      "label": "phishing",
+      "category": "BEC",
+      "set": "tuning",
+      "description": "CEO impersonation from a free-mail address asking staff to buy gift cards and keep it quiet.",
+      "expect": [
+        "display_name_exec_spoof",
+        "freemail_display_spoof",
+        "gift_card_scam",
+        "bec_wording"
+      ],
+      "forbid": []
+    },
+    {
+      "file": "P10-cfo-vendor-bank-change-lookalike.eml",
+      "id": "P10-cfo-vendor-bank-change-lookalike",
+      "label": "phishing",
+      "category": "BEC",
+      "set": "tuning",
+      "description": "CFO impersonation from a one-letter-off look-alike of the company domain, urgent wire to 'new bank details', SPF fails in the offline evaluator, and a Received chain whose timestamps go backwards.",
+      "expect": [
+        "sender_domain_lookalike",
+        "display_name_exec_spoof",
+        "bec_wording",
+        "spf_fail",
+        "received_time_anomaly",
+        "received_helo_mismatch"
+      ],
+      "forbid": []
+    },
+    {
+      "file": "P11-helpdesk-password-reset-spoof.eml",
+      "id": "P11-helpdesk-password-reset-spoof",
+      "label": "phishing",
+      "category": "credential phish",
+      "set": "tuning",
+      "description": "Spoofed IT Help Desk: password-expiry scare with a link to a domain that embeds the company name.",
+      "expect": [
+        "display_name_exec_spoof",
+        "url_brand_in_domain",
+        "credential_lure",
+        "urgency_language"
+      ],
+      "forbid": []
+    },
+    {
+      "file": "P12-mfa-qr-code-phish.eml",
+      "id": "P12-mfa-qr-code-phish",
+      "label": "phishing",
+      "category": "QR phish",
+      "set": "tuning",
+      "description": "'Re-authenticate MFA' lure delivered as a QR image with no clickable link, from a spoofed brand name.",
+      "expect": [
+        "qr_lure",
+        "display_name_brand_spoof",
+        "credential_lure"
+      ],
+      "forbid": []
+    },
+    {
+      "file": "P13-amazon-userinfo-ip-url.eml",
+      "id": "P13-amazon-userinfo-ip-url",
+      "label": "phishing",
+      "category": "URL trick",
+      "set": "tuning",
+      "description": "Order-problem lure whose link uses the '@' userinfo trick and an obfuscated (hex) IP address as the real host.",
+      "expect": [
+        "url_userinfo",
+        "url_ip_host",
+        "url_obfuscated",
+        "url_text_mismatch"
+      ],
+      "forbid": []
+    },
+    {
+      "file": "P14-netflix-open-redirect-billing.eml",
+      "id": "P14-netflix-open-redirect-billing",
+      "label": "phishing",
+      "category": "credential phish",
+      "set": "tuning",
+      "description": "Billing-failure lure whose link bounces through an open-redirect style parameter to a look-alike login host.",
+      "expect": [
+        "url_redirect_param",
+        "display_name_brand_spoof",
+        "payment_lure"
+      ],
+      "forbid": []
+    },
+    {
+      "file": "H01-saas-billing-receipt-esp.eml",
+      "id": "H01-saas-billing-receipt-esp",
+      "label": "benign",
+      "category": "receipt",
+      "set": "holdout",
+      "description": "SaaS invoice mail through an ESP: tracking links, invoice wording, DKIM aligned, SPF aligned only to the ESP.",
+      "expect": [],
+      "forbid": [
+        "url_text_mismatch",
+        "url_login_keywords"
+      ]
+    },
+    {
+      "file": "H02-newsletter-unicode-cafe.eml",
+      "id": "H02-newsletter-unicode-cafe",
+      "label": "benign",
+      "category": "legit IDN",
+      "set": "holdout",
+      "description": "Newsletter with Greek and accented text and a legitimate accented-Latin domain (café.example); generic greeting only.",
+      "expect": [],
+      "forbid": [
+        "url_idn_homograph",
+        "url_lookalike_domain"
+      ]
+    },
+    {
+      "file": "H03-internal-maintenance-notice.eml",
+      "id": "H03-internal-maintenance-notice",
+      "label": "benign",
+      "category": "internal",
+      "set": "holdout",
+      "description": "IT Help Desk (real domain) announcing maintenance with a sign-in reminder; protected display name on the real domain.",
+      "expect": [],
+      "forbid": [
+        "display_name_exec_spoof",
+        "sender_domain_lookalike"
+      ]
+    },
+    {
+      "file": "H04-payroll-direct-deposit-change.eml",
+      "id": "H04-payroll-direct-deposit-change",
+      "label": "phishing",
+      "category": "BEC",
+      "set": "holdout",
+      "description": "'Payroll' display name from a free-mail account asking to update direct deposit details via a shortened link.",
+      "expect": [
+        "display_name_exec_spoof",
+        "freemail_display_spoof",
+        "payment_lure",
+        "url_shortener"
+      ],
+      "forbid": []
+    },
+    {
+      "file": "H05-voicemail-svg-script.eml",
+      "id": "H05-voicemail-svg-script",
+      "label": "phishing",
+      "category": "malicious attachment",
+      "set": "holdout",
+      "description": "'Voice message' lure with an SVG attachment containing script, sender authentication failing.",
+      "expect": [
+        "svg_script"
+      ],
+      "forbid": []
+    },
+    {
+      "file": "H06-parcel-fee-decimal-ip.eml",
+      "id": "H06-parcel-fee-decimal-ip",
+      "label": "phishing",
+      "category": "URL trick",
+      "set": "holdout",
+      "description": "Postal-service fee lure with a decimal-encoded IP host and a brand display name from an unrelated domain.",
+      "expect": [
+        "url_ip_host",
+        "url_obfuscated",
+        "display_name_brand_spoof"
+      ],
+      "forbid": []
+    },
+    {
+      "file": "H07-unauth-rar-password.eml",
+      "id": "H07-unauth-rar-password",
+      "label": "suspicious",
+      "category": "borderline",
+      "set": "holdout",
+      "description": "Unauthenticated mail with a RAR archive and the password in the body. RAR contents are not inspected, so only the weak signals are available.",
+      "expect": [
+        "archive_password_hint"
+      ],
+      "forbid": []
+    },
+    {
+      "file": "H08-aws-billing-brand-on-real-domain.eml",
+      "id": "H08-aws-billing-brand-on-real-domain",
+      "label": "benign",
+      "category": "legit brand",
+      "set": "holdout",
+      "description": "Brand name in the display name on the brand's real (sub)domain, authenticated: must not be called a brand spoof.",
+      "expect": [],
+      "forbid": [
+        "display_name_brand_spoof",
+        "sender_domain_lookalike",
+        "url_brand_in_subdomain"
+      ]
+    }
+  ]
+}

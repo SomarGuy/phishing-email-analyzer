@@ -1,0 +1,27 @@
+Return-Path: <helpdesk@northwind-analytics.example>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Sun, 29 Mar 2026
+ 15:05:07 +0000
+Received: from mail-it.northwind-analytics.example
+ (mail-it.northwind-analytics.example [10.20.3.3]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Sun, 29 Mar 2026
+ 15:05:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=pass
+ smtp.mailfrom=northwind-analytics.example; dkim=pass
+ header.d=northwind-analytics.example header.s=sel1; dmarc=pass
+ header.from=northwind-analytics.example
+X-Synthetic-Sample: yes
+From: "IT Help Desk" <helpdesk@northwind-analytics.example>
+To: alex.morgan@northwind-analytics.example
+Subject: Scheduled maintenance Saturday 22:00-23:00
+Date: Sun, 29 Mar 2026 15:05:00 +0000
+Message-ID: <hd.20260329@northwind-analytics.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+VPN and email will be offline Saturday 22:00-23:00. You will be asked to sign in again afterwards. Status: https://status.northwind-analytics.example
+
+IT Help Desk
+

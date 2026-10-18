@@ -1,0 +1,22 @@
+Return-Path: <billing@brightpath-supplies.example>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Thu, 26 Mar 2026
+ 10:48:07 +0000
+Received: from mail.brightpath-supplies.example
+ (mail.brightpath-supplies.example [192.0.2.201]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Thu, 26 Mar 2026
+ 10:48:05 +0000
+X-Synthetic-Sample: yes
+From: "Accounts Receivable" <billing@brightpath-supplies.example>
+To: alex.morgan@northwind-analytics.example
+Reply-To: collections@quickpay-desk.example
+Subject: Invoice 55120 overdue
+Date: Thu, 26 Mar 2026 10:48:00 +0000
+Message-ID: <inv.55120@brightpath-supplies.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Our records show invoice 55120 is overdue. Please remit payment this week. Questions: reply to this email.
+

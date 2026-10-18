@@ -1,0 +1,1245 @@
+{
+ "version": 1,
+ "organisation": {
+  "name": "Northwind Analytics (fictional)",
+  "domains": [
+   "northwind-analytics.example"
+  ],
+  "protected_names": [
+   {
+    "name": "Priya Raman",
+    "role": "CEO"
+   },
+   {
+    "name": "Marcus Cole",
+    "role": "CFO"
+   },
+   {
+    "name": "IT Help Desk",
+    "role": "IT"
+   },
+   {
+    "name": "IT Service Desk",
+    "role": "IT"
+   },
+   {
+    "name": "IT Support",
+    "role": "IT"
+   },
+   {
+    "name": "Payroll",
+    "role": "Finance"
+   },
+   {
+    "name": "Human Resources",
+    "role": "HR"
+   }
+  ]
+ },
+ "thresholds": {
+  "suspicious": 25,
+  "phishing": 55,
+  "date_future_hours": 24,
+  "date_stale_days": 30,
+  "received_backwards_seconds": 300,
+  "received_long_delay_hours": 12,
+  "received_many_hops": 12,
+  "lookalike_max_distance": 2,
+  "lookalike_short_distance": 1,
+  "lookalike_short_len": 8,
+  "min_brand_label_len": 5,
+  "long_url_chars": 220,
+  "deep_subdomains": 4,
+  "max_evidence": 6,
+  "mitigation_cap": 20,
+  "min_matches": {
+   "gift_card": 2,
+   "bec": 2
+  }
+ },
+ "category_caps": {
+  "header": 45,
+  "auth": 40,
+  "url": 60,
+  "attachment": 80,
+  "language": 40,
+  "combo": 20
+ },
+ "multi_label_suffixes": [
+  "co.uk",
+  "org.uk",
+  "ac.uk",
+  "gov.uk",
+  "com.au",
+  "net.au",
+  "org.au",
+  "co.nz",
+  "co.jp",
+  "com.br",
+  "co.in",
+  "com.cn",
+  "co.za",
+  "com.mx",
+  "com.tr",
+  "co.kr"
+ ],
+ "lists": {
+  "brands": [
+   {
+    "name": "Microsoft",
+    "label": "microsoft",
+    "domains": [
+     "microsoft.com",
+     "office.com",
+     "live.com",
+     "outlook.com",
+     "microsoftonline.com",
+     "office365.com",
+     "sharepoint.com"
+    ]
+   },
+   {
+    "name": "PayPal",
+    "label": "paypal",
+    "domains": [
+     "paypal.com"
+    ]
+   },
+   {
+    "name": "Amazon",
+    "label": "amazon",
+    "domains": [
+     "amazon.com",
+     "amazon.ca",
+     "amazon.co.uk"
+    ]
+   },
+   {
+    "name": "Apple",
+    "label": "apple",
+    "domains": [
+     "apple.com",
+     "icloud.com"
+    ]
+   },
+   {
+    "name": "Google",
+    "label": "google",
+    "domains": [
+     "google.com",
+     "gmail.com",
+     "googlemail.com"
+    ]
+   },
+   {
+    "name": "DocuSign",
+    "label": "docusign",
+    "domains": [
+     "docusign.com",
+     "docusign.net"
+    ]
+   },
+   {
+    "name": "DHL",
+    "label": "dhl",
+    "domains": [
+     "dhl.com",
+     "dhl.de"
+    ]
+   },
+   {
+    "name": "Netflix",
+    "label": "netflix",
+    "domains": [
+     "netflix.com"
+    ]
+   },
+   {
+    "name": "Dropbox",
+    "label": "dropbox",
+    "domains": [
+     "dropbox.com"
+    ]
+   },
+   {
+    "name": "LinkedIn",
+    "label": "linkedin",
+    "domains": [
+     "linkedin.com"
+    ]
+   },
+   {
+    "name": "Canada Post",
+    "label": "canadapost",
+    "domains": [
+     "canadapost.ca",
+     "canadapost-postescanada.ca"
+    ]
+   },
+   {
+    "name": "RBC",
+    "label": "rbcroyalbank",
+    "domains": [
+     "rbc.com",
+     "rbcroyalbank.com"
+    ]
+   },
+   {
+    "name": "Canada Revenue Agency",
+    "label": "canada",
+    "domains": [
+     "canada.ca"
+    ]
+   },
+   {
+    "name": "Northwind Analytics",
+    "label": "northwind-analytics",
+    "domains": [
+     "northwind-analytics.example"
+    ],
+    "org": true
+   }
+  ],
+  "freemail": [
+   "gmail.com",
+   "outlook.com",
+   "hotmail.com",
+   "yahoo.com",
+   "aol.com",
+   "proton.me",
+   "protonmail.com",
+   "icloud.com",
+   "gmx.com",
+   "mail.com",
+   "freemail.example"
+  ],
+  "shorteners": [
+   "bit.ly",
+   "tinyurl.com",
+   "t.co",
+   "goo.gl",
+   "ow.ly",
+   "is.gd",
+   "buff.ly",
+   "rebrand.ly",
+   "cutt.ly",
+   "rb.gy",
+   "tiny.cc",
+   "shorturl.at",
+   "short.test"
+  ],
+  "suspicious_tlds": [
+   "zip",
+   "mov",
+   "top",
+   "xyz",
+   "click",
+   "country",
+   "gq",
+   "ml",
+   "cf",
+   "ga",
+   "tk",
+   "work",
+   "rest",
+   "support",
+   "icu",
+   "cyou",
+   "invalid"
+  ],
+  "executable_exts": [
+   "exe",
+   "scr",
+   "com",
+   "pif",
+   "bat",
+   "cmd",
+   "msi",
+   "msp",
+   "dll",
+   "cpl",
+   "jar",
+   "vbs",
+   "vbe",
+   "js",
+   "jse",
+   "wsf",
+   "wsh",
+   "hta",
+   "ps1",
+   "psm1",
+   "lnk",
+   "iso",
+   "img",
+   "vhd",
+   "vhdx",
+   "chm",
+   "reg",
+   "inf",
+   "application",
+   "gadget",
+   "appx",
+   "msix"
+  ],
+  "decoy_exts": [
+   "pdf",
+   "doc",
+   "docx",
+   "xls",
+   "xlsx",
+   "ppt",
+   "pptx",
+   "txt",
+   "rtf",
+   "csv",
+   "jpg",
+   "jpeg",
+   "png",
+   "gif",
+   "zip",
+   "htm",
+   "html",
+   "mp3",
+   "mp4"
+  ],
+  "macro_exts": [
+   "docm",
+   "xlsm",
+   "pptm",
+   "dotm",
+   "xltm",
+   "xlam",
+   "ppam",
+   "sldm"
+  ],
+  "ole_exts": [
+   "doc",
+   "xls",
+   "ppt",
+   "dot",
+   "xlt",
+   "pot"
+  ],
+  "archive_exts": [
+   "zip",
+   "rar",
+   "7z",
+   "gz",
+   "tar",
+   "cab",
+   "ace"
+  ],
+  "html_exts": [
+   "html",
+   "htm",
+   "xhtml",
+   "shtml",
+   "svg"
+  ],
+  "redirect_params": [
+   "url",
+   "u",
+   "redirect",
+   "redirect_uri",
+   "redirecturl",
+   "redir",
+   "next",
+   "target",
+   "dest",
+   "destination",
+   "return",
+   "returnurl",
+   "return_to",
+   "goto",
+   "link",
+   "continue",
+   "r"
+  ],
+  "login_keywords": [
+   "login",
+   "signin",
+   "sign-in",
+   "logon",
+   "verify",
+   "verification",
+   "account",
+   "secure",
+   "password",
+   "update",
+   "confirm",
+   "webmail",
+   "sso",
+   "reset"
+  ],
+  "safe_url_hosts": [
+   "schemas.microsoft.com",
+   "www.w3.org"
+  ]
+ },
+ "language": {
+  "urgency": [
+   "\\burgent(ly)?\\b",
+   "\\bimmediate(ly)?\\b",
+   "within (the next )?\\d+ (hours?|days?)",
+   "\\bact now\\b",
+   "\\bfinal (notice|warning|reminder)\\b",
+   "\\bexpires? (today|tonight|soon)\\b",
+   "\\b(will|may) be (suspended|closed|locked|disabled|terminated|deleted)\\b",
+   "\\baction required\\b",
+   "\\bavoid (suspension|closure|termination)\\b",
+   "\\bwithin 24 hours\\b"
+  ],
+  "credential": [
+   "verify your (account|identity|password|email|mailbox)",
+   "confirm your (password|credentials|login|identity|account)",
+   "(re-?)?validate your (account|mailbox|credentials)",
+   "password (will )?(expire|expires|expired)",
+   "reset your password",
+   "update your (payment|billing|account|login) (details|information|credentials)",
+   "unusual (sign-?in|login|activity)",
+   "mailbox (is )?(full|over quota)|storage quota",
+   "keep (the same|your current) password",
+   "sign in to (keep|restore|review|view)"
+  ],
+  "payment": [
+   "\\binvoice (#?\\w+ )?(is )?(attached|overdue|due)\\b",
+   "\\bpayment (is )?(overdue|pending|failed|declined|required)\\b",
+   "\\bwire (transfer|funds|payment)\\b",
+   "\\bremittance\\b",
+   "\\boutstanding (balance|invoice)\\b",
+   "(update|change) (of )?(your |our |my )?(bank|banking|payment|direct deposit|payroll)",
+   "\\bpast due\\b"
+  ],
+  "gift_card": [
+   "\\bgift ?cards?\\b",
+   "\\b(itunes|google play|steam|amazon) (gift )?cards?\\b",
+   "scratch (off|the back)",
+   "\\b(send|email|text) (me )?(the )?(card )?(codes?|pins?|numbers?)\\b",
+   "\\b(buy|purchase|get) (some |a few |\\d+ )?(gift )?cards?\\b"
+  ],
+  "bec": [
+   "are you (available|at your desk|free (right now|now))",
+   "need (you to do )?(a )?(quick |small |urgent )?favou?r",
+   "keep (this|it) (confidential|between us|quiet)",
+   "\\bdo ?n[o']?t (call|tell|discuss)",
+   "i('| a)m (in a meeting|travell?ing|unable to (talk|take calls))",
+   "(new|updated|different) (bank|banking|account) (details|information|number)",
+   "process (a|the|this) (wire|payment|transfer)",
+   "\\bbefore (close of business|end of (the )?day|cob|eod)\\b",
+   "reply (only )?(to|via) (this|my) (email|number)"
+  ],
+  "qr": [
+   "scan (the|this|your|that|a) ?(qr|code|barcode)",
+   "\\bqr[- ]?code\\b",
+   "point your (phone|camera)"
+  ],
+  "greeting": [
+   "^\\s*dear (customer|user|client|member|valued customer|account holder|sir ?/ ?madam|email user)\\b"
+  ],
+  "enable_content": [
+   "\\benable (content|editing|macros?)\\b",
+   "\\bclick (the )?(enable|yellow bar)\\b"
+  ]
+ },
+ "known_bad_sha256": {
+  "5b7899ea45c5645b69d529a410444d2da7e254edf2b36021926452e0b4be955e": "SYNTHETIC stub from sample P05 (stand-in for a threat-intel hash feed)"
+ },
+ "mitre": {
+  "T1566.001": "Phishing: Spearphishing Attachment",
+  "T1566.002": "Phishing: Spearphishing Link",
+  "T1566.003": "Phishing: Spearphishing via Service",
+  "T1598.003": "Phishing for Information: Spearphishing Link",
+  "T1204.001": "User Execution: Malicious Link",
+  "T1204.002": "User Execution: Malicious File",
+  "T1027.006": "Obfuscated Files or Information: HTML Smuggling",
+  "T1027.017": "Obfuscated Files or Information: SVG Smuggling",
+  "T1036.002": "Masquerading: Right-to-Left Override",
+  "T1036.007": "Masquerading: Double File Extension",
+  "T1036.008": "Masquerading: Masquerade File Type",
+  "T1684.001": "Social Engineering: Impersonation",
+  "T1684.002": "Social Engineering: Email Spoofing"
+ },
+ "generic_response": {
+  "likely_phishing": [
+   "Do not click links, open attachments or reply. If the user already did, treat it as an incident (see the steps marked 'if clicked').",
+   "Report the message to the security team and keep the original (.eml with full headers) as evidence; do not forward it as plain text.",
+   "Block the sender address and the domains/URLs below at the mail gateway and web proxy, then search other mailboxes for the same sender, subject, URL or attachment hash.",
+   "If the user clicked or opened anything: reset their password, revoke active sessions, check MFA methods and mailbox rules, and isolate the device if an attachment was opened."
+  ],
+  "suspicious": [
+   "Hold the message and do not click or open anything until it is verified.",
+   "Verify with the claimed sender through a different channel (phone number from the directory, not from the email).",
+   "If it cannot be verified, treat it as likely phishing and follow those steps."
+  ],
+  "benign": [
+   "No action needed. If the user is still unsure, ask them to confirm the sender through a separate channel."
+  ]
+ },
+ "indicators": [
+  {
+   "id": "reply_to_mismatch",
+   "category": "header",
+   "weight": 15,
+   "severity": "medium",
+   "mitre": [
+    "T1684.002"
+   ],
+   "title": "Reply-To goes to a different domain than From",
+   "description": "Replies would go somewhere other than the address the message claims to come from.",
+   "response": [
+    "Do not reply; a reply would reach the Reply-To address, not the sender shown."
+   ]
+  },
+  {
+   "id": "return_path_mismatch",
+   "category": "header",
+   "weight": 10,
+   "severity": "low",
+   "mitre": [
+    "T1684.002"
+   ],
+   "title": "Return-Path (envelope sender) domain differs from From and nothing aligned vouches for it",
+   "description": "Bulk senders legitimately use their own bounce domain, so this is only reported when no aligned DKIM or SPF pass exists.",
+   "response": []
+  },
+  {
+   "id": "display_name_email_spoof",
+   "category": "header",
+   "weight": 25,
+   "severity": "high",
+   "mitre": [
+    "T1684.001"
+   ],
+   "title": "Display name contains a different email address than the real sender",
+   "description": "Mail clients show the display name prominently; putting another address in it is a classic trick.",
+   "response": []
+  },
+  {
+   "id": "display_name_brand_spoof",
+   "category": "header",
+   "weight": 25,
+   "severity": "high",
+   "mitre": [
+    "T1684.001"
+   ],
+   "title": "Display name uses a brand name but the sender domain is not that brand's",
+   "description": "The visible sender name claims a well-known brand, the actual domain does not belong to it.",
+   "response": [
+    "Report the impersonated brand if it offers an abuse mailbox."
+   ]
+  },
+  {
+   "id": "display_name_exec_spoof",
+   "category": "header",
+   "weight": 25,
+   "severity": "high",
+   "mitre": [
+    "T1684.001"
+   ],
+   "title": "Display name matches a protected person or team, but the domain is not ours",
+   "description": "An executive, finance, HR or IT help-desk name is used from an address outside the organisation's domains.",
+   "response": [
+    "Confirm any request with the real person or team using a known phone number or chat."
+   ]
+  },
+  {
+   "id": "freemail_display_spoof",
+   "category": "header",
+   "weight": 10,
+   "severity": "medium",
+   "mitre": [
+    "T1566.003",
+    "T1684.001"
+   ],
+   "title": "Free-mail address using the name of a protected person, team or brand",
+   "description": "Organisations rarely write from free webmail accounts, and attackers often do.",
+   "response": []
+  },
+  {
+   "id": "sender_domain_lookalike",
+   "category": "header",
+   "weight": 30,
+   "severity": "high",
+   "mitre": [
+    "T1684.001"
+   ],
+   "title": "Sender domain imitates a protected brand or our own domain",
+   "description": "The domain is a near-miss (typo, homoglyph or added word) of a brand or organisation domain.",
+   "response": [
+    "Add the lookalike domain to the mail gateway block list."
+   ]
+  },
+  {
+   "id": "message_id_missing",
+   "category": "header",
+   "weight": 5,
+   "severity": "low",
+   "mitre": [],
+   "title": "No Message-ID header",
+   "description": "Every normal mail server adds one; some scripts and spoofing tools do not.",
+   "response": []
+  },
+  {
+   "id": "message_id_malformed",
+   "category": "header",
+   "weight": 5,
+   "severity": "low",
+   "mitre": [],
+   "title": "Message-ID is malformed",
+   "description": "Not in the form <unique@domain>.",
+   "response": []
+  },
+  {
+   "id": "message_id_domain_mismatch",
+   "category": "header",
+   "weight": 5,
+   "severity": "low",
+   "mitre": [],
+   "title": "Message-ID domain is unrelated to the sender",
+   "description": "Only reported when nothing aligned vouches for the sender.",
+   "response": []
+  },
+  {
+   "id": "date_invalid",
+   "category": "header",
+   "weight": 5,
+   "severity": "low",
+   "mitre": [],
+   "title": "Date header missing or unparseable",
+   "description": "Mail servers add a valid Date; many forged messages do not.",
+   "response": []
+  },
+  {
+   "id": "date_future",
+   "category": "header",
+   "weight": 8,
+   "severity": "low",
+   "mitre": [],
+   "title": "Date header is later than the time the mail was delivered",
+   "description": "The sender's clock claims a time after delivery.",
+   "response": []
+  },
+  {
+   "id": "date_stale",
+   "category": "header",
+   "weight": 5,
+   "severity": "low",
+   "mitre": [],
+   "title": "Date header is much older than the first delivery hop",
+   "description": "A message dated weeks before it was first handled can be a replay or a forged header.",
+   "response": []
+  },
+  {
+   "id": "received_missing",
+   "category": "header",
+   "weight": 6,
+   "severity": "low",
+   "mitre": [],
+   "title": "No Received headers",
+   "description": "A message that crossed a mail server always has at least one Received header.",
+   "response": []
+  },
+  {
+   "id": "received_time_anomaly",
+   "category": "header",
+   "weight": 10,
+   "severity": "medium",
+   "mitre": [],
+   "title": "Received timestamps go backwards or show a very long delay",
+   "description": "Hop timestamps should increase from origin to delivery; reversed or hours-long gaps suggest forged hops or replay.",
+   "response": []
+  },
+  {
+   "id": "received_helo_mismatch",
+   "category": "header",
+   "weight": 6,
+   "severity": "low",
+   "mitre": [],
+   "title": "Origin hop's HELO name does not match its reverse DNS",
+   "description": "The sending host introduced itself with a name unrelated to its DNS name, or has no reverse DNS.",
+   "response": []
+  },
+  {
+   "id": "received_many_hops",
+   "category": "header",
+   "weight": 3,
+   "severity": "low",
+   "mitre": [],
+   "title": "Unusually long Received chain",
+   "description": "Many relays can indicate forwarding or relay abuse.",
+   "response": []
+  },
+  {
+   "id": "spf_fail",
+   "category": "auth",
+   "weight": 15,
+   "severity": "high",
+   "mitre": [
+    "T1684.002"
+   ],
+   "title": "SPF failed: the sending server is not authorised for the envelope domain",
+   "description": "The domain's SPF policy does not list the IP that delivered this message.",
+   "response": []
+  },
+  {
+   "id": "spf_softfail",
+   "category": "auth",
+   "weight": 8,
+   "severity": "medium",
+   "mitre": [
+    "T1684.002"
+   ],
+   "title": "SPF softfail",
+   "description": "The sending IP is probably not authorised (policy '~all').",
+   "response": []
+  },
+  {
+   "id": "dkim_fail",
+   "category": "auth",
+   "weight": 12,
+   "severity": "high",
+   "mitre": [
+    "T1684.002"
+   ],
+   "title": "DKIM signature failed verification",
+   "description": "A signature is present but does not validate, so the message was altered or forged.",
+   "response": []
+  },
+  {
+   "id": "dmarc_fail",
+   "category": "auth",
+   "weight": 20,
+   "severity": "high",
+   "mitre": [
+    "T1684.002"
+   ],
+   "title": "DMARC failed for the From domain",
+   "description": "Neither SPF nor DKIM passed in alignment with the visible From domain.",
+   "response": []
+  },
+  {
+   "id": "dkim_misaligned",
+   "category": "auth",
+   "weight": 4,
+   "severity": "low",
+   "mitre": [],
+   "title": "DKIM passed but for a different domain than From",
+   "description": "The signature vouches for another domain, not the one the reader sees.",
+   "response": []
+  },
+  {
+   "id": "auth_absent",
+   "category": "auth",
+   "weight": 3,
+   "severity": "low",
+   "mitre": [],
+   "title": "No SPF, DKIM or DMARC results available",
+   "description": "Nothing in the message tells us whether the sender was authenticated.",
+   "response": []
+  },
+  {
+   "id": "url_ip_host",
+   "category": "url",
+   "weight": 20,
+   "severity": "high",
+   "mitre": [
+    "T1566.002",
+    "T1204.001"
+   ],
+   "title": "Link points to a raw IP address",
+   "description": "Legitimate services link to named hosts, not numbers (including decimal, hex or octal disguised IPs).",
+   "response": []
+  },
+  {
+   "id": "url_idn_homograph",
+   "category": "url",
+   "weight": 25,
+   "severity": "high",
+   "mitre": [
+    "T1566.002",
+    "T1204.001"
+   ],
+   "title": "Link uses look-alike (homograph) characters",
+   "description": "A punycode (xn--) host mixes scripts or imitates a brand using characters from another alphabet.",
+   "response": []
+  },
+  {
+   "id": "url_lookalike_domain",
+   "category": "url",
+   "weight": 30,
+   "severity": "high",
+   "mitre": [
+    "T1566.002",
+    "T1204.001",
+    "T1598.003"
+   ],
+   "title": "Link domain imitates a brand or our own domain",
+   "description": "Typosquatting by edit distance, digit/letter swaps (0/o, 1/l, rn/m) or the brand name on a different domain.",
+   "response": []
+  },
+  {
+   "id": "url_brand_in_domain",
+   "category": "url",
+   "weight": 12,
+   "severity": "medium",
+   "mitre": [
+    "T1566.002",
+    "T1598.003"
+   ],
+   "title": "Brand name used inside a domain it does not own",
+   "description": "For example brand-secure.example or login-brand.example.",
+   "response": []
+  },
+  {
+   "id": "url_brand_in_subdomain",
+   "category": "url",
+   "weight": 15,
+   "severity": "medium",
+   "mitre": [
+    "T1566.002"
+   ],
+   "title": "Brand domain appears as a subdomain of someone else's domain",
+   "description": "For example brand.com.evil.example: the real domain is the last part, not the first.",
+   "response": []
+  },
+  {
+   "id": "url_shortener",
+   "category": "url",
+   "weight": 10,
+   "severity": "medium",
+   "mitre": [
+    "T1566.002"
+   ],
+   "title": "Link goes through a URL shortener",
+   "description": "The real destination is hidden until clicked.",
+   "response": []
+  },
+  {
+   "id": "url_text_mismatch",
+   "category": "url",
+   "weight": 25,
+   "severity": "high",
+   "mitre": [
+    "T1566.002",
+    "T1204.001"
+   ],
+   "title": "Link text shows one address but the link goes to another",
+   "description": "The visible text names a domain that is not the domain the link points to.",
+   "response": []
+  },
+  {
+   "id": "url_suspicious_tld",
+   "category": "url",
+   "weight": 8,
+   "severity": "low",
+   "mitre": [
+    "T1566.002"
+   ],
+   "title": "Link uses a top-level domain often abused for phishing",
+   "description": "Heuristic only: many abused TLDs are cheap or free.",
+   "response": []
+  },
+  {
+   "id": "url_userinfo",
+   "category": "url",
+   "weight": 25,
+   "severity": "high",
+   "mitre": [
+    "T1566.002",
+    "T1204.001"
+   ],
+   "title": "Link contains user@ credentials syntax that hides the real host",
+   "description": "In https://trusted.com@evil.example/ the real host is evil.example.",
+   "response": []
+  },
+  {
+   "id": "url_redirect_param",
+   "category": "url",
+   "weight": 10,
+   "severity": "medium",
+   "mitre": [
+    "T1566.002"
+   ],
+   "title": "Link carries a redirect parameter to a different site",
+   "description": "An open-redirect style parameter (url=, redirect=, next=) points to another domain.",
+   "response": []
+  },
+  {
+   "id": "url_login_keywords",
+   "category": "url",
+   "weight": 6,
+   "severity": "low",
+   "mitre": [
+    "T1598.003"
+   ],
+   "title": "Login/verify wording in a link to an unrelated domain",
+   "description": "Words like login, verify or secure in the path or host of a link that is not on a known domain.",
+   "response": []
+  },
+  {
+   "id": "url_script_scheme",
+   "category": "url",
+   "weight": 20,
+   "severity": "high",
+   "mitre": [
+    "T1566.002",
+    "T1204.001"
+   ],
+   "title": "Link uses a javascript: or data: scheme",
+   "description": "These run or embed code instead of opening a normal web page.",
+   "response": []
+  },
+  {
+   "id": "url_obfuscated",
+   "category": "url",
+   "weight": 5,
+   "severity": "low",
+   "mitre": [
+    "T1566.002"
+   ],
+   "title": "Very long or deeply nested link",
+   "description": "Extremely long URLs or many subdomain levels are used to hide the real domain.",
+   "response": []
+  },
+  {
+   "id": "attachment_executable",
+   "category": "attachment",
+   "weight": 35,
+   "severity": "high",
+   "mitre": [
+    "T1566.001",
+    "T1204.002"
+   ],
+   "title": "Attachment is an executable or script type",
+   "description": "By extension or by content (Windows executable, script, shortcut, disk image).",
+   "response": [
+    "Do not open the attachment. If it was opened, isolate the device and run a full scan."
+   ]
+  },
+  {
+   "id": "attachment_magic_mismatch",
+   "category": "attachment",
+   "weight": 25,
+   "severity": "high",
+   "mitre": [
+    "T1566.001",
+    "T1036.008"
+   ],
+   "title": "Attachment content does not match its file extension",
+   "description": "The first bytes identify another format than the extension claims.",
+   "response": []
+  },
+  {
+   "id": "attachment_double_extension",
+   "category": "attachment",
+   "weight": 30,
+   "severity": "high",
+   "mitre": [
+    "T1566.001",
+    "T1036.007"
+   ],
+   "title": "Attachment has a double extension (document name, executable type)",
+   "description": "invoice.pdf.exe shows as invoice.pdf when extensions are hidden.",
+   "response": []
+  },
+  {
+   "id": "attachment_rtl_override",
+   "category": "attachment",
+   "weight": 35,
+   "severity": "high",
+   "mitre": [
+    "T1566.001",
+    "T1036.002"
+   ],
+   "title": "File name contains a right-to-left override character",
+   "description": "U+202E makes part of the name display reversed, hiding the real extension.",
+   "response": []
+  },
+  {
+   "id": "attachment_macro",
+   "category": "attachment",
+   "weight": 30,
+   "severity": "high",
+   "mitre": [
+    "T1566.001",
+    "T1204.002"
+   ],
+   "title": "Office document that can contain macros",
+   "description": "Macro-enabled type (.docm, .xlsm, ...) or a document with a VBA project inside.",
+   "response": [
+    "Do not enable macros or content. If it was opened, report it so the device can be checked."
+   ]
+  },
+  {
+   "id": "archive_contains_executable",
+   "category": "attachment",
+   "weight": 35,
+   "severity": "high",
+   "mitre": [
+    "T1566.001",
+    "T1204.002"
+   ],
+   "title": "Archive lists an executable or script inside",
+   "description": "Read from the archive's directory only; nothing was extracted.",
+   "response": []
+  },
+  {
+   "id": "archive_encrypted",
+   "category": "attachment",
+   "weight": 25,
+   "severity": "medium",
+   "mitre": [
+    "T1566.001"
+   ],
+   "title": "Password-protected archive",
+   "description": "Encryption stops mail scanners from looking inside, which attackers rely on.",
+   "response": []
+  },
+  {
+   "id": "archive_password_hint",
+   "category": "attachment",
+   "weight": 15,
+   "severity": "medium",
+   "mitre": [
+    "T1566.001"
+   ],
+   "title": "Message body gives a password for the attached archive",
+   "description": "Handing the recipient the password is how encrypted malware archives are delivered.",
+   "response": []
+  },
+  {
+   "id": "html_attachment",
+   "category": "attachment",
+   "weight": 12,
+   "severity": "medium",
+   "mitre": [
+    "T1566.001"
+   ],
+   "title": "HTML or SVG file attached",
+   "description": "Attached web pages run in the browser from a local file, bypassing link scanning.",
+   "response": []
+  },
+  {
+   "id": "html_smuggling",
+   "category": "attachment",
+   "weight": 40,
+   "severity": "high",
+   "mitre": [
+    "T1566.001",
+    "T1027.006"
+   ],
+   "title": "HTML attachment builds a file in the browser (HTML smuggling)",
+   "description": "JavaScript Blob / base64 decoding plus an automatic download assembles the payload on the victim's machine.",
+   "response": [
+    "Do not open the HTML file. If it was opened, check the Downloads folder and isolate the device."
+   ]
+  },
+  {
+   "id": "html_credential_form",
+   "category": "attachment",
+   "weight": 35,
+   "severity": "high",
+   "mitre": [
+    "T1566.001",
+    "T1598.003"
+   ],
+   "title": "HTML attachment contains a password form",
+   "description": "A login page delivered as a file is a credential harvester.",
+   "response": []
+  },
+  {
+   "id": "svg_script",
+   "category": "attachment",
+   "weight": 30,
+   "severity": "high",
+   "mitre": [
+    "T1566.001",
+    "T1027.017"
+   ],
+   "title": "SVG attachment contains script",
+   "description": "SVG images can carry JavaScript that redirects or drops files.",
+   "response": []
+  },
+  {
+   "id": "pdf_active_content",
+   "category": "attachment",
+   "weight": 20,
+   "severity": "medium",
+   "mitre": [
+    "T1566.001"
+   ],
+   "title": "PDF contains JavaScript or launch actions",
+   "description": "Active content inside a PDF is unusual for invoices and letters.",
+   "response": []
+  },
+  {
+   "id": "attachment_known_bad",
+   "category": "attachment",
+   "weight": 60,
+   "severity": "critical",
+   "mitre": [
+    "T1566.001",
+    "T1204.002"
+   ],
+   "title": "Attachment hash is on the known-bad list",
+   "description": "The SHA-256 matches a hash you listed as malicious.",
+   "response": [
+    "Quarantine every copy of this message."
+   ]
+  },
+  {
+   "id": "urgency_language",
+   "category": "language",
+   "weight": 8,
+   "severity": "low",
+   "mitre": [],
+   "title": "Urgent or threatening wording",
+   "description": "At least two pressure phrases (deadline, suspension, final notice).",
+   "response": []
+  },
+  {
+   "id": "credential_lure",
+   "category": "language",
+   "weight": 12,
+   "severity": "medium",
+   "mitre": [
+    "T1598.003"
+   ],
+   "title": "Asks the reader to verify, confirm or reset credentials",
+   "description": "Credential-harvesting wording. Legitimate password-reset mail uses it too, so it only scores lightly.",
+   "response": []
+  },
+  {
+   "id": "payment_lure",
+   "category": "language",
+   "weight": 10,
+   "severity": "medium",
+   "mitre": [],
+   "title": "Invoice, payment or bank-detail wording",
+   "description": "Finance wording used in invoice scams and payment diversion.",
+   "response": []
+  },
+  {
+   "id": "gift_card_scam",
+   "category": "language",
+   "weight": 30,
+   "severity": "high",
+   "mitre": [
+    "T1684.001"
+   ],
+   "title": "Gift-card request",
+   "description": "Asking staff to buy gift cards and send the codes is a well-known scam.",
+   "response": [
+    "Tell the user not to buy anything; confirm with the real person by phone."
+   ]
+  },
+  {
+   "id": "bec_wording",
+   "category": "language",
+   "weight": 20,
+   "severity": "high",
+   "mitre": [
+    "T1684.001"
+   ],
+   "title": "Business-email-compromise style request",
+   "description": "At least two of: availability check, favour, secrecy, new bank details, wire/payment request, 'in a meeting'.",
+   "response": [
+    "Verify any payment or bank-detail change by phone with a known number before acting."
+   ]
+  },
+  {
+   "id": "qr_lure",
+   "category": "language",
+   "weight": 15,
+   "severity": "medium",
+   "mitre": [
+    "T1566.002"
+   ],
+   "title": "Asks the reader to scan a QR code",
+   "description": "QR codes move the link onto a phone, out of reach of link scanning. This tool cannot decode QR images.",
+   "response": [
+    "Do not scan the QR code. Ask the user whether they did; if so, treat the destination as a phishing site."
+   ]
+  },
+  {
+   "id": "generic_greeting",
+   "category": "language",
+   "weight": 3,
+   "severity": "low",
+   "mitre": [],
+   "title": "Generic greeting (\"Dear customer\")",
+   "description": "Mass mailings do not know your name.",
+   "response": []
+  },
+  {
+   "id": "combo_lure_deceptive_link",
+   "category": "combo",
+   "weight": 10,
+   "severity": "high",
+   "mitre": [
+    "T1598.003"
+   ],
+   "title": "Credential or urgency lure combined with a deceptive link",
+   "description": "A pressure or credential lure plus a lookalike, mismatched, IP-based or userinfo link.",
+   "response": []
+  },
+  {
+   "id": "combo_exec_payment",
+   "category": "combo",
+   "weight": 10,
+   "severity": "high",
+   "mitre": [
+    "T1684.001"
+   ],
+   "title": "Executive impersonation combined with payment or gift-card wording",
+   "description": "The classic CEO-fraud pattern.",
+   "response": []
+  },
+  {
+   "id": "combo_unauth_spoof",
+   "category": "combo",
+   "weight": 10,
+   "severity": "high",
+   "mitre": [
+    "T1684.002"
+   ],
+   "title": "Claims a protected identity and fails authentication",
+   "description": "The sender impersonates a brand or protected name and SPF or DMARC failed.",
+   "response": []
+  },
+  {
+   "id": "authenticated_aligned",
+   "category": "mitigation",
+   "weight": -12,
+   "severity": "info",
+   "mitre": [],
+   "title": "Sender domain authenticated and aligned (DMARC pass, or aligned DKIM or SPF pass)",
+   "description": "Reduces the score: the message really came from the domain it shows. Attackers can authenticate their own domains, so this is a small credit.",
+   "response": []
+  },
+  {
+   "id": "list_unsubscribe",
+   "category": "mitigation",
+   "weight": -5,
+   "severity": "info",
+   "mitre": [],
+   "title": "Has a List-Unsubscribe header",
+   "description": "A hallmark of bulk mail from real senders (it can be forged, so the credit is small).",
+   "response": []
+  },
+  {
+   "id": "enable_content_lure",
+   "category": "language",
+   "weight": 20,
+   "severity": "high",
+   "mitre": [
+    "T1204.002"
+   ],
+   "title": "Asks the reader to 'enable content' or macros",
+   "description": "Macro malware relies on persuading the user to switch protection off.",
+   "response": [
+    "Do not open the document or enable content; delete the message after reporting it."
+   ]
+  }
+ ]
+}

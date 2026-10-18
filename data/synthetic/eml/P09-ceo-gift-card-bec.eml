@@ -1,0 +1,26 @@
+Return-Path: <priya.raman.ceo@freemail.example>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Fri, 13 Mar 2026
+ 17:05:07 +0000
+Received: from mail-oa1.freemail.example (mail-oa1.freemail.example
+ [198.51.100.12]) by mx1.northwind-analytics.example with ESMTPS id D4E5F6;
+ Fri, 13 Mar 2026 17:05:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=pass
+ smtp.mailfrom=freemail.example; dkim=pass header.d=freemail.example
+ header.s=f1; dmarc=pass header.from=freemail.example
+X-Synthetic-Sample: yes
+From: "Priya Raman (CEO)" <priya.raman.ceo@freemail.example>
+To: alex.morgan@northwind-analytics.example
+Subject: Quick favour
+Date: Fri, 13 Mar 2026 17:05:00 +0000
+Message-ID: <q7721@freemail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Are you available? I need a quick favor and I'm in a meeting so cannot take calls.
+Please buy 5 gift cards (Amazon, $200 each), scratch off the back and send me the codes. Keep this confidential. I will reimburse you.
+
+Priya
+

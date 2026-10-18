@@ -1,0 +1,44 @@
+Return-Path: <no-reply@secure-notify.test>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Mon, 16 Mar 2026
+ 04:18:07 +0000
+Received: from secure-notify.test (secure-notify.test [198.51.100.188]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Mon, 16 Mar 2026
+ 04:18:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=fail
+ smtp.mailfrom=secure-notify.test; dmarc=fail header.from=secure-notify.test
+X-Synthetic-Sample: yes
+From: "Microsoft Security" <no-reply@secure-notify.test>
+To: alex.morgan@northwind-analytics.example
+Subject: Action required: re-validate your account with MFA
+Date: Mon, 16 Mar 2026 04:18:00 +0000
+Message-ID: <mfa.201@secure-notify.test>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="=_synthetic_mixed_7f3a"
+
+--=_synthetic_mixed_7f3a
+Content-Type: multipart/alternative; boundary="=_synthetic_alt_7f3a"
+
+--=_synthetic_alt_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Action required: validate your account within 24 hours. Scan the QR code below with your phone to complete multi-factor setup.
+
+--=_synthetic_alt_7f3a
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+<html><body style="font-family:Arial"><h2>Security check</h2><p>Action required. Scan the QR code with your phone to re-validate your account.</p><img src="cid:qr1" alt="QR"><p style="color:#888;font-size:11px">Synthetic sample for testing.</p></body></html>
+--=_synthetic_alt_7f3a--
+
+--=_synthetic_mixed_7f3a
+Content-Type: image/png; name="qr.png"
+Content-Transfer-Encoding: base64
+Content-ID: <qr1>
+Content-Disposition: inline; filename="qr.png"
+
+iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVR4nGP4//8/AAX+Av4N70a4
+AAAAAElFTkSuQmCC
+--=_synthetic_mixed_7f3a--

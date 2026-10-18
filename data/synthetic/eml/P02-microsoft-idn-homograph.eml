@@ -1,0 +1,31 @@
+Return-Path: <admin@m365-notices.test>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Fri, 06 Mar 2026
+ 22:09:07 +0000
+Received: from m365-notices.test (m365-notices.test [198.51.100.211]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Fri, 06 Mar 2026
+ 22:09:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=softfail
+ smtp.mailfrom=m365-notices.test; dmarc=fail header.from=m365-notices.test
+X-Synthetic-Sample: yes
+From: "Microsoft 365 Admin" <admin@m365-notices.test>
+To: alex.morgan@northwind-analytics.example
+Subject: Your mailbox is full - verify your account
+Date: Fri, 06 Mar 2026 22:09:00 +0000
+Message-ID: <a8812@m365-notices.test>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="=_synthetic_alt_7f3a"
+
+--=_synthetic_alt_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Your mailbox is over quota. Verify your account now: https://xn--micrsft-djgb.invalid/owa/verify
+
+--=_synthetic_alt_7f3a
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+<html><body style="font-family:Arial"><h2>Mailbox</h2><p>Your mailbox is over quota.</p><p><a href="https://xn--micrsft-djgb.invalid/owa/verify">Verify your account</a></p><p style="color:#888;font-size:11px">Synthetic sample for testing.</p></body></html>
+--=_synthetic_alt_7f3a--

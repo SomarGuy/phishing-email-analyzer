@@ -1,0 +1,28 @@
+{
+ "_note": "SYNTHETIC DNS records for the offline SPF evaluator. No real lookups are ever made.",
+ "domains": {
+  "vendor-pay.example": {
+   "TXT": [
+    "v=spf1 ip4:203.0.113.0/24 -all"
+   ]
+  },
+  "northwind-analytlcs.example": {
+   "TXT": [
+    "v=spf1 ip4:203.0.113.0/24 -all"
+   ]
+  },
+  "northwind-analytics.example": {
+   "TXT": [
+    "v=spf1 ip4:10.20.0.0/16 mx -all"
+   ],
+   "MX": [
+    "mx1.northwind-analytics.example"
+   ]
+  },
+  "mx1.northwind-analytics.example": {
+   "A": [
+    "10.20.0.5"
+   ]
+  }
+ }
+}

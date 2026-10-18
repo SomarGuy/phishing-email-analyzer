@@ -1,0 +1,21 @@
+[project]
+name = "phishanalyzer"
+version = "1.0.0"
+description = "Phishing email analyzer: header, authentication, URL, attachment and language analysis with a transparent risk score, ATT&CK mapping, defanged IOC export and help-desk incident reports."
+requires-python = ">=3.10"
+dependencies = []          # standard library only
+
+[project.scripts]
+phishanalyzer = "phishanalyzer.cli:main"
+
+[tool.setuptools]
+packages = ["phishanalyzer"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
+
+[tool.coverage.run]
+source = ["phishanalyzer"]
+omit = ["phishanalyzer/__main__.py"]

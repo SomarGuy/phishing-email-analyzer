@@ -1,0 +1,1258 @@
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <bounce+4411@esp-mail.example>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Tue, 03 Mar 2026
+ 09:14:07 +0000
+Received: from out7.esp-mail.example (out7.esp-mail.example [198.51.100.23])
+ by mx1.northwind-analytics.example with ESMTPS id D4E5F6; Tue, 03 Mar 2026
+ 09:14:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=pass
+ smtp.mailfrom=bounce+4411@esp-mail.example; dkim=pass
+ header.d=harbourgazette.example header.s=s2026; dmarc=pass
+ header.from=harbourgazette.example
+X-Synthetic-Sample: yes
+From: "Harbour Gazette" <newsletter@harbourgazette.example>
+To: alex.morgan@northwind-analytics.example
+Subject: This week: harbour dredging, new ferry timetable
+Date: Tue, 03 Mar 2026 09:14:00 +0000
+Message-ID: <20260303.0914.4411@harbourgazette.example>
+List-Id: <weekly.harbourgazette.example>
+List-Unsubscribe: <https://click.esp-mail.example/unsub/4411>
+Precedence: bulk
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="=_synthetic_alt_7f3a"
+
+--=_synthetic_alt_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Harbour Gazette - weekly digest
+
+Read the ferry timetable: https://click.esp-mail.example/c?u=https%3A%2F%2Fharbourgazette.example%2Fferry&id=4411
+Offer ends today: 10% off annual subscriptions.
+Unsubscribe: https://click.esp-mail.example/unsub/4411
+
+--=_synthetic_alt_7f3a
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+<html><body style="font-family:Arial"><h2>Harbour Gazette - weekly digest</h2><p><a href="https://click.esp-mail.example/c?u=https%3A%2F%2Fharbourgazette.example%2Fferry&amp;id=4411">Read the ferry timetable</a></p><p>Offer ends today: 10% off annual subscriptions.</p><p><a href="https://click.esp-mail.example/unsub/4411">Unsubscribe</a></p><p style="color:#888;font-size:11px">Synthetic sample for testing.</p></body></html>
+--=_synthetic_alt_7f3a--
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <marcus.cole@northwind-analytics.example>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Thu, 05 Mar 2026
+ 14:02:07 +0000
+Received: from laptop-mc.corp.northwind-analytics.example
+ (laptop-mc.corp.northwind-analytics.example [10.20.4.18]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Thu, 05 Mar 2026
+ 14:02:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=pass
+ smtp.mailfrom=northwind-analytics.example; dkim=pass
+ header.d=northwind-analytics.example header.s=sel1; dmarc=pass
+ header.from=northwind-analytics.example
+X-Synthetic-Sample: yes
+From: "Marcus Cole" <marcus.cole@northwind-analytics.example>
+To: alex.morgan@northwind-analytics.example
+Subject: Q3 invoice approvals - sign-off needed Friday
+Date: Thu, 05 Mar 2026 14:02:00 +0000
+Message-ID: <CAF3a91b@mail.northwind-analytics.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Hi Alex,
+
+Please review the Q3 invoice batch in the finance share and sign off by Friday.
+The payment run is on Monday.
+
+Marcus
+
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <hr@northwind-analytics.example>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Mon, 09 Mar 2026
+ 08:30:07 +0000
+Received: from mail-hr.northwind-analytics.example
+ (mail-hr.northwind-analytics.example [10.20.1.9]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Mon, 09 Mar 2026
+ 08:30:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=pass
+ smtp.mailfrom=northwind-analytics.example; dkim=pass
+ header.d=northwind-analytics.example header.s=sel1; dmarc=pass
+ header.from=northwind-analytics.example
+X-Synthetic-Sample: yes
+From: "Human Resources" <hr@northwind-analytics.example>
+To: alex.morgan@northwind-analytics.example
+Subject: URGENT: benefits enrolment closes in 3 days - action required
+Date: Mon, 09 Mar 2026 08:30:00 +0000
+Message-ID: <hr-20260309-01@northwind-analytics.example>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="=_synthetic_alt_7f3a"
+
+--=_synthetic_alt_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Hello team,
+
+Benefits enrolment closes within 3 days. Action required: choose your plan at https://hr.northwind-analytics.example/enrol
+
+Human Resources
+
+--=_synthetic_alt_7f3a
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+<html><body style="font-family:Arial"><h2>Benefits enrolment</h2><p>Enrolment closes within 3 days. Action required.</p><p><a href="https://hr.northwind-analytics.example/enrol">Choose your plan</a></p><p style="color:#888;font-size:11px">Synthetic sample for testing.</p></body></html>
+--=_synthetic_alt_7f3a--
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <no-reply@cloudnote.example>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Wed, 11 Mar 2026
+ 16:45:07 +0000
+Received: from smtp3.cloudnote.example (smtp3.cloudnote.example
+ [203.0.113.41]) by mx1.northwind-analytics.example with ESMTPS id D4E5F6;
+ Wed, 11 Mar 2026 16:45:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=pass
+ smtp.mailfrom=cloudnote.example; dkim=pass header.d=cloudnote.example
+ header.s=k1; dmarc=pass header.from=cloudnote.example
+X-Synthetic-Sample: yes
+From: "Cloudnote Support" <no-reply@cloudnote.example>
+To: alex.morgan@northwind-analytics.example
+Subject: Reset your Cloudnote password
+Date: Wed, 11 Mar 2026 16:45:00 +0000
+Message-ID: <rst.88213@cloudnote.example>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="=_synthetic_alt_7f3a"
+
+--=_synthetic_alt_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+You asked to reset your password. Use the link below within 1 hour:
+https://app.cloudnote.example/account/reset?token=Zk3pV9aQ
+
+If you did not ask for this, ignore this message.
+
+--=_synthetic_alt_7f3a
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+<html><body style="font-family:Arial"><h2>Password reset</h2><p>You asked to reset your password. The link works for 1 hour.</p><p><a href="https://app.cloudnote.example/account/reset?token=Zk3pV9aQ">Reset password</a></p><p style="color:#888;font-size:11px">Synthetic sample for testing.</p></body></html>
+--=_synthetic_alt_7f3a--
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <orders@lanternbooks.example>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Thu, 12 Mar 2026
+ 11:03:07 +0000
+Received: from mailer.lanternbooks.example (mailer.lanternbooks.example
+ [192.0.2.61]) by mx1.northwind-analytics.example with ESMTPS id D4E5F6;
+ Thu, 12 Mar 2026 11:03:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=pass
+ smtp.mailfrom=lanternbooks.example; dkim=pass header.d=lanternbooks.example
+ header.s=m1; dmarc=pass header.from=lanternbooks.example
+X-Synthetic-Sample: yes
+From: "Lantern Books" <orders@lanternbooks.example>
+To: alex.morgan@northwind-analytics.example
+Subject: Your order #LB-20931 - receipt attached
+Date: Thu, 12 Mar 2026 11:03:00 +0000
+Message-ID: <order.20931@lanternbooks.example>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="=_synthetic_mixed_7f3a"
+
+--=_synthetic_mixed_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Thanks for your order. Invoice attached (PDF).
+Track it at https://www.lanternbooks.example/orders/20931
+
+--=_synthetic_mixed_7f3a
+Content-Type: application/pdf; name="Invoice-LB-20931.pdf"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="Invoice-LB-20931.pdf"
+
+JVBERi0xLjQKJSBTWU5USEVUSUMgU0FNUExFOiByZWNlaXB0CjEgMCBvYmoKPDwgL1R5cGUgL0Nh
+dGFsb2cgL1BhZ2VzIDIgMCBSID4+CmVuZG9iagoyIDAgb2JqCjw8IC9UeXBlIC9QYWdlcyAvS2lk
+cyBbXSAvQ291bnQgMCA+PgplbmRvYmoKdHJhaWxlcgo8PCAvUm9vdCAxIDAgUiA+PgolJUVPRgo=
+--=_synthetic_mixed_7f3a--
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <alerts@monitor.example.net>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Sat, 14 Mar 2026
+ 03:17:07 +0000
+Received: from monitor.example.net (monitor.example.net [198.51.100.88]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Sat, 14 Mar 2026
+ 03:17:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=pass
+ smtp.mailfrom=monitor.example.net; dkim=pass header.d=monitor.example.net
+ header.s=mon; dmarc=pass header.from=monitor.example.net
+X-Synthetic-Sample: yes
+From: "Monitor" <alerts@monitor.example.net>
+To: alex.morgan@northwind-analytics.example
+Subject: [ALERT] disk usage 91% on db-02
+Date: Sat, 14 Mar 2026 03:17:00 +0000
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Host db-02 /var is at 91% (threshold 90%). See https://monitor.example.net/hosts/db-02
+
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <tickets@xn--mnchen-3ya.example>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Mon, 16 Mar 2026
+ 18:22:07 +0000
+Received: from mail.xn--mnchen-3ya.example (mail.xn--mnchen-3ya.example
+ [203.0.113.77]) by mx1.northwind-analytics.example with ESMTPS id D4E5F6;
+ Mon, 16 Mar 2026 18:22:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=pass
+ smtp.mailfrom=xn--mnchen-3ya.example; dkim=pass
+ header.d=xn--mnchen-3ya.example header.s=d1; dmarc=pass
+ header.from=xn--mnchen-3ya.example
+X-Synthetic-Sample: yes
+From: "=?utf-8?B?TcO8bmNobmVyIEtvbnplcnRl?="
+ <tickets@xn--mnchen-3ya.example>
+To: alex.morgan@northwind-analytics.example
+Subject: Your concert tickets
+Date: Mon, 16 Mar 2026 18:22:00 +0000
+Message-ID: <t.7712@xn--mnchen-3ya.example>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="=_synthetic_alt_7f3a"
+
+--=_synthetic_alt_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Your tickets: https://xn--mnchen-3ya.example/tickets/7712
+
+--=_synthetic_alt_7f3a
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: base64
+
+PGh0bWw+PGJvZHkgc3R5bGU9ImZvbnQtZmFtaWx5OkFyaWFsIj48aDI+VGlja2V0czwvaDI+PHA+
+PGEgaHJlZj0iaHR0cHM6Ly94bi0tbW5jaGVuLTN5YS5leGFtcGxlL3RpY2tldHMvNzcxMiI+aHR0
+cHM6Ly9tw7xuY2hlbi5leGFtcGxlL3RpY2tldHMvNzcxMjwvYT48L3A+PHAgc3R5bGU9ImNvbG9y
+OiM4ODg7Zm9udC1zaXplOjExcHgiPlN5bnRoZXRpYyBzYW1wbGUgZm9yIHRlc3RpbmcuPC9wPjwv
+Ym9keT48L2h0bWw+
+--=_synthetic_alt_7f3a--
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <tickets@riverside-events.example>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Wed, 18 Mar 2026
+ 12:40:07 +0000
+Received: from mail.riverside-events.example (mail.riverside-events.example
+ [192.0.2.90]) by mx1.northwind-analytics.example with ESMTPS id D4E5F6;
+ Wed, 18 Mar 2026 12:40:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=pass
+ smtp.mailfrom=riverside-events.example; dkim=pass
+ header.d=riverside-events.example header.s=r1; dmarc=pass
+ header.from=riverside-events.example
+X-Synthetic-Sample: yes
+From: "Riverside Events" <tickets@riverside-events.example>
+To: alex.morgan@northwind-analytics.example
+Subject: Your ticket for Saturday
+Date: Wed, 18 Mar 2026 12:40:00 +0000
+Message-ID: <tk.5521@riverside-events.example>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="=_synthetic_mixed_7f3a"
+
+--=_synthetic_mixed_7f3a
+Content-Type: multipart/alternative; boundary="=_synthetic_alt_7f3a"
+
+--=_synthetic_alt_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Scan the QR code at the door. Gates open at 18:00.
+
+--=_synthetic_alt_7f3a
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+<html><body style="font-family:Arial"><h2>Your ticket</h2><p>Scan the QR code at the door.</p><img src="cid:ticketqr" alt="ticket QR"><p style="color:#888;font-size:11px">Synthetic sample for testing.</p></body></html>
+--=_synthetic_alt_7f3a--
+
+--=_synthetic_mixed_7f3a
+Content-Type: image/png; name="ticket-qr.png"
+Content-Transfer-Encoding: base64
+Content-ID: <ticketqr>
+Content-Disposition: inline; filename="ticket-qr.png"
+
+iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVR4nGP4//8/AAX+Av4N70a4
+AAAAAElFTkSuQmCC
+--=_synthetic_mixed_7f3a--
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <tracking@swiftcouriers.example>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Fri, 20 Mar 2026
+ 07:55:07 +0000
+Received: from relay.swiftcouriers.example (relay.swiftcouriers.example
+ [198.51.100.140]) by mx1.northwind-analytics.example with ESMTPS id D4E5F6;
+ Fri, 20 Mar 2026 07:55:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=pass
+ smtp.mailfrom=swiftcouriers.example; dkim=pass
+ header.d=swiftcouriers.example header.s=s1; dmarc=pass
+ header.from=swiftcouriers.example
+X-Synthetic-Sample: yes
+From: "Swift Couriers" <tracking@swiftcouriers.example>
+To: alex.morgan@northwind-analytics.example
+Subject: Your parcel arrives today
+Date: Fri, 20 Mar 2026 07:55:00 +0000
+Message-ID: <trk.99120@swiftcouriers.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Your parcel will arrive by 5pm. Track: https://short.test/Ab12Cd
+
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <nettalk-bounces@lists.example.net>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Sat, 21 Mar 2026
+ 10:05:07 +0000
+Received: from lists.example.net (lists.example.net [203.0.113.120]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Sat, 21 Mar 2026
+ 10:05:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=pass
+ smtp.mailfrom=nettalk-bounces@lists.example.net; dkim=pass
+ header.d=example.org header.s=k2; dmarc=pass header.from=example.org
+X-Synthetic-Sample: yes
+From: "Bob Fisher" <bob@example.org>
+To: alex.morgan@northwind-analytics.example
+Reply-To: nettalk@lists.example.net
+Subject: [nettalk] re: switch firmware 4.2 rollout
+Date: Sat, 21 Mar 2026 10:05:00 +0000
+Message-ID: <list.31772@lists.example.net>
+List-Id: <nettalk.lists.example.net>
+List-Unsubscribe: <mailto:nettalk-leave@lists.example.net>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+We rolled 4.2 to the lab racks last night, no regressions so far.
+-- 
+nettalk mailing list
+
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <secops@northwind-analytics.example>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Mon, 23 Mar 2026
+ 13:00:07 +0000
+Received: from mail-sec.northwind-analytics.example
+ (mail-sec.northwind-analytics.example [10.20.2.7]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Mon, 23 Mar 2026
+ 13:00:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=pass
+ smtp.mailfrom=northwind-analytics.example; dkim=pass
+ header.d=northwind-analytics.example header.s=sel1; dmarc=pass
+ header.from=northwind-analytics.example
+X-Synthetic-Sample: yes
+From: "Security Team" <secops@northwind-analytics.example>
+To: alex.morgan@northwind-analytics.example
+Subject: Awareness: spot this week's fake PayPal email
+Date: Mon, 23 Mar 2026 13:00:00 +0000
+Message-ID: <sec.20260323@northwind-analytics.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Team,
+
+This week's example (defanged, do NOT visit): hxxps://paypa1-secure[.]test/login
+It says "verify your account" and threatens suspension. Report anything like it to the help desk.
+
+Security Team
+
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <ops@eastgate-logistics.example>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Tue, 24 Mar 2026
+ 09:12:07 +0000
+Received: from mx.eastgate-logistics.example (mx.eastgate-logistics.example
+ [192.0.2.150]) by mx1.northwind-analytics.example with ESMTPS id D4E5F6;
+ Tue, 24 Mar 2026 09:12:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=pass
+ smtp.mailfrom=eastgate-logistics.example; dkim=pass
+ header.d=eastgate-logistics.example header.s=e1; dmarc=pass
+ header.from=eastgate-logistics.example
+X-Synthetic-Sample: yes
+From: "Eastgate Logistics" <ops@eastgate-logistics.example>
+To: alex.morgan@northwind-analytics.example
+Subject: Shipping documents for PO 4471
+Date: Tue, 24 Mar 2026 09:12:00 +0000
+Message-ID: <po4471.1@eastgate-logistics.example>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="=_synthetic_mixed_7f3a"
+
+--=_synthetic_mixed_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Hello,
+
+Shipping documents attached. Password: Ship4471!
+
+Regards, Eastgate Logistics
+
+--=_synthetic_mixed_7f3a
+Content-Type: application/zip; name="PO-4471-docs.zip"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="PO-4471-docs.zip"
+
+UEsDBBQAAQAAAAAAYVwELrnYpwEAAJsBAAARAAAAUE8tNDQ3MS1kb2NzLmRvY3j5qrZBfwJ0K1Fr
+CmE4tAZmuOD+uYNoBTuHhGJlfIXxxcd0CyqNwYM7YRh1EugFDG8ElCvfR3OkVw25reAMPvkzutKa
+yFIwFZfFcvcYlZeHgrPNI9riPkSnEg80vDk/q1D0J+5bfYwYP3H7pxWg6/CYc189Kqgx0Ay1f3CH
+DoP89gAynVTQ8b2LaRh4i0TV64+ih/6WmAOiCls0kNbJ8x9hR7D9EQz8x8NjG8+FVUjKfBS4xyHi
+yE016fOezJ2ZWxMTTwlJfSHz3ev0iJwN10/Ts/Nwm8dqPHZ+cWl1jm1ahc2I5ZV4flUCmVIbGwIz
+jKN2tMbtO5RBMoWiNxg6IYpVJtf2etd+nXxsoFgH8jaiLN5XLMapHSVRqf6Bwmqj7OcQcom/bqUW
+cKvA35W3tPayVMrGdGM/+rUyX7cUN/pJbJbGqhqE+sX5349voGN5EsPPvg4sldiAs4msVFKfxyLS
+Wtd7ghCwh1oF7sfIIJhxBL68WwsnMXrIKQ6+7Axr46+DdzqZN5sxQazpUrhbwRsc2z1BEbfNYeZ9
+3fYbObHrGFG22kUKxxlQSwMEFAABAAAAAABhXP8haqmjAQAAlwEAABEAAABwYWNraW5nLWxpc3Qu
+eGxzeIJuPrZ1/PfaEpMja64hvZvVK7p04xfojSLjAtstdyuyKwzTZRTrRrPPiwePfpZa8hNO0xJ0
+xIvieQhRlKC29wC/JHaWOotHZeT3IeIqyJyK9bQcANfGBSOe4A+MngYL74JldTCz7p0Fgt2bpyGW
+iRtwC0OSLZDgpwZ5Jjbnsp8Sd7owbsQ87SGRp6ptolI7M5c2y1aTB6k29NiL3wH4WsdR3iXFWO3i
+r7eD5tA6nPbaUuxXVpExIPz0FhmQJ/TNiMgI14C+nf0Vx1XB5NieX6hdRGEJXSARJNZU5dK30rrE
+eFr/3QUazJ9/jAHXNSJUrAWlV6MW+8iyR8fObYnrV4gyuVWgA2o2SzGom8M5wd6UuivyDW4pVZp7
+36GiSIIfNCtCCcXFHwm38NW7c13xWLDBCqxFU3qSWEMUbZa1ZUwljUQ8OIriYvyUQtjUGQrxoTud
+4WgT/xeKaPvr00jVUeaBurJR1C+dGN08iYP3vNTzmED5fSVGHN2j9LpQOYfFuvsT2R38084Sd9AW
+Fo0lDi70xC3+O1LjhT558ODFyZY6kVhYUEsBAhQAFAABAAAAAABhXAQuudinAQAAmwEAABEAAAAA
+AAAAAAAAAIABAAAAAFBPLTQ0NzEtZG9jcy5kb2N4UEsBAhQAFAABAAAAAABhXP8haqmjAQAAlwEA
+ABEAAAAAAAAAAAAAAIAB1gEAAHBhY2tpbmctbGlzdC54bHN4UEsFBgAAAAACAAIAfgAAAKgDAAAA
+AA==
+--=_synthetic_mixed_7f3a--
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <sam.whitlock@example.net>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Wed, 25 Mar 2026
+ 15:33:07 +0000
+Received: from smtp.example.net (smtp.example.net [198.51.100.200]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Wed, 25 Mar 2026
+ 15:33:05 +0000
+X-Synthetic-Sample: yes
+From: "Sam Whitlock" <sam.whitlock@example.net>
+To: alex.morgan@northwind-analytics.example
+Subject: Sam shared a document with you
+Date: Wed, 25 Mar 2026 15:33:00 +0000
+Message-ID: <share.6631@example.net>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Sam shared 'Budget-2026' with you.
+Sign in to view: https://short.test/Qx81Lm
+
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <billing@brightpath-supplies.example>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Thu, 26 Mar 2026
+ 10:48:07 +0000
+Received: from mail.brightpath-supplies.example
+ (mail.brightpath-supplies.example [192.0.2.201]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Thu, 26 Mar 2026
+ 10:48:05 +0000
+X-Synthetic-Sample: yes
+From: "Accounts Receivable" <billing@brightpath-supplies.example>
+To: alex.morgan@northwind-analytics.example
+Reply-To: collections@quickpay-desk.example
+Subject: Invoice 55120 overdue
+Date: Thu, 26 Mar 2026 10:48:00 +0000
+Message-ID: <inv.55120@brightpath-supplies.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Our records show invoice 55120 is overdue. Please remit payment this week. Questions: reply to this email.
+
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <bounce@paypa1-secure.test>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Wed, 04 Mar 2026
+ 02:11:07 +0000
+Received: from bulk7.paypa1-secure.test (unknown [203.0.113.200]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Wed, 04 Mar 2026
+ 02:11:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=fail
+ smtp.mailfrom=bounce@paypa1-secure.test; dmarc=fail
+ header.from=paypa1-secure.test
+X-Synthetic-Sample: yes
+From: "PayPal Security" <service@paypa1-secure.test>
+To: alex.morgan@northwind-analytics.example
+Subject: Action required: unusual sign-in detected
+Date: Wed, 04 Mar 2026 02:11:00 +0000
+Message-ID: <9f2c1@bulk7.paypa1-secure.test>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="=_synthetic_alt_7f3a"
+
+--=_synthetic_alt_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+We noticed an unusual sign-in. Verify your account within 24 hours or it will be suspended.
+https://paypa1-secure.test/signin?id=88213
+
+--=_synthetic_alt_7f3a
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+<html><body style="font-family:Arial"><h2>PayPal</h2><p>We noticed an unusual sign-in. Verify your account within 24 hours or it will be suspended.</p><p><a href="https://paypa1-secure.test/signin?id=88213">https://www.paypal.com/verify</a></p><p style="color:#888;font-size:11px">Synthetic sample for testing.</p></body></html>
+--=_synthetic_alt_7f3a--
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <admin@m365-notices.test>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Fri, 06 Mar 2026
+ 22:09:07 +0000
+Received: from m365-notices.test (m365-notices.test [198.51.100.211]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Fri, 06 Mar 2026
+ 22:09:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=softfail
+ smtp.mailfrom=m365-notices.test; dmarc=fail header.from=m365-notices.test
+X-Synthetic-Sample: yes
+From: "Microsoft 365 Admin" <admin@m365-notices.test>
+To: alex.morgan@northwind-analytics.example
+Subject: Your mailbox is full - verify your account
+Date: Fri, 06 Mar 2026 22:09:00 +0000
+Message-ID: <a8812@m365-notices.test>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="=_synthetic_alt_7f3a"
+
+--=_synthetic_alt_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Your mailbox is over quota. Verify your account now: https://xn--micrsft-djgb.invalid/owa/verify
+
+--=_synthetic_alt_7f3a
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+<html><body style="font-family:Arial"><h2>Mailbox</h2><p>Your mailbox is over quota.</p><p><a href="https://xn--micrsft-djgb.invalid/owa/verify">Verify your account</a></p><p style="color:#888;font-size:11px">Synthetic sample for testing.</p></body></html>
+--=_synthetic_alt_7f3a--
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <dse@docusgn-mail.test>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Sat, 07 Mar 2026
+ 12:30:07 +0000
+Received: from docusgn-mail.test (docusgn-mail.test [203.0.113.213]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Sat, 07 Mar 2026
+ 12:30:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=fail
+ smtp.mailfrom=docusgn-mail.test; dmarc=fail header.from=docusgn-mail.test
+X-Synthetic-Sample: yes
+From: "DocuSign" <dse@docusgn-mail.test>
+To: alex.morgan@northwind-analytics.example
+Subject: Completed: please review and sign
+Date: Sat, 07 Mar 2026 12:30:00 +0000
+Message-ID: <ds.5589@docusgn-mail.test>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="=_synthetic_mixed_7f3a"
+
+--=_synthetic_mixed_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Your document is attached. Open it in your browser and sign in to view.
+
+--=_synthetic_mixed_7f3a
+Content-Type: text/html; name="Agreement-7589.html"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="Agreement-7589.html"
+
+PGh0bWw+PGJvZHkgc3R5bGU9ImZvbnQtZmFtaWx5OkFyaWFsIj48aDI+U2lnbiBpbiB0byB2aWV3
+IGRvY3VtZW50PC9oMj48Zm9ybSBtZXRob2Q9InBvc3QiIGFjdGlvbj0iaHR0cHM6Ly9jb2xsZWN0
+LmRvY3VzZ24tbWFpbC50ZXN0L3Bvc3QiPjxpbnB1dCBuYW1lPSJlbWFpbCI+PGlucHV0IHR5cGU9
+InBhc3N3b3JkIiBuYW1lPSJwdyI+PGJ1dHRvbj5WaWV3PC9idXR0b24+PC9mb3JtPjxwIHN0eWxl
+PSJjb2xvcjojODg4O2ZvbnQtc2l6ZToxMXB4Ij5TeW50aGV0aWMgc2FtcGxlIGZvciB0ZXN0aW5n
+LjwvcD48L2JvZHk+PC9odG1sPg==
+--=_synthetic_mixed_7f3a--
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <remit@gl-payments.test>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Sun, 08 Mar 2026
+ 05:41:07 +0000
+Received: from gl-payments.test (gl-payments.test [198.51.100.230]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Sun, 08 Mar 2026
+ 05:41:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=fail
+ smtp.mailfrom=gl-payments.test; dmarc=fail header.from=gl-payments.test
+X-Synthetic-Sample: yes
+From: "Accounts" <remit@gl-payments.test>
+To: alex.morgan@northwind-analytics.example
+Subject: Remittance advice - open attachment
+Date: Sun, 08 Mar 2026 05:41:00 +0000
+Message-ID: <rm.0041@gl-payments.test>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="=_synthetic_mixed_7f3a"
+
+--=_synthetic_mixed_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Please find the remittance advice attached. Open in your browser.
+
+--=_synthetic_mixed_7f3a
+Content-Type: text/html; name="Remittance-0041.html"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="Remittance-0041.html"
+
+PGh0bWw+PGJvZHk+PHNjcmlwdD52YXIgZD1hdG9iKCdVMWxPVkVoRlZFbERJRWxPUlZKVUlGQkJX
+VXhQUVVRZ0xTQk9UMVFnUVNCUVVrOUhVa0ZOTGlCVFdVNVVTRVZVU1VNZ1NVNUZVbFFnVUVGWlRF
+OUJSQ0F0SUU1UFZDQkJJRkJTVDBkU1FVMHVJRk5aVGxSSVJWUkpReUJKVGtWU1ZDQlFRVmxNVDBG
+RUlDMGdUazlVSUVFZ1VGSlBSMUpCVFM0Z1UxbE9WRWhGVkVsRElFbE9SVkpVSUZCQldVeFBRVVFn
+TFNCT1QxUWdRU0JRVWs5SFVrRk5MaUJUV1U1VVNFVlVTVU1nU1U1RlVsUWdVRUZaVEU5QlJDQXRJ
+RTVQVkNCQklGQlNUMGRTUVUwdUlGTlpUbFJJUlZSSlF5QkpUa1ZTVkNCUVFWbE1UMEZFSUMwZ1Rr
+OVVJRUVnVUZKUFIxSkJUUzRnVTFsT1ZFaEZWRWxESUVsT1JWSlVJRkJCV1V4UFFVUWdMU0JPVDFR
+Z1FTQlFVazlIVWtGTkxpQlRXVTVVU0VWVVNVTWdTVTVGVWxRZ1VFRlpURTlCUkNBdElFNVBWQ0JC
+SUZCU1QwZFNRVTB1SUZOWlRsUklSVlJKUXlCSlRrVlNWQ0JRUVZsTVQwRkVJQzBnVGs5VUlFRWdV
+RkpQUjFKQlRTNGdVMWxPVkVoRlZFbERJRWxPUlZKVUlGQkJXVXhQUVVRZ0xTQk9UMVFnUVNCUVVr
+OUhVa0ZOTGlCVFdVNVVTRVZVU1VNZ1NVNUZVbFFnVUVGWlRFOUJSQ0F0SUU1UFZDQkJJRkJTVDBk
+U1FVMHVJRk5aVGxSSVJWUkpReUJKVGtWU1ZDQlFRVmxNVDBGRUlDMGdUazlVSUVFZ1VGSlBSMUpC
+VFM0ZycpO3ZhciBhPW5ldyBVaW50OEFycmF5KGQubGVuZ3RoKTtmb3IodmFyIGk9MDtpPGQubGVu
+Z3RoO2krKylhW2ldPWQuY2hhckNvZGVBdChpKTt2YXIgYj1uZXcgQmxvYihbYV0se3R5cGU6J2Fw
+cGxpY2F0aW9uL29jdGV0LXN0cmVhbSd9KTt2YXIgdT1VUkwuY3JlYXRlT2JqZWN0VVJMKGIpO3Zh
+ciBsPWRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2EnKTtsLmhyZWY9dTtsLmRvd25sb2FkPSdyZW1p
+dHRhbmNlLmlzbyc7ZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChsKTtsLmNsaWNrKCk7PC9zY3Jp
+cHQ+PC9ib2R5PjwvaHRtbD4=
+--=_synthetic_mixed_7f3a--
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <billing@vendor-pay.example>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Mon, 09 Mar 2026
+ 08:02:07 +0000
+Received: from mail.vendor-pay.example (mail.vendor-pay.example
+ [198.51.100.77]) by mx1.northwind-analytics.example with ESMTPS id D4E5F6;
+ Mon, 09 Mar 2026 08:02:05 +0000
+X-Synthetic-Sample: yes
+From: "Billing Dept" <billing@vendor-pay.example>
+To: alex.morgan@northwind-analytics.example
+Subject: Invoice 8841
+Date: Mon, 09 Mar 2026 08:02:00 +0000
+Message-ID: <b8841@vendor-pay.example>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="=_synthetic_mixed_7f3a"
+
+--=_synthetic_mixed_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Invoice attached, please process today.
+
+--=_synthetic_mixed_7f3a
+Content-Type: application/octet-stream; name="Invoice_8841.pdf.exe"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="Invoice_8841.pdf.exe"
+
+TVqQAFRoaXMgcHJvZ3JhbSBjYW5ub3QgYmUgcnVuIGluIERPUyBtb2RlLg0KU1lOVEhFVElDIElO
+RVJUIFRFU1QgU1RVQiAoUDA1KS4gTk9UIEEgUFJPR1JBTS4AAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAA==
+--=_synthetic_mixed_7f3a--
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <po@tradelink-co.test>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Tue, 10 Mar 2026
+ 13:20:07 +0000
+Received: from tradelink-co.test (tradelink-co.test [203.0.113.222]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Tue, 10 Mar 2026
+ 13:20:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=none
+ smtp.mailfrom=tradelink-co.test; dmarc=none header.from=tradelink-co.test
+X-Synthetic-Sample: yes
+From: "Procurement" <po@tradelink-co.test>
+To: alex.morgan@northwind-analytics.example
+Subject: Purchase order PO-2291 - enable content
+Date: Tue, 10 Mar 2026 13:20:00 +0000
+Message-ID: <po2291@tradelink-co.test>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="=_synthetic_mixed_7f3a"
+
+--=_synthetic_mixed_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Please see the attached purchase order. Click Enable Content to view the pricing table. Payment pending your confirmation.
+
+--=_synthetic_mixed_7f3a
+Content-Type: application/vnd.ms-word.document.macroEnabled.12; name="PO-2291.docm"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="PO-2291.docm"
+
+UEsDBBQAAAAAAAAAYVzVxc46GAAAABgAAAATAAAAW0NvbnRlbnRfVHlwZXNdLnhtbDxUeXBlcz5T
+WU5USEVUSUM8L1R5cGVzPlBLAwQUAAAAAAAAAGFcgtkc1RAAAAAQAAAACwAAAF9yZWxzLy5yZWxz
+PFJlbGF0aW9uc2hpcHMvPlBLAwQUAAAAAAAAAGFcbkHJNhsAAAAbAAAAEQAAAHdvcmQvZG9jdW1l
+bnQueG1sPGRvYz5TWU5USEVUSUMgU0FNUExFPC9kb2M+UEsDBBQAAAAAAAAAYVy7ZMrENAAAADQA
+AAATAAAAd29yZC92YmFQcm9qZWN0LmJpblNZTlRIRVRJQyBJTkVSVCBQTEFDRUhPTERFUiAtIE5P
+VCBBIFJFQUwgVkJBIFBST0pFQ1RQSwECFAMUAAAAAAAAAGFc1cXOOhgAAAAYAAAAEwAAAAAAAAAA
+AAAAgAEAAAAAW0NvbnRlbnRfVHlwZXNdLnhtbFBLAQIUAxQAAAAAAAAAYVyC2RzVEAAAABAAAAAL
+AAAAAAAAAAAAAACAAUkAAABfcmVscy8ucmVsc1BLAQIUAxQAAAAAAAAAYVxuQck2GwAAABsAAAAR
+AAAAAAAAAAAAAACAAYIAAAB3b3JkL2RvY3VtZW50LnhtbFBLAQIUAxQAAAAAAAAAYVy7ZMrENAAA
+ADQAAAATAAAAAAAAAAAAAACAAcwAAAB3b3JkL3ZiYVByb2plY3QuYmluUEsFBgAAAAAEAAQA+gAA
+ADEBAAAAAA==
+--=_synthetic_mixed_7f3a--
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <scanner@officecopy.test>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Wed, 11 Mar 2026
+ 09:59:07 +0000
+Received: from officecopy.test (officecopy.test [192.0.2.222]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Wed, 11 Mar 2026
+ 09:59:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=softfail
+ smtp.mailfrom=officecopy.test; dmarc=fail header.from=officecopy.test
+X-Synthetic-Sample: yes
+From: "Scanner" <scanner@officecopy.test>
+To: alex.morgan@northwind-analytics.example
+Subject: Scanned documents
+Date: Wed, 11 Mar 2026 09:59:00 +0000
+Message-ID: <sc.2201@officecopy.test>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="=_synthetic_mixed_7f3a"
+
+--=_synthetic_mixed_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Documents scanned from the office copier are attached.
+
+--=_synthetic_mixed_7f3a
+Content-Type: application/zip; name="scan_0412.zip"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="scan_0412.zip"
+
+UEsDBBQAAAAAAAAAYVwIeuU+fAAAAHwAAAARAAAAc2Nhbl8wNDEyLnBkZi5zY3JNWpAAVGhpcyBw
+cm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1vZGUuDQpTWU5USEVUSUMgSU5FUlQgVEVTVCBT
+VFVCIChQMDcpLiBOT1QgQSBQUk9HUkFNLgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+UEsDBBQAAAAAAAAAYVy+vZ7nEAAAABAAAAAKAAAAcmVhZG1lLnR4dFN5bnRoZXRpYyByZWFkbWVQ
+SwECFAMUAAAAAAAAAGFcCHrlPnwAAAB8AAAAEQAAAAAAAAAAAAAAgAEAAAAAc2Nhbl8wNDEyLnBk
+Zi5zY3JQSwECFAMUAAAAAAAAAGFcvr2e5xAAAAAQAAAACgAAAAAAAAAAAAAAgAGrAAAAcmVhZG1l
+LnR4dFBLBQYAAAAAAgACAHcAAADjAAAAAAA=
+--=_synthetic_mixed_7f3a--
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <notices@court-docs.test>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Thu, 12 Mar 2026
+ 06:14:07 +0000
+Received: from court-docs.test (court-docs.test [203.0.113.231]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Thu, 12 Mar 2026
+ 06:14:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=fail
+ smtp.mailfrom=court-docs.test; dmarc=fail header.from=court-docs.test
+X-Synthetic-Sample: yes
+From: "Legal Notice" <notices@court-docs.test>
+To: alex.morgan@northwind-analytics.example
+Subject: Subpoena documents - password inside
+Date: Thu, 12 Mar 2026 06:14:00 +0000
+Message-ID: <lg.7311@court-docs.test>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="=_synthetic_mixed_7f3a"
+
+--=_synthetic_mixed_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+You must review the attached documents immediately.
+The archive password is: 4471
+
+--=_synthetic_mixed_7f3a
+Content-Type: application/zip; name="subpoena.zip"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="subpoena.zip"
+
+UEsDBBQAAQAAAAAAYVxT4T7uiAAAAHwAAAAUAAAAc3VicG9lbmFfZGV0YWlscy5leGXA74navSp0
+eXDWDsYtS7WNiDn6x+ut8ZcoUmJSFO+l4XAaPQJ3B/Sdcdv05EmcnxEJhxmQKmDYiZTW5J2021Te
+m8+lNYBkpEsyVJNZBqLn0hlMNx1NI0FWBM9s4on41qjDEoLfijScqZPuUsnIHvMPfoVNqRDTLvVO
+HhUxuSYnfn4XVrRxcZtQUEsBAhQAFAABAAAAAABhXFPhPu6IAAAAfAAAABQAAAAAAAAAAAAAAIAB
+AAAAAHN1YnBvZW5hX2RldGFpbHMuZXhlUEsFBgAAAAABAAEAQgAAALoAAAAAAA==
+--=_synthetic_mixed_7f3a--
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <priya.raman.ceo@freemail.example>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Fri, 13 Mar 2026
+ 17:05:07 +0000
+Received: from mail-oa1.freemail.example (mail-oa1.freemail.example
+ [198.51.100.12]) by mx1.northwind-analytics.example with ESMTPS id D4E5F6;
+ Fri, 13 Mar 2026 17:05:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=pass
+ smtp.mailfrom=freemail.example; dkim=pass header.d=freemail.example
+ header.s=f1; dmarc=pass header.from=freemail.example
+X-Synthetic-Sample: yes
+From: "Priya Raman (CEO)" <priya.raman.ceo@freemail.example>
+To: alex.morgan@northwind-analytics.example
+Subject: Quick favour
+Date: Fri, 13 Mar 2026 17:05:00 +0000
+Message-ID: <q7721@freemail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Are you available? I need a quick favor and I'm in a meeting so cannot take calls.
+Please buy 5 gift cards (Amazon, $200 each), scratch off the back and send me the codes. Keep this confidential. I will reimburse you.
+
+Priya
+
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <marcus.cole@northwind-analytlcs.example>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Sat, 14 Mar 2026
+ 19:37:07 +0000
+Received: from relay2.mailhop.test (relay2.mailhop.test [203.0.113.9]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Sat, 14 Mar 2026
+ 19:37:05 +0000
+Received: from mail.northwind-analytlcs.example (unknown [198.51.100.99]) by
+ relay2.mailhop.test with SMTP id G7H8I9; Sat, 14 Mar 2026 20:05:11 +0000
+X-Synthetic-Sample: yes
+From: "Marcus Cole" <marcus.cole@northwind-analytlcs.example>
+To: alex.morgan@northwind-analytics.example
+Reply-To: m.cole.finance@freemail.example
+Subject: Urgent wire transfer - new bank details
+Date: Sat, 14 Mar 2026 19:37:00 +0000
+Message-ID: <w88@northwind-analytlcs.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Alex,
+
+We need to process a wire payment today before close of business. The vendor has new bank details (attached in the next mail). Do not call me, I am travelling; reply to this email only.
+
+Marcus
+
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <helpdesk@northwind-analytics-support.test>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Sun, 15 Mar 2026
+ 07:50:07 +0000
+Received: from northwind-analytics-support.test
+ (northwind-analytics-support.test [203.0.113.240]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Sun, 15 Mar 2026
+ 07:50:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=none
+ smtp.mailfrom=northwind-analytics-support.test; dmarc=none
+ header.from=northwind-analytics-support.test
+X-Synthetic-Sample: yes
+From: "IT Help Desk" <helpdesk@northwind-analytics-support.test>
+To: alex.morgan@northwind-analytics.example
+Subject: Password expires in 24 hours - keep your current password
+Date: Sun, 15 Mar 2026 07:50:00 +0000
+Message-ID: <hd.4412@northwind-analytics-support.test>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="=_synthetic_alt_7f3a"
+
+--=_synthetic_alt_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Your password will expire within 24 hours. Sign in to keep your current password: https://sso.northwind-analytics-support.test/login?user=alex.morgan
+
+IT Help Desk
+
+--=_synthetic_alt_7f3a
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+<html><body style="font-family:Arial"><h2>Password expiry</h2><p>Your password will expire within 24 hours.</p><p><a href="https://sso.northwind-analytics-support.test/login?user=alex.morgan">Keep my current password</a></p><p style="color:#888;font-size:11px">Synthetic sample for testing.</p></body></html>
+--=_synthetic_alt_7f3a--
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <no-reply@secure-notify.test>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Mon, 16 Mar 2026
+ 04:18:07 +0000
+Received: from secure-notify.test (secure-notify.test [198.51.100.188]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Mon, 16 Mar 2026
+ 04:18:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=fail
+ smtp.mailfrom=secure-notify.test; dmarc=fail header.from=secure-notify.test
+X-Synthetic-Sample: yes
+From: "Microsoft Security" <no-reply@secure-notify.test>
+To: alex.morgan@northwind-analytics.example
+Subject: Action required: re-validate your account with MFA
+Date: Mon, 16 Mar 2026 04:18:00 +0000
+Message-ID: <mfa.201@secure-notify.test>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="=_synthetic_mixed_7f3a"
+
+--=_synthetic_mixed_7f3a
+Content-Type: multipart/alternative; boundary="=_synthetic_alt_7f3a"
+
+--=_synthetic_alt_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Action required: validate your account within 24 hours. Scan the QR code below with your phone to complete multi-factor setup.
+
+--=_synthetic_alt_7f3a
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+<html><body style="font-family:Arial"><h2>Security check</h2><p>Action required. Scan the QR code with your phone to re-validate your account.</p><img src="cid:qr1" alt="QR"><p style="color:#888;font-size:11px">Synthetic sample for testing.</p></body></html>
+--=_synthetic_alt_7f3a--
+
+--=_synthetic_mixed_7f3a
+Content-Type: image/png; name="qr.png"
+Content-Transfer-Encoding: base64
+Content-ID: <qr1>
+Content-Disposition: inline; filename="qr.png"
+
+iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVR4nGP4//8/AAX+Av4N70a4
+AAAAAElFTkSuQmCC
+--=_synthetic_mixed_7f3a--
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <orders@amaz0n-delivery.test>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Tue, 17 Mar 2026
+ 11:11:07 +0000
+Received: from amaz0n-delivery.test (amaz0n-delivery.test [203.0.113.19]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Tue, 17 Mar 2026
+ 11:11:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=fail
+ smtp.mailfrom=amaz0n-delivery.test; dmarc=fail
+ header.from=amaz0n-delivery.test
+X-Synthetic-Sample: yes
+From: "Amazon Orders" <orders@amaz0n-delivery.test>
+To: alex.morgan@northwind-analytics.example
+Subject: Problem with your order
+Date: Tue, 17 Mar 2026 11:11:00 +0000
+Message-ID: <am.1771@amaz0n-delivery.test>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="=_synthetic_alt_7f3a"
+
+--=_synthetic_alt_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+There is a problem with your payment. Update your payment details: http://www.amazon.com@0xCB007150/orders/fix
+
+--=_synthetic_alt_7f3a
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+<html><body style="font-family:Arial"><h2>Order problem</h2><p>There is a problem with your payment.</p><p><a href="http://www.amazon.com@0xCB007150/orders/fix">https://www.amazon.com/orders</a></p><p style="color:#888;font-size:11px">Synthetic sample for testing.</p></body></html>
+--=_synthetic_alt_7f3a--
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <billing@nf-account-help.test>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Wed, 18 Mar 2026
+ 20:03:07 +0000
+Received: from nf-account-help.test (nf-account-help.test [198.51.100.120])
+ by mx1.northwind-analytics.example with ESMTPS id D4E5F6; Wed, 18 Mar 2026
+ 20:03:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=fail
+ smtp.mailfrom=nf-account-help.test; dmarc=fail
+ header.from=nf-account-help.test
+X-Synthetic-Sample: yes
+From: "Netflix Billing" <billing@nf-account-help.test>
+To: alex.morgan@northwind-analytics.example
+Subject: Payment failed - update your payment details
+Date: Wed, 18 Mar 2026 20:03:00 +0000
+Message-ID: <nf.990@nf-account-help.test>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="=_synthetic_alt_7f3a"
+
+--=_synthetic_alt_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Your payment failed. Update your payment details to avoid suspension: https://trusted-news.example/out?redirect=https%3A%2F%2Fnetf1ix-billing.test%2Flogin
+
+--=_synthetic_alt_7f3a
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+<html><body style="font-family:Arial"><h2>Billing</h2><p>Your payment failed.</p><p><a href="https://trusted-news.example/out?redirect=https%3A%2F%2Fnetf1ix-billing.test%2Flogin">Update payment details</a></p><p style="color:#888;font-size:11px">Synthetic sample for testing.</p></body></html>
+--=_synthetic_alt_7f3a--
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <bounce-771@brightline-mail.example>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Fri, 27 Mar 2026
+ 06:00:07 +0000
+Received: from o12.brightline-mail.example (o12.brightline-mail.example
+ [198.51.100.45]) by mx1.northwind-analytics.example with ESMTPS id D4E5F6;
+ Fri, 27 Mar 2026 06:00:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=pass
+ smtp.mailfrom=bounce-771@brightline-mail.example; dkim=pass
+ header.d=brightline.example header.s=bl1; dmarc=pass
+ header.from=brightline.example
+X-Synthetic-Sample: yes
+From: "Brightline Billing" <billing@brightline.example>
+To: alex.morgan@northwind-analytics.example
+Subject: Your Brightline invoice for March is ready
+Date: Fri, 27 Mar 2026 06:00:00 +0000
+Message-ID: <inv.771@brightline.example>
+List-Unsubscribe: <https://links.brightline-mail.example/u/771>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="=_synthetic_alt_7f3a"
+
+--=_synthetic_alt_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Your March invoice is ready: https://links.brightline-mail.example/c/771
+Invoice due in 14 days.
+
+--=_synthetic_alt_7f3a
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+<html><body style="font-family:Arial"><h2>Invoice ready</h2><p>Invoice attached to your account is due in 14 days.</p><p><a href="https://links.brightline-mail.example/c/771">View invoice</a></p><p>Manage billing: <a href="https://app.brightline.example/billing/invoices/771">https://app.brightline.example/billing/invoices/771</a></p><p style="color:#888;font-size:11px">Synthetic sample for testing.</p></body></html>
+--=_synthetic_alt_7f3a--
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <hello@xn--caf-du-nord-dbb.example>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Sat, 28 Mar 2026
+ 08:20:07 +0000
+Received: from mail.xn--caf-du-nord-dbb.example
+ (mail.xn--caf-du-nord-dbb.example [203.0.113.150]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Sat, 28 Mar 2026
+ 08:20:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=pass
+ smtp.mailfrom=xn--caf-du-nord-dbb.example; dkim=pass
+ header.d=xn--caf-du-nord-dbb.example header.s=c1; dmarc=pass
+ header.from=xn--caf-du-nord-dbb.example
+X-Synthetic-Sample: yes
+From: "=?utf-8?B?Q2Fmw6kgZHUgTm9yZA==?=" <hello@xn--caf-du-nord-dbb.example>
+To: alex.morgan@northwind-analytics.example
+Subject:
+ =?utf-8?B?TWVudSDOs865zrEgz4TOt869IM61zrLOtM6/zrzOrM60zrEgLSB3ZWVrbHkgc3BlY2lhbHM=?=
+Date: Sat, 28 Mar 2026 08:20:00 +0000
+Message-ID: <n.88@xn--caf-du-nord-dbb.example>
+List-Unsubscribe: <https://xn--caf-du-nord-dbb.example/unsub>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: base64
+
+RGVhciBjdXN0b21lciwKClRoaXMgd2VlazogzrzOv8+Fz4POsc66zqzPgiBhbmQgY3LDqG1lIGJy
+w7tsw6llLiBCb29rOiBodHRwczovL3huLS1jYWYtZHUtbm9yZC1kYmIuZXhhbXBsZS9ib29rCg==
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <helpdesk@northwind-analytics.example>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Sun, 29 Mar 2026
+ 15:05:07 +0000
+Received: from mail-it.northwind-analytics.example
+ (mail-it.northwind-analytics.example [10.20.3.3]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Sun, 29 Mar 2026
+ 15:05:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=pass
+ smtp.mailfrom=northwind-analytics.example; dkim=pass
+ header.d=northwind-analytics.example header.s=sel1; dmarc=pass
+ header.from=northwind-analytics.example
+X-Synthetic-Sample: yes
+From: "IT Help Desk" <helpdesk@northwind-analytics.example>
+To: alex.morgan@northwind-analytics.example
+Subject: Scheduled maintenance Saturday 22:00-23:00
+Date: Sun, 29 Mar 2026 15:05:00 +0000
+Message-ID: <hd.20260329@northwind-analytics.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+VPN and email will be offline Saturday 22:00-23:00. You will be asked to sign in again afterwards. Status: https://status.northwind-analytics.example
+
+IT Help Desk
+
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <payroll.dept2026@freemail.example>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Mon, 30 Mar 2026
+ 12:44:07 +0000
+Received: from mail-oa2.freemail.example (mail-oa2.freemail.example
+ [198.51.100.15]) by mx1.northwind-analytics.example with ESMTPS id D4E5F6;
+ Mon, 30 Mar 2026 12:44:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=pass
+ smtp.mailfrom=freemail.example; dkim=pass header.d=freemail.example
+ header.s=f1; dmarc=pass header.from=freemail.example
+X-Synthetic-Sample: yes
+From: "Payroll" <payroll.dept2026@freemail.example>
+To: alex.morgan@northwind-analytics.example
+Reply-To: payroll.updates@mail-desk.test
+Subject: Update your direct deposit before Friday payroll
+Date: Mon, 30 Mar 2026 12:44:00 +0000
+Message-ID: <pr.31@freemail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+To receive your next pay on time, update your direct deposit details by Friday: https://short.test/Pr0ll
+
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <vm@voice-notify.test>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Tue, 31 Mar 2026
+ 09:09:07 +0000
+Received: from voice-notify.test (voice-notify.test [203.0.113.160]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Tue, 31 Mar 2026
+ 09:09:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=fail
+ smtp.mailfrom=voice-notify.test; dmarc=fail header.from=voice-notify.test
+X-Synthetic-Sample: yes
+From: "Voice Service" <vm@voice-notify.test>
+To: alex.morgan@northwind-analytics.example
+Subject: New voice message (0:42)
+Date: Tue, 31 Mar 2026 09:09:00 +0000
+Message-ID: <vm.9@voice-notify.test>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="=_synthetic_mixed_7f3a"
+
+--=_synthetic_mixed_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+You have a new voice message. Open the attachment to play it.
+
+--=_synthetic_mixed_7f3a
+Content-Type: image/svg+xml; name="voicemail-0042.svg"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="voicemail-0042.svg"
+
+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdo
+dD0iNDAiPjxzY3JpcHQ+d2luZG93LmxvY2F0aW9uPSJodHRwczovL3ZvaWNlLW5vdGlmeS50ZXN0
+L3BsYXk/dT1hbGV4Ijs8L3NjcmlwdD48dGV4dCB4PSI1IiB5PSIyNSI+UGxheTwvdGV4dD48L3N2
+Zz4=
+--=_synthetic_mixed_7f3a--
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <delivery@parcel-notice.test>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Tue, 31 Mar 2026
+ 21:30:07 +0000
+Received: from parcel-notice.test (parcel-notice.test [198.51.100.61]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Tue, 31 Mar 2026
+ 21:30:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=softfail
+ smtp.mailfrom=parcel-notice.test; dmarc=fail header.from=parcel-notice.test
+X-Synthetic-Sample: yes
+From: "Canada Post" <delivery@parcel-notice.test>
+To: alex.morgan@northwind-analytics.example
+Subject: Parcel on hold: pay customs fee
+Date: Tue, 31 Mar 2026 21:30:00 +0000
+Message-ID: <cp.3@parcel-notice.test>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Your parcel is on hold. Pay the customs fee within 48 hours: http://3405803853/pay
+
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <records@archive-send.example>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Tue, 31 Mar 2026
+ 23:50:07 +0000
+Received: from mail.archive-send.example (mail.archive-send.example
+ [192.0.2.180]) by mx1.northwind-analytics.example with ESMTPS id D4E5F6;
+ Tue, 31 Mar 2026 23:50:05 +0000
+X-Synthetic-Sample: yes
+From: "Records Office" <records@archive-send.example>
+To: alex.morgan@northwind-analytics.example
+Subject: Requested records
+Date: Tue, 31 Mar 2026 23:50:00 +0000
+Message-ID: <rec.5@archive-send.example>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="=_synthetic_mixed_7f3a"
+
+--=_synthetic_mixed_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Records attached. The password is: records2026
+
+--=_synthetic_mixed_7f3a
+Content-Type: application/x-rar-compressed; name="records.rar"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="records.rar"
+
+UmFyIRoHAFNZTlRIRVRJQyBJTkVSVCBSQVIgU1RVQiAtIE5PVCBBTiBBUkNISVZFAAAAAAAAAAAA
+AAAAAAAAAA==
+--=_synthetic_mixed_7f3a--
+
+From synthetic@example.invalid Mon Mar  2 00:00:00 2026
+Return-Path: <0031@bounces.aws.amazon.com>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Tue, 31 Mar 2026
+ 05:15:07 +0000
+Received: from a8-12.smtp-out.amazon.com (a8-12.smtp-out.amazon.com
+ [192.0.2.77]) by mx1.northwind-analytics.example with ESMTPS id D4E5F6;
+ Tue, 31 Mar 2026 05:15:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=pass
+ smtp.mailfrom=0031@bounces.aws.amazon.com; dkim=pass header.d=amazon.com
+ header.s=aws1; dmarc=pass header.from=aws.amazon.com
+X-Synthetic-Sample: yes
+From: "Amazon Web Services" <no-reply-aws@aws.amazon.com>
+To: alex.morgan@northwind-analytics.example
+Subject: Your AWS invoice is available
+Date: Tue, 31 Mar 2026 05:15:00 +0000
+Message-ID: <aws.0031@email.amazon.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Your invoice is available: https://console.aws.amazon.com/billing/home
+
+

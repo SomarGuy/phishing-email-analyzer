@@ -1,0 +1,30 @@
+Return-Path: <marcus.cole@northwind-analytics.example>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Thu, 05 Mar 2026
+ 14:02:07 +0000
+Received: from laptop-mc.corp.northwind-analytics.example
+ (laptop-mc.corp.northwind-analytics.example [10.20.4.18]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Thu, 05 Mar 2026
+ 14:02:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=pass
+ smtp.mailfrom=northwind-analytics.example; dkim=pass
+ header.d=northwind-analytics.example header.s=sel1; dmarc=pass
+ header.from=northwind-analytics.example
+X-Synthetic-Sample: yes
+From: "Marcus Cole" <marcus.cole@northwind-analytics.example>
+To: alex.morgan@northwind-analytics.example
+Subject: Q3 invoice approvals - sign-off needed Friday
+Date: Thu, 05 Mar 2026 14:02:00 +0000
+Message-ID: <CAF3a91b@mail.northwind-analytics.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Hi Alex,
+
+Please review the Q3 invoice batch in the finance share and sign off by Friday.
+The payment run is on Monday.
+
+Marcus
+

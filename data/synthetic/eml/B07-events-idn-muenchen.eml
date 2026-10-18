@@ -1,0 +1,38 @@
+Return-Path: <tickets@xn--mnchen-3ya.example>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Mon, 16 Mar 2026
+ 18:22:07 +0000
+Received: from mail.xn--mnchen-3ya.example (mail.xn--mnchen-3ya.example
+ [203.0.113.77]) by mx1.northwind-analytics.example with ESMTPS id D4E5F6;
+ Mon, 16 Mar 2026 18:22:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=pass
+ smtp.mailfrom=xn--mnchen-3ya.example; dkim=pass
+ header.d=xn--mnchen-3ya.example header.s=d1; dmarc=pass
+ header.from=xn--mnchen-3ya.example
+X-Synthetic-Sample: yes
+From: "=?utf-8?B?TcO8bmNobmVyIEtvbnplcnRl?="
+ <tickets@xn--mnchen-3ya.example>
+To: alex.morgan@northwind-analytics.example
+Subject: Your concert tickets
+Date: Mon, 16 Mar 2026 18:22:00 +0000
+Message-ID: <t.7712@xn--mnchen-3ya.example>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="=_synthetic_alt_7f3a"
+
+--=_synthetic_alt_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Your tickets: https://xn--mnchen-3ya.example/tickets/7712
+
+--=_synthetic_alt_7f3a
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: base64
+
+PGh0bWw+PGJvZHkgc3R5bGU9ImZvbnQtZmFtaWx5OkFyaWFsIj48aDI+VGlja2V0czwvaDI+PHA+
+PGEgaHJlZj0iaHR0cHM6Ly94bi0tbW5jaGVuLTN5YS5leGFtcGxlL3RpY2tldHMvNzcxMiI+aHR0
+cHM6Ly9tw7xuY2hlbi5leGFtcGxlL3RpY2tldHMvNzcxMjwvYT48L3A+PHAgc3R5bGU9ImNvbG9y
+OiM4ODg7Zm9udC1zaXplOjExcHgiPlN5bnRoZXRpYyBzYW1wbGUgZm9yIHRlc3RpbmcuPC9wPjwv
+Ym9keT48L2h0bWw+
+--=_synthetic_alt_7f3a--

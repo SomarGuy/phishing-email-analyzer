@@ -1,0 +1,21 @@
+Return-Path: <sam.whitlock@example.net>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Wed, 25 Mar 2026
+ 15:33:07 +0000
+Received: from smtp.example.net (smtp.example.net [198.51.100.200]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Wed, 25 Mar 2026
+ 15:33:05 +0000
+X-Synthetic-Sample: yes
+From: "Sam Whitlock" <sam.whitlock@example.net>
+To: alex.morgan@northwind-analytics.example
+Subject: Sam shared a document with you
+Date: Wed, 25 Mar 2026 15:33:00 +0000
+Message-ID: <share.6631@example.net>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Sam shared 'Budget-2026' with you.
+Sign in to view: https://short.test/Qx81Lm
+

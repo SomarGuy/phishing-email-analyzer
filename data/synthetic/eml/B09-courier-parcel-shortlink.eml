@@ -1,0 +1,24 @@
+Return-Path: <tracking@swiftcouriers.example>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Fri, 20 Mar 2026
+ 07:55:07 +0000
+Received: from relay.swiftcouriers.example (relay.swiftcouriers.example
+ [198.51.100.140]) by mx1.northwind-analytics.example with ESMTPS id D4E5F6;
+ Fri, 20 Mar 2026 07:55:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=pass
+ smtp.mailfrom=swiftcouriers.example; dkim=pass
+ header.d=swiftcouriers.example header.s=s1; dmarc=pass
+ header.from=swiftcouriers.example
+X-Synthetic-Sample: yes
+From: "Swift Couriers" <tracking@swiftcouriers.example>
+To: alex.morgan@northwind-analytics.example
+Subject: Your parcel arrives today
+Date: Fri, 20 Mar 2026 07:55:00 +0000
+Message-ID: <trk.99120@swiftcouriers.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Your parcel will arrive by 5pm. Track: https://short.test/Ab12Cd
+

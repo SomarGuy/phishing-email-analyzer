@@ -1,0 +1,30 @@
+Return-Path: <secops@northwind-analytics.example>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Mon, 23 Mar 2026
+ 13:00:07 +0000
+Received: from mail-sec.northwind-analytics.example
+ (mail-sec.northwind-analytics.example [10.20.2.7]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Mon, 23 Mar 2026
+ 13:00:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=pass
+ smtp.mailfrom=northwind-analytics.example; dkim=pass
+ header.d=northwind-analytics.example header.s=sel1; dmarc=pass
+ header.from=northwind-analytics.example
+X-Synthetic-Sample: yes
+From: "Security Team" <secops@northwind-analytics.example>
+To: alex.morgan@northwind-analytics.example
+Subject: Awareness: spot this week's fake PayPal email
+Date: Mon, 23 Mar 2026 13:00:00 +0000
+Message-ID: <sec.20260323@northwind-analytics.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Team,
+
+This week's example (defanged, do NOT visit): hxxps://paypa1-secure[.]test/login
+It says "verify your account" and threatens suspension. Report anything like it to the help desk.
+
+Security Team
+

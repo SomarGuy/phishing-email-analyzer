@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phishing Email Analyzer | Diogo Ramos</title>
+<meta name="description" content="Help desk / SOC portfolio project: a static phishing e-mail analyser (headers, SPF/DKIM/DMARC, URLs, attachments, wording) with a transparent 0-100 risk score, ATT&CK mapping and ticket-ready incident reports. The dashboard shows SYNTHETIC sample mail.">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#inbox-title">Skip to inbox</a>
+
+<header class="top">
+  <div class="brand">
+    <svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="8" width="26" height="17" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 10l12 9 12-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M24 3l6 10H18z" fill="#ff4d6d"/></svg>
+    <div>
+      <h1>Phishing Email <span class="amp">Analyzer</span></h1>
+      <p class="tagline">Help desk / SOC portfolio project by Diogo Ramos &middot; static analysis, nothing is opened, executed or fetched</p>
+    </div>
+  </div>
+  <div class="top-actions">
+    <span id="dataset-meta" class="meta" aria-live="polite">Loading…</span>
+    <a class="btn ghost" href="#paste-title">Analyse your own</a>
+  </div>
+</header>
+
+<div id="banner" class="banner synthetic" role="note">
+  <strong>SYNTHETIC DATA.</strong>
+  <span>Every message below was written for this project. The company and people are fictional, sender domains are reserved (<code>example.*</code>, <code>.test</code>, <code>.invalid</code>) and all IPs are documentation ranges. Only three real brand domains (paypal.com, amazon.com, aws.amazon.com) appear, as the legitimate side of look-alike tests, and nothing is ever fetched. Attachments are inert text stubs.</span>
+</div>
+
+<main id="main">
+  <section id="error" class="panel error" hidden aria-live="assertive"></section>
+  <noscript><section class="panel error">This dashboard needs JavaScript. The generated reports are in the repository's <code>reports/</code> folder.</section></noscript>
+
+  <section class="kpis" id="kpis" aria-label="Summary"></section>
+
+  <div class="split">
+    <section class="panel sticky" aria-labelledby="inbox-title">
+      <div class="panel-head"><h2 id="inbox-title">Inbox</h2><span id="inbox-count" class="meta"></span></div>
+      <div class="filters">
+        <input id="inbox-q" type="search" placeholder="Search sender, subject, indicator…" aria-label="Search messages">
+      </div>
+      <div class="chips" id="inbox-chips" role="group" aria-label="Filter by verdict"></div>
+      <ul id="inbox-list" class="mail-list" aria-label="Messages"></ul>
+      <p id="inbox-empty" class="empty" hidden>No message matches.</p>
+    </section>
+
+    <section class="panel" id="detail" aria-live="polite" aria-label="Message detail"></section>
+  </div>
+
+  <section class="panel" aria-labelledby="paste-title">
+    <div class="panel-head"><h2 id="paste-title">Analyse a message in your browser</h2><span class="meta">client-side port of the engine &middot; nothing is uploaded or fetched</span></div>
+    <p class="hint">Paste a raw <code>.eml</code> (or only the header block) and press Analyse. The browser runs the same header, authentication, URL, attachment and wording checks as the Python engine and scores the result. SPF uses the bundled synthetic DNS records, so real domains show &ldquo;none&rdquo;. Do not paste anything confidential on a shared computer.</p>
+    <label class="hint" for="paste-sample">Or load a sample:</label>
+    <select id="paste-sample" aria-label="Load a sample message"></select>
+    <textarea id="paste-input" spellcheck="false" placeholder="From: &quot;Example Bank&quot; &lt;alerts@examp1e-bank.test&gt;&#10;Reply-To: help@other.test&#10;Subject: Verify your account&#10;..."></textarea>
+    <div class="paste-controls">
+      <button type="button" class="btn" id="paste-run">Analyse</button>
+      <button type="button" class="btn ghost" id="paste-clear">Clear</button>
+      <span id="paste-status" class="meta" aria-live="polite"></span>
+    </div>
+    <div id="paste-result" hidden></div>
+  </section>
+
+  <div class="grid even">
+    <section class="panel" aria-labelledby="eval-title">
+      <div class="panel-head"><h2 id="eval-title">Evaluation against ground truth</h2><span class="meta">synthetic, self-authored</span></div>
+      <div class="caveat" id="eval-caveat"></div>
+      <div id="eval-body"></div>
+    </section>
+    <section class="panel" aria-labelledby="ioc-title">
+      <div class="panel-head"><h2 id="ioc-title">IOCs (defanged)</h2>
+        <span class="btn-row"><button type="button" class="btn ghost" id="ioc-csv">Download CSV</button><button type="button" class="btn ghost" id="ioc-json">Download JSON</button></span></div>
+      <p class="hint">From every message scored suspicious or worse. Values are shown defanged (hxxp, [.]); the downloads carry both forms. All synthetic.</p>
+      <div class="filters"><select id="ioc-type" aria-label="Filter by type"></select><input id="ioc-q" type="search" placeholder="Filter IOCs…" aria-label="Filter IOCs"></div>
+      <div class="table-scroll"><table class="data" id="ioc-table"><thead><tr><th>Type</th><th>Value (defanged)</th><th>Message</th></tr></thead><tbody></tbody></table></div>
+      <p id="ioc-more" class="meta"></p>
+    </section>
+  </div>
+
+  <details class="panel rules" id="catalog">
+    <summary><h2>Indicator catalogue</h2><span class="meta" id="catalog-meta"></span></summary>
+    <div class="table-scroll"><table class="data" id="catalog-table"><thead><tr><th>Indicator</th><th>Category</th><th class="num">Weight</th><th>Severity</th><th>ATT&amp;CK</th><th>What it means</th></tr></thead><tbody></tbody></table></div>
+  </details>
+</main>
+
+<footer class="foot">
+  <p>Phishing Email Analyzer &middot; Python 3 standard-library engine plus this static dashboard. Source and tests in the repository. This page makes no network requests except to load its own JSON files, and renders every value as text.</p>
+</footer>
+
+<script src="core-text.js"></script>
+<script src="core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+Return-Path: <delivery@parcel-notice.test>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Tue, 31 Mar 2026
+ 21:30:07 +0000
+Received: from parcel-notice.test (parcel-notice.test [198.51.100.61]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Tue, 31 Mar 2026
+ 21:30:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=softfail
+ smtp.mailfrom=parcel-notice.test; dmarc=fail header.from=parcel-notice.test
+X-Synthetic-Sample: yes
+From: "Canada Post" <delivery@parcel-notice.test>
+To: alex.morgan@northwind-analytics.example
+Subject: Parcel on hold: pay customs fee
+Date: Tue, 31 Mar 2026 21:30:00 +0000
+Message-ID: <cp.3@parcel-notice.test>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Your parcel is on hold. Pay the customs fee within 48 hours: http://3405803853/pay
+

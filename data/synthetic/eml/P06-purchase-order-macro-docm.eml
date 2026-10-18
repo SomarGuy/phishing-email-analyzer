@@ -1,0 +1,42 @@
+Return-Path: <po@tradelink-co.test>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Tue, 10 Mar 2026
+ 13:20:07 +0000
+Received: from tradelink-co.test (tradelink-co.test [203.0.113.222]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Tue, 10 Mar 2026
+ 13:20:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=none
+ smtp.mailfrom=tradelink-co.test; dmarc=none header.from=tradelink-co.test
+X-Synthetic-Sample: yes
+From: "Procurement" <po@tradelink-co.test>
+To: alex.morgan@northwind-analytics.example
+Subject: Purchase order PO-2291 - enable content
+Date: Tue, 10 Mar 2026 13:20:00 +0000
+Message-ID: <po2291@tradelink-co.test>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="=_synthetic_mixed_7f3a"
+
+--=_synthetic_mixed_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Please see the attached purchase order. Click Enable Content to view the pricing table. Payment pending your confirmation.
+
+--=_synthetic_mixed_7f3a
+Content-Type: application/vnd.ms-word.document.macroEnabled.12; name="PO-2291.docm"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="PO-2291.docm"
+
+UEsDBBQAAAAAAAAAYVzVxc46GAAAABgAAAATAAAAW0NvbnRlbnRfVHlwZXNdLnhtbDxUeXBlcz5T
+WU5USEVUSUM8L1R5cGVzPlBLAwQUAAAAAAAAAGFcgtkc1RAAAAAQAAAACwAAAF9yZWxzLy5yZWxz
+PFJlbGF0aW9uc2hpcHMvPlBLAwQUAAAAAAAAAGFcbkHJNhsAAAAbAAAAEQAAAHdvcmQvZG9jdW1l
+bnQueG1sPGRvYz5TWU5USEVUSUMgU0FNUExFPC9kb2M+UEsDBBQAAAAAAAAAYVy7ZMrENAAAADQA
+AAATAAAAd29yZC92YmFQcm9qZWN0LmJpblNZTlRIRVRJQyBJTkVSVCBQTEFDRUhPTERFUiAtIE5P
+VCBBIFJFQUwgVkJBIFBST0pFQ1RQSwECFAMUAAAAAAAAAGFc1cXOOhgAAAAYAAAAEwAAAAAAAAAA
+AAAAgAEAAAAAW0NvbnRlbnRfVHlwZXNdLnhtbFBLAQIUAxQAAAAAAAAAYVyC2RzVEAAAABAAAAAL
+AAAAAAAAAAAAAACAAUkAAABfcmVscy8ucmVsc1BLAQIUAxQAAAAAAAAAYVxuQck2GwAAABsAAAAR
+AAAAAAAAAAAAAACAAYIAAAB3b3JkL2RvY3VtZW50LnhtbFBLAQIUAxQAAAAAAAAAYVy7ZMrENAAA
+ADQAAAATAAAAAAAAAAAAAACAAcwAAAB3b3JkL3ZiYVByb2plY3QuYmluUEsFBgAAAAAEAAQA+gAA
+ADEBAAAAAA==
+--=_synthetic_mixed_7f3a--

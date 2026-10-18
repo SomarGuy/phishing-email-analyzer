@@ -1,0 +1,23 @@
+Return-Path: <0031@bounces.aws.amazon.com>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Tue, 31 Mar 2026
+ 05:15:07 +0000
+Received: from a8-12.smtp-out.amazon.com (a8-12.smtp-out.amazon.com
+ [192.0.2.77]) by mx1.northwind-analytics.example with ESMTPS id D4E5F6;
+ Tue, 31 Mar 2026 05:15:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=pass
+ smtp.mailfrom=0031@bounces.aws.amazon.com; dkim=pass header.d=amazon.com
+ header.s=aws1; dmarc=pass header.from=aws.amazon.com
+X-Synthetic-Sample: yes
+From: "Amazon Web Services" <no-reply-aws@aws.amazon.com>
+To: alex.morgan@northwind-analytics.example
+Subject: Your AWS invoice is available
+Date: Tue, 31 Mar 2026 05:15:00 +0000
+Message-ID: <aws.0031@email.amazon.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Your invoice is available: https://console.aws.amazon.com/billing/home
+

@@ -1,0 +1,27 @@
+Return-Path: <marcus.cole@northwind-analytlcs.example>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Sat, 14 Mar 2026
+ 19:37:07 +0000
+Received: from relay2.mailhop.test (relay2.mailhop.test [203.0.113.9]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Sat, 14 Mar 2026
+ 19:37:05 +0000
+Received: from mail.northwind-analytlcs.example (unknown [198.51.100.99]) by
+ relay2.mailhop.test with SMTP id G7H8I9; Sat, 14 Mar 2026 20:05:11 +0000
+X-Synthetic-Sample: yes
+From: "Marcus Cole" <marcus.cole@northwind-analytlcs.example>
+To: alex.morgan@northwind-analytics.example
+Reply-To: m.cole.finance@freemail.example
+Subject: Urgent wire transfer - new bank details
+Date: Sat, 14 Mar 2026 19:37:00 +0000
+Message-ID: <w88@northwind-analytlcs.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Alex,
+
+We need to process a wire payment today before close of business. The vendor has new bank details (attached in the next mail). Do not call me, I am travelling; reply to this email only.
+
+Marcus
+

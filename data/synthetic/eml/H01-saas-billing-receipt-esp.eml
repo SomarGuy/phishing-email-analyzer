@@ -1,0 +1,35 @@
+Return-Path: <bounce-771@brightline-mail.example>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Fri, 27 Mar 2026
+ 06:00:07 +0000
+Received: from o12.brightline-mail.example (o12.brightline-mail.example
+ [198.51.100.45]) by mx1.northwind-analytics.example with ESMTPS id D4E5F6;
+ Fri, 27 Mar 2026 06:00:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=pass
+ smtp.mailfrom=bounce-771@brightline-mail.example; dkim=pass
+ header.d=brightline.example header.s=bl1; dmarc=pass
+ header.from=brightline.example
+X-Synthetic-Sample: yes
+From: "Brightline Billing" <billing@brightline.example>
+To: alex.morgan@northwind-analytics.example
+Subject: Your Brightline invoice for March is ready
+Date: Fri, 27 Mar 2026 06:00:00 +0000
+Message-ID: <inv.771@brightline.example>
+List-Unsubscribe: <https://links.brightline-mail.example/u/771>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="=_synthetic_alt_7f3a"
+
+--=_synthetic_alt_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Your March invoice is ready: https://links.brightline-mail.example/c/771
+Invoice due in 14 days.
+
+--=_synthetic_alt_7f3a
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+<html><body style="font-family:Arial"><h2>Invoice ready</h2><p>Invoice attached to your account is due in 14 days.</p><p><a href="https://links.brightline-mail.example/c/771">View invoice</a></p><p>Manage billing: <a href="https://app.brightline.example/billing/invoices/771">https://app.brightline.example/billing/invoices/771</a></p><p style="color:#888;font-size:11px">Synthetic sample for testing.</p></body></html>
+--=_synthetic_alt_7f3a--

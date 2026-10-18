@@ -1,0 +1,22 @@
+Return-Path: <alerts@monitor.example.net>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Sat, 14 Mar 2026
+ 03:17:07 +0000
+Received: from monitor.example.net (monitor.example.net [198.51.100.88]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Sat, 14 Mar 2026
+ 03:17:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=pass
+ smtp.mailfrom=monitor.example.net; dkim=pass header.d=monitor.example.net
+ header.s=mon; dmarc=pass header.from=monitor.example.net
+X-Synthetic-Sample: yes
+From: "Monitor" <alerts@monitor.example.net>
+To: alex.morgan@northwind-analytics.example
+Subject: [ALERT] disk usage 91% on db-02
+Date: Sat, 14 Mar 2026 03:17:00 +0000
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Host db-02 /var is at 91% (threshold 90%). See https://monitor.example.net/hosts/db-02
+

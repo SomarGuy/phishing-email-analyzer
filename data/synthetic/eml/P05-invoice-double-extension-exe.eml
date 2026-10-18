@@ -1,0 +1,32 @@
+Return-Path: <billing@vendor-pay.example>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Mon, 09 Mar 2026
+ 08:02:07 +0000
+Received: from mail.vendor-pay.example (mail.vendor-pay.example
+ [198.51.100.77]) by mx1.northwind-analytics.example with ESMTPS id D4E5F6;
+ Mon, 09 Mar 2026 08:02:05 +0000
+X-Synthetic-Sample: yes
+From: "Billing Dept" <billing@vendor-pay.example>
+To: alex.morgan@northwind-analytics.example
+Subject: Invoice 8841
+Date: Mon, 09 Mar 2026 08:02:00 +0000
+Message-ID: <b8841@vendor-pay.example>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="=_synthetic_mixed_7f3a"
+
+--=_synthetic_mixed_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Invoice attached, please process today.
+
+--=_synthetic_mixed_7f3a
+Content-Type: application/octet-stream; name="Invoice_8841.pdf.exe"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="Invoice_8841.pdf.exe"
+
+TVqQAFRoaXMgcHJvZ3JhbSBjYW5ub3QgYmUgcnVuIGluIERPUyBtb2RlLg0KU1lOVEhFVElDIElO
+RVJUIFRFU1QgU1RVQiAoUDA1KS4gTk9UIEEgUFJPR1JBTS4AAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAA==
+--=_synthetic_mixed_7f3a--

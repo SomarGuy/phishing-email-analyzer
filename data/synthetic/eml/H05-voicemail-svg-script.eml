@@ -1,0 +1,35 @@
+Return-Path: <vm@voice-notify.test>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Tue, 31 Mar 2026
+ 09:09:07 +0000
+Received: from voice-notify.test (voice-notify.test [203.0.113.160]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Tue, 31 Mar 2026
+ 09:09:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=fail
+ smtp.mailfrom=voice-notify.test; dmarc=fail header.from=voice-notify.test
+X-Synthetic-Sample: yes
+From: "Voice Service" <vm@voice-notify.test>
+To: alex.morgan@northwind-analytics.example
+Subject: New voice message (0:42)
+Date: Tue, 31 Mar 2026 09:09:00 +0000
+Message-ID: <vm.9@voice-notify.test>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="=_synthetic_mixed_7f3a"
+
+--=_synthetic_mixed_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+You have a new voice message. Open the attachment to play it.
+
+--=_synthetic_mixed_7f3a
+Content-Type: image/svg+xml; name="voicemail-0042.svg"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="voicemail-0042.svg"
+
+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdo
+dD0iNDAiPjxzY3JpcHQ+d2luZG93LmxvY2F0aW9uPSJodHRwczovL3ZvaWNlLW5vdGlmeS50ZXN0
+L3BsYXk/dT1hbGV4Ijs8L3NjcmlwdD48dGV4dCB4PSI1IiB5PSIyNSI+UGxheTwvdGV4dD48L3N2
+Zz4=
+--=_synthetic_mixed_7f3a--

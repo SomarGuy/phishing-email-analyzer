@@ -1,0 +1,915 @@
+{
+  "tool": "phishanalyzer",
+  "note": "Values are defanged in the 'defanged' field. Synthetic corpus: none of these are real indicators.",
+  "iocs": [
+    {
+      "message_id": "B12-secops-awareness-quoted-phish",
+      "type": "email",
+      "value": "secops@northwind-analytics.example",
+      "defanged": "secops[@]northwind-analytics[.]example",
+      "context": "From address",
+      "verdict": "suspicious",
+      "score": 28
+    },
+    {
+      "message_id": "B12-secops-awareness-quoted-phish",
+      "type": "domain",
+      "value": "northwind-analytics.example",
+      "defanged": "northwind-analytics[.]example",
+      "context": "Sender domain",
+      "verdict": "suspicious",
+      "score": 28
+    },
+    {
+      "message_id": "B12-secops-awareness-quoted-phish",
+      "type": "url",
+      "value": "https://paypa1-secure.test/login",
+      "defanged": "hxxps://paypa1-secure[.]test/login",
+      "context": "url_brand_in_domain; url_login_keywords",
+      "verdict": "suspicious",
+      "score": 28
+    },
+    {
+      "message_id": "B12-secops-awareness-quoted-phish",
+      "type": "domain",
+      "value": "paypa1-secure.test",
+      "defanged": "paypa1-secure[.]test",
+      "context": "Domain of a flagged URL",
+      "verdict": "suspicious",
+      "score": 28
+    },
+    {
+      "message_id": "H04-payroll-direct-deposit-change",
+      "type": "email",
+      "value": "payroll.dept2026@freemail.example",
+      "defanged": "payroll[.]dept2026[@]freemail[.]example",
+      "context": "From address",
+      "verdict": "likely_phishing",
+      "score": 75
+    },
+    {
+      "message_id": "H04-payroll-direct-deposit-change",
+      "type": "domain",
+      "value": "freemail.example",
+      "defanged": "freemail[.]example",
+      "context": "Sender domain",
+      "verdict": "likely_phishing",
+      "score": 75
+    },
+    {
+      "message_id": "H04-payroll-direct-deposit-change",
+      "type": "email",
+      "value": "payroll.updates@mail-desk.test",
+      "defanged": "payroll[.]updates[@]mail-desk[.]test",
+      "context": "Reply-To address",
+      "verdict": "likely_phishing",
+      "score": 75
+    },
+    {
+      "message_id": "H04-payroll-direct-deposit-change",
+      "type": "domain",
+      "value": "mail-desk.test",
+      "defanged": "mail-desk[.]test",
+      "context": "Reply-To domain",
+      "verdict": "likely_phishing",
+      "score": 75
+    },
+    {
+      "message_id": "H04-payroll-direct-deposit-change",
+      "type": "ip",
+      "value": "198.51.100.15",
+      "defanged": "198[.]51[.]100[.]15",
+      "context": "Origin of the Received chain",
+      "verdict": "likely_phishing",
+      "score": 75
+    },
+    {
+      "message_id": "H04-payroll-direct-deposit-change",
+      "type": "url",
+      "value": "https://short.test/Pr0ll",
+      "defanged": "hxxps://short[.]test/Pr0ll",
+      "context": "url_shortener",
+      "verdict": "likely_phishing",
+      "score": 75
+    },
+    {
+      "message_id": "H04-payroll-direct-deposit-change",
+      "type": "domain",
+      "value": "short.test",
+      "defanged": "short[.]test",
+      "context": "Domain of a flagged URL",
+      "verdict": "likely_phishing",
+      "score": 75
+    },
+    {
+      "message_id": "H05-voicemail-svg-script",
+      "type": "email",
+      "value": "vm@voice-notify.test",
+      "defanged": "vm[@]voice-notify[.]test",
+      "context": "From address",
+      "verdict": "likely_phishing",
+      "score": 65
+    },
+    {
+      "message_id": "H05-voicemail-svg-script",
+      "type": "domain",
+      "value": "voice-notify.test",
+      "defanged": "voice-notify[.]test",
+      "context": "Sender domain",
+      "verdict": "likely_phishing",
+      "score": 65
+    },
+    {
+      "message_id": "H05-voicemail-svg-script",
+      "type": "ip",
+      "value": "203.0.113.160",
+      "defanged": "203[.]0[.]113[.]160",
+      "context": "Origin of the Received chain",
+      "verdict": "likely_phishing",
+      "score": 65
+    },
+    {
+      "message_id": "H05-voicemail-svg-script",
+      "type": "sha256",
+      "value": "ecb07392e11468ec713dbe94853ab86d9730429c02e873c42cf9c64c8473cdc4",
+      "defanged": "ecb07392e11468ec713dbe94853ab86d9730429c02e873c42cf9c64c8473cdc4",
+      "context": "Attachment voicemail-0042.svg: svg_script",
+      "verdict": "likely_phishing",
+      "score": 65
+    },
+    {
+      "message_id": "H05-voicemail-svg-script",
+      "type": "filename",
+      "value": "voicemail-0042.svg",
+      "defanged": "voicemail-0042.svg",
+      "context": "Flagged attachment name",
+      "verdict": "likely_phishing",
+      "score": 65
+    },
+    {
+      "message_id": "H06-parcel-fee-decimal-ip",
+      "type": "email",
+      "value": "delivery@parcel-notice.test",
+      "defanged": "delivery[@]parcel-notice[.]test",
+      "context": "From address",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "H06-parcel-fee-decimal-ip",
+      "type": "domain",
+      "value": "parcel-notice.test",
+      "defanged": "parcel-notice[.]test",
+      "context": "Sender domain",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "H06-parcel-fee-decimal-ip",
+      "type": "ip",
+      "value": "198.51.100.61",
+      "defanged": "198[.]51[.]100[.]61",
+      "context": "Origin of the Received chain",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "H06-parcel-fee-decimal-ip",
+      "type": "url",
+      "value": "http://3405803853/pay",
+      "defanged": "hxxp://3405803853/pay",
+      "context": "url_ip_host; url_obfuscated",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P01-paypal-lookalike-credential",
+      "type": "email",
+      "value": "service@paypa1-secure.test",
+      "defanged": "service[@]paypa1-secure[.]test",
+      "context": "From address",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P01-paypal-lookalike-credential",
+      "type": "domain",
+      "value": "paypa1-secure.test",
+      "defanged": "paypa1-secure[.]test",
+      "context": "Sender domain",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P01-paypal-lookalike-credential",
+      "type": "email",
+      "value": "bounce@paypa1-secure.test",
+      "defanged": "bounce[@]paypa1-secure[.]test",
+      "context": "Return-Path address",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P01-paypal-lookalike-credential",
+      "type": "ip",
+      "value": "203.0.113.200",
+      "defanged": "203[.]0[.]113[.]200",
+      "context": "Origin of the Received chain",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P01-paypal-lookalike-credential",
+      "type": "url",
+      "value": "https://paypa1-secure.test/signin?id=88213",
+      "defanged": "hxxps://paypa1-secure[.]test/signin?id=88213",
+      "context": "url_brand_in_domain; url_text_mismatch",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P01-paypal-lookalike-credential",
+      "type": "url",
+      "value": "https://www.paypal.com/verify",
+      "defanged": "hxxps://www[.]paypal[.]com/verify",
+      "context": "url_login_keywords",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P01-paypal-lookalike-credential",
+      "type": "domain",
+      "value": "paypal.com",
+      "defanged": "paypal[.]com",
+      "context": "Domain of a flagged URL",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P02-microsoft-idn-homograph",
+      "type": "email",
+      "value": "admin@m365-notices.test",
+      "defanged": "admin[@]m365-notices[.]test",
+      "context": "From address",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P02-microsoft-idn-homograph",
+      "type": "domain",
+      "value": "m365-notices.test",
+      "defanged": "m365-notices[.]test",
+      "context": "Sender domain",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P02-microsoft-idn-homograph",
+      "type": "ip",
+      "value": "198.51.100.211",
+      "defanged": "198[.]51[.]100[.]211",
+      "context": "Origin of the Received chain",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P02-microsoft-idn-homograph",
+      "type": "url",
+      "value": "https://xn--micrsft-djgb.invalid/owa/verify",
+      "defanged": "hxxps://xn--micrsft-djgb[.]invalid/owa/verify",
+      "context": "url_idn_homograph; url_suspicious_tld; url_login_keywords",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P02-microsoft-idn-homograph",
+      "type": "domain",
+      "value": "micrоsоft.invalid",
+      "defanged": "micrоsоft[.]invalid",
+      "context": "Domain of a flagged URL",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P03-docusign-html-credential-attachment",
+      "type": "email",
+      "value": "dse@docusgn-mail.test",
+      "defanged": "dse[@]docusgn-mail[.]test",
+      "context": "From address",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P03-docusign-html-credential-attachment",
+      "type": "domain",
+      "value": "docusgn-mail.test",
+      "defanged": "docusgn-mail[.]test",
+      "context": "Sender domain",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P03-docusign-html-credential-attachment",
+      "type": "ip",
+      "value": "203.0.113.213",
+      "defanged": "203[.]0[.]113[.]213",
+      "context": "Origin of the Received chain",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P03-docusign-html-credential-attachment",
+      "type": "sha256",
+      "value": "5ed86dc5629c0b6b7a30888a73a7e1b45a3a2e19fd5230a939d33c693a362950",
+      "defanged": "5ed86dc5629c0b6b7a30888a73a7e1b45a3a2e19fd5230a939d33c693a362950",
+      "context": "Attachment Agreement-7589.html: html_attachment, html_credential_form",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P03-docusign-html-credential-attachment",
+      "type": "filename",
+      "value": "Agreement-7589.html",
+      "defanged": "Agreement-7589.html",
+      "context": "Flagged attachment name",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P04-remittance-html-smuggling",
+      "type": "email",
+      "value": "remit@gl-payments.test",
+      "defanged": "remit[@]gl-payments[.]test",
+      "context": "From address",
+      "verdict": "likely_phishing",
+      "score": 97
+    },
+    {
+      "message_id": "P04-remittance-html-smuggling",
+      "type": "domain",
+      "value": "gl-payments.test",
+      "defanged": "gl-payments[.]test",
+      "context": "Sender domain",
+      "verdict": "likely_phishing",
+      "score": 97
+    },
+    {
+      "message_id": "P04-remittance-html-smuggling",
+      "type": "ip",
+      "value": "198.51.100.230",
+      "defanged": "198[.]51[.]100[.]230",
+      "context": "Origin of the Received chain",
+      "verdict": "likely_phishing",
+      "score": 97
+    },
+    {
+      "message_id": "P04-remittance-html-smuggling",
+      "type": "sha256",
+      "value": "5b93c9ef041b56551e02f4aeccc56f3b9c10791f7c9cfd4992927c8bea50b1a3",
+      "defanged": "5b93c9ef041b56551e02f4aeccc56f3b9c10791f7c9cfd4992927c8bea50b1a3",
+      "context": "Attachment Remittance-0041.html: html_attachment, html_smuggling",
+      "verdict": "likely_phishing",
+      "score": 97
+    },
+    {
+      "message_id": "P04-remittance-html-smuggling",
+      "type": "filename",
+      "value": "Remittance-0041.html",
+      "defanged": "Remittance-0041.html",
+      "context": "Flagged attachment name",
+      "verdict": "likely_phishing",
+      "score": 97
+    },
+    {
+      "message_id": "P05-invoice-double-extension-exe",
+      "type": "email",
+      "value": "billing@vendor-pay.example",
+      "defanged": "billing[@]vendor-pay[.]example",
+      "context": "From address",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P05-invoice-double-extension-exe",
+      "type": "domain",
+      "value": "vendor-pay.example",
+      "defanged": "vendor-pay[.]example",
+      "context": "Sender domain",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P05-invoice-double-extension-exe",
+      "type": "ip",
+      "value": "198.51.100.77",
+      "defanged": "198[.]51[.]100[.]77",
+      "context": "Origin of the Received chain",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P05-invoice-double-extension-exe",
+      "type": "sha256",
+      "value": "5b7899ea45c5645b69d529a410444d2da7e254edf2b36021926452e0b4be955e",
+      "defanged": "5b7899ea45c5645b69d529a410444d2da7e254edf2b36021926452e0b4be955e",
+      "context": "Attachment Invoice_8841.pdf.exe: attachment_executable, attachment_double_extension, attachment_known_bad",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P05-invoice-double-extension-exe",
+      "type": "filename",
+      "value": "Invoice_8841.pdf.exe",
+      "defanged": "Invoice_8841.pdf.exe",
+      "context": "Flagged attachment name",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P06-purchase-order-macro-docm",
+      "type": "email",
+      "value": "po@tradelink-co.test",
+      "defanged": "po[@]tradelink-co[.]test",
+      "context": "From address",
+      "verdict": "likely_phishing",
+      "score": 60
+    },
+    {
+      "message_id": "P06-purchase-order-macro-docm",
+      "type": "domain",
+      "value": "tradelink-co.test",
+      "defanged": "tradelink-co[.]test",
+      "context": "Sender domain",
+      "verdict": "likely_phishing",
+      "score": 60
+    },
+    {
+      "message_id": "P06-purchase-order-macro-docm",
+      "type": "ip",
+      "value": "203.0.113.222",
+      "defanged": "203[.]0[.]113[.]222",
+      "context": "Origin of the Received chain",
+      "verdict": "likely_phishing",
+      "score": 60
+    },
+    {
+      "message_id": "P06-purchase-order-macro-docm",
+      "type": "sha256",
+      "value": "2694258d7d71fdb58768187946e79c6827d192a2af8e76153cfab3615c9fde37",
+      "defanged": "2694258d7d71fdb58768187946e79c6827d192a2af8e76153cfab3615c9fde37",
+      "context": "Attachment PO-2291.docm: attachment_macro",
+      "verdict": "likely_phishing",
+      "score": 60
+    },
+    {
+      "message_id": "P06-purchase-order-macro-docm",
+      "type": "filename",
+      "value": "PO-2291.docm",
+      "defanged": "PO-2291.docm",
+      "context": "Flagged attachment name",
+      "verdict": "likely_phishing",
+      "score": 60
+    },
+    {
+      "message_id": "P07-scans-zip-with-scr",
+      "type": "email",
+      "value": "scanner@officecopy.test",
+      "defanged": "scanner[@]officecopy[.]test",
+      "context": "From address",
+      "verdict": "likely_phishing",
+      "score": 63
+    },
+    {
+      "message_id": "P07-scans-zip-with-scr",
+      "type": "domain",
+      "value": "officecopy.test",
+      "defanged": "officecopy[.]test",
+      "context": "Sender domain",
+      "verdict": "likely_phishing",
+      "score": 63
+    },
+    {
+      "message_id": "P07-scans-zip-with-scr",
+      "type": "ip",
+      "value": "192.0.2.222",
+      "defanged": "192[.]0[.]2[.]222",
+      "context": "Origin of the Received chain",
+      "verdict": "likely_phishing",
+      "score": 63
+    },
+    {
+      "message_id": "P07-scans-zip-with-scr",
+      "type": "sha256",
+      "value": "424690a5bfcb0bacd698acfd6a7e621b3c6a57d30ea85b10accdcccf4c24e766",
+      "defanged": "424690a5bfcb0bacd698acfd6a7e621b3c6a57d30ea85b10accdcccf4c24e766",
+      "context": "Attachment scan_0412.zip: archive_contains_executable",
+      "verdict": "likely_phishing",
+      "score": 63
+    },
+    {
+      "message_id": "P07-scans-zip-with-scr",
+      "type": "filename",
+      "value": "scan_0412.zip",
+      "defanged": "scan_0412.zip",
+      "context": "Flagged attachment name",
+      "verdict": "likely_phishing",
+      "score": 63
+    },
+    {
+      "message_id": "P08-encrypted-zip-exe-password",
+      "type": "email",
+      "value": "notices@court-docs.test",
+      "defanged": "notices[@]court-docs[.]test",
+      "context": "From address",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P08-encrypted-zip-exe-password",
+      "type": "domain",
+      "value": "court-docs.test",
+      "defanged": "court-docs[.]test",
+      "context": "Sender domain",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P08-encrypted-zip-exe-password",
+      "type": "ip",
+      "value": "203.0.113.231",
+      "defanged": "203[.]0[.]113[.]231",
+      "context": "Origin of the Received chain",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P08-encrypted-zip-exe-password",
+      "type": "sha256",
+      "value": "16999801695f738d6e2ad9519da9fa7cd37c118f1f3c3cae4c34095293066460",
+      "defanged": "16999801695f738d6e2ad9519da9fa7cd37c118f1f3c3cae4c34095293066460",
+      "context": "Attachment subpoena.zip: archive_contains_executable, archive_encrypted, archive_password_hint",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P08-encrypted-zip-exe-password",
+      "type": "filename",
+      "value": "subpoena.zip",
+      "defanged": "subpoena.zip",
+      "context": "Flagged attachment name",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P09-ceo-gift-card-bec",
+      "type": "email",
+      "value": "priya.raman.ceo@freemail.example",
+      "defanged": "priya[.]raman[.]ceo[@]freemail[.]example",
+      "context": "From address",
+      "verdict": "likely_phishing",
+      "score": 85
+    },
+    {
+      "message_id": "P09-ceo-gift-card-bec",
+      "type": "domain",
+      "value": "freemail.example",
+      "defanged": "freemail[.]example",
+      "context": "Sender domain",
+      "verdict": "likely_phishing",
+      "score": 85
+    },
+    {
+      "message_id": "P09-ceo-gift-card-bec",
+      "type": "ip",
+      "value": "198.51.100.12",
+      "defanged": "198[.]51[.]100[.]12",
+      "context": "Origin of the Received chain",
+      "verdict": "likely_phishing",
+      "score": 85
+    },
+    {
+      "message_id": "P10-cfo-vendor-bank-change-lookalike",
+      "type": "email",
+      "value": "marcus.cole@northwind-analytlcs.example",
+      "defanged": "marcus[.]cole[@]northwind-analytlcs[.]example",
+      "context": "From address",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P10-cfo-vendor-bank-change-lookalike",
+      "type": "domain",
+      "value": "northwind-analytlcs.example",
+      "defanged": "northwind-analytlcs[.]example",
+      "context": "Sender domain",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P10-cfo-vendor-bank-change-lookalike",
+      "type": "email",
+      "value": "m.cole.finance@freemail.example",
+      "defanged": "m[.]cole[.]finance[@]freemail[.]example",
+      "context": "Reply-To address",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P10-cfo-vendor-bank-change-lookalike",
+      "type": "domain",
+      "value": "freemail.example",
+      "defanged": "freemail[.]example",
+      "context": "Reply-To domain",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P10-cfo-vendor-bank-change-lookalike",
+      "type": "ip",
+      "value": "198.51.100.99",
+      "defanged": "198[.]51[.]100[.]99",
+      "context": "Origin of the Received chain",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P11-helpdesk-password-reset-spoof",
+      "type": "email",
+      "value": "helpdesk@northwind-analytics-support.test",
+      "defanged": "helpdesk[@]northwind-analytics-support[.]test",
+      "context": "From address",
+      "verdict": "likely_phishing",
+      "score": 87
+    },
+    {
+      "message_id": "P11-helpdesk-password-reset-spoof",
+      "type": "domain",
+      "value": "northwind-analytics-support.test",
+      "defanged": "northwind-analytics-support[.]test",
+      "context": "Sender domain",
+      "verdict": "likely_phishing",
+      "score": 87
+    },
+    {
+      "message_id": "P11-helpdesk-password-reset-spoof",
+      "type": "ip",
+      "value": "203.0.113.240",
+      "defanged": "203[.]0[.]113[.]240",
+      "context": "Origin of the Received chain",
+      "verdict": "likely_phishing",
+      "score": 87
+    },
+    {
+      "message_id": "P11-helpdesk-password-reset-spoof",
+      "type": "url",
+      "value": "https://sso.northwind-analytics-support.test/login?user=alex.morgan",
+      "defanged": "hxxps://sso[.]northwind-analytics-support[.]test/login?user=alex.morgan",
+      "context": "url_brand_in_domain",
+      "verdict": "likely_phishing",
+      "score": 87
+    },
+    {
+      "message_id": "P12-mfa-qr-code-phish",
+      "type": "email",
+      "value": "no-reply@secure-notify.test",
+      "defanged": "no-reply[@]secure-notify[.]test",
+      "context": "From address",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P12-mfa-qr-code-phish",
+      "type": "domain",
+      "value": "secure-notify.test",
+      "defanged": "secure-notify[.]test",
+      "context": "Sender domain",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P12-mfa-qr-code-phish",
+      "type": "ip",
+      "value": "198.51.100.188",
+      "defanged": "198[.]51[.]100[.]188",
+      "context": "Origin of the Received chain",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P13-amazon-userinfo-ip-url",
+      "type": "email",
+      "value": "orders@amaz0n-delivery.test",
+      "defanged": "orders[@]amaz0n-delivery[.]test",
+      "context": "From address",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P13-amazon-userinfo-ip-url",
+      "type": "domain",
+      "value": "amaz0n-delivery.test",
+      "defanged": "amaz0n-delivery[.]test",
+      "context": "Sender domain",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P13-amazon-userinfo-ip-url",
+      "type": "ip",
+      "value": "203.0.113.19",
+      "defanged": "203[.]0[.]113[.]19",
+      "context": "Origin of the Received chain",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P13-amazon-userinfo-ip-url",
+      "type": "url",
+      "value": "http://www.amazon.com@0xCB007150/orders/fix",
+      "defanged": "hxxp://www[.]amazon[.]com@0xCB007150/orders/fix",
+      "context": "url_ip_host; url_obfuscated; url_userinfo",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P14-netflix-open-redirect-billing",
+      "type": "email",
+      "value": "billing@nf-account-help.test",
+      "defanged": "billing[@]nf-account-help[.]test",
+      "context": "From address",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P14-netflix-open-redirect-billing",
+      "type": "domain",
+      "value": "nf-account-help.test",
+      "defanged": "nf-account-help[.]test",
+      "context": "Sender domain",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P14-netflix-open-redirect-billing",
+      "type": "ip",
+      "value": "198.51.100.120",
+      "defanged": "198[.]51[.]100[.]120",
+      "context": "Origin of the Received chain",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P14-netflix-open-redirect-billing",
+      "type": "url",
+      "value": "https://trusted-news.example/out?redirect=https%3A%2F%2Fnetf1ix-billing.test%2Flogin",
+      "defanged": "hxxps://trusted-news[.]example/out?redirect=https%3A%2F%2Fnetf1ix-billing.test%2Flogin",
+      "context": "url_redirect_param; url_login_keywords",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "P14-netflix-open-redirect-billing",
+      "type": "domain",
+      "value": "trusted-news.example",
+      "defanged": "trusted-news[.]example",
+      "context": "Domain of a flagged URL",
+      "verdict": "likely_phishing",
+      "score": 100
+    },
+    {
+      "message_id": "S01-partner-encrypted-zip",
+      "type": "email",
+      "value": "ops@eastgate-logistics.example",
+      "defanged": "ops[@]eastgate-logistics[.]example",
+      "context": "From address",
+      "verdict": "suspicious",
+      "score": 28
+    },
+    {
+      "message_id": "S01-partner-encrypted-zip",
+      "type": "domain",
+      "value": "eastgate-logistics.example",
+      "defanged": "eastgate-logistics[.]example",
+      "context": "Sender domain",
+      "verdict": "suspicious",
+      "score": 28
+    },
+    {
+      "message_id": "S01-partner-encrypted-zip",
+      "type": "ip",
+      "value": "192.0.2.150",
+      "defanged": "192[.]0[.]2[.]150",
+      "context": "Origin of the Received chain",
+      "verdict": "suspicious",
+      "score": 28
+    },
+    {
+      "message_id": "S01-partner-encrypted-zip",
+      "type": "sha256",
+      "value": "bb1ab7caf9e1c421035c73cbf7e6fde325470e78ad0c76b0d05160365fe33a3f",
+      "defanged": "bb1ab7caf9e1c421035c73cbf7e6fde325470e78ad0c76b0d05160365fe33a3f",
+      "context": "Attachment PO-4471-docs.zip: archive_encrypted, archive_password_hint",
+      "verdict": "suspicious",
+      "score": 28
+    },
+    {
+      "message_id": "S01-partner-encrypted-zip",
+      "type": "filename",
+      "value": "PO-4471-docs.zip",
+      "defanged": "PO-4471-docs.zip",
+      "context": "Flagged attachment name",
+      "verdict": "suspicious",
+      "score": 28
+    },
+    {
+      "message_id": "S02-shared-doc-unauth-shortlink",
+      "type": "email",
+      "value": "sam.whitlock@example.net",
+      "defanged": "sam[.]whitlock[@]example[.]net",
+      "context": "From address",
+      "verdict": "suspicious",
+      "score": 25
+    },
+    {
+      "message_id": "S02-shared-doc-unauth-shortlink",
+      "type": "domain",
+      "value": "example.net",
+      "defanged": "example[.]net",
+      "context": "Sender domain",
+      "verdict": "suspicious",
+      "score": 25
+    },
+    {
+      "message_id": "S02-shared-doc-unauth-shortlink",
+      "type": "ip",
+      "value": "198.51.100.200",
+      "defanged": "198[.]51[.]100[.]200",
+      "context": "Origin of the Received chain",
+      "verdict": "suspicious",
+      "score": 25
+    },
+    {
+      "message_id": "S02-shared-doc-unauth-shortlink",
+      "type": "url",
+      "value": "https://short.test/Qx81Lm",
+      "defanged": "hxxps://short[.]test/Qx81Lm",
+      "context": "url_shortener",
+      "verdict": "suspicious",
+      "score": 25
+    },
+    {
+      "message_id": "S02-shared-doc-unauth-shortlink",
+      "type": "domain",
+      "value": "short.test",
+      "defanged": "short[.]test",
+      "context": "Domain of a flagged URL",
+      "verdict": "suspicious",
+      "score": 25
+    },
+    {
+      "message_id": "S03-unknown-vendor-invoice-reply-to",
+      "type": "email",
+      "value": "billing@brightpath-supplies.example",
+      "defanged": "billing[@]brightpath-supplies[.]example",
+      "context": "From address",
+      "verdict": "suspicious",
+      "score": 28
+    },
+    {
+      "message_id": "S03-unknown-vendor-invoice-reply-to",
+      "type": "domain",
+      "value": "brightpath-supplies.example",
+      "defanged": "brightpath-supplies[.]example",
+      "context": "Sender domain",
+      "verdict": "suspicious",
+      "score": 28
+    },
+    {
+      "message_id": "S03-unknown-vendor-invoice-reply-to",
+      "type": "email",
+      "value": "collections@quickpay-desk.example",
+      "defanged": "collections[@]quickpay-desk[.]example",
+      "context": "Reply-To address",
+      "verdict": "suspicious",
+      "score": 28
+    },
+    {
+      "message_id": "S03-unknown-vendor-invoice-reply-to",
+      "type": "domain",
+      "value": "quickpay-desk.example",
+      "defanged": "quickpay-desk[.]example",
+      "context": "Reply-To domain",
+      "verdict": "suspicious",
+      "score": 28
+    },
+    {
+      "message_id": "S03-unknown-vendor-invoice-reply-to",
+      "type": "ip",
+      "value": "192.0.2.201",
+      "defanged": "192[.]0[.]2[.]201",
+      "context": "Origin of the Received chain",
+      "verdict": "suspicious",
+      "score": 28
+    }
+  ]
+}

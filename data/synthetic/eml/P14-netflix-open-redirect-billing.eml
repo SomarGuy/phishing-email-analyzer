@@ -1,0 +1,32 @@
+Return-Path: <billing@nf-account-help.test>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Wed, 18 Mar 2026
+ 20:03:07 +0000
+Received: from nf-account-help.test (nf-account-help.test [198.51.100.120])
+ by mx1.northwind-analytics.example with ESMTPS id D4E5F6; Wed, 18 Mar 2026
+ 20:03:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=fail
+ smtp.mailfrom=nf-account-help.test; dmarc=fail
+ header.from=nf-account-help.test
+X-Synthetic-Sample: yes
+From: "Netflix Billing" <billing@nf-account-help.test>
+To: alex.morgan@northwind-analytics.example
+Subject: Payment failed - update your payment details
+Date: Wed, 18 Mar 2026 20:03:00 +0000
+Message-ID: <nf.990@nf-account-help.test>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="=_synthetic_alt_7f3a"
+
+--=_synthetic_alt_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Your payment failed. Update your payment details to avoid suspension: https://trusted-news.example/out?redirect=https%3A%2F%2Fnetf1ix-billing.test%2Flogin
+
+--=_synthetic_alt_7f3a
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+<html><body style="font-family:Arial"><h2>Billing</h2><p>Your payment failed.</p><p><a href="https://trusted-news.example/out?redirect=https%3A%2F%2Fnetf1ix-billing.test%2Flogin">Update payment details</a></p><p style="color:#888;font-size:11px">Synthetic sample for testing.</p></body></html>
+--=_synthetic_alt_7f3a--

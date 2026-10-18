@@ -1,0 +1,102 @@
+message_id,type,value,defanged,context,verdict,score
+B12-secops-awareness-quoted-phish,email,secops@northwind-analytics.example,secops[@]northwind-analytics[.]example,From address,suspicious,28
+B12-secops-awareness-quoted-phish,domain,northwind-analytics.example,northwind-analytics[.]example,Sender domain,suspicious,28
+B12-secops-awareness-quoted-phish,url,https://paypa1-secure.test/login,hxxps://paypa1-secure[.]test/login,url_brand_in_domain; url_login_keywords,suspicious,28
+B12-secops-awareness-quoted-phish,domain,paypa1-secure.test,paypa1-secure[.]test,Domain of a flagged URL,suspicious,28
+H04-payroll-direct-deposit-change,email,payroll.dept2026@freemail.example,payroll[.]dept2026[@]freemail[.]example,From address,likely_phishing,75
+H04-payroll-direct-deposit-change,domain,freemail.example,freemail[.]example,Sender domain,likely_phishing,75
+H04-payroll-direct-deposit-change,email,payroll.updates@mail-desk.test,payroll[.]updates[@]mail-desk[.]test,Reply-To address,likely_phishing,75
+H04-payroll-direct-deposit-change,domain,mail-desk.test,mail-desk[.]test,Reply-To domain,likely_phishing,75
+H04-payroll-direct-deposit-change,ip,198.51.100.15,198[.]51[.]100[.]15,Origin of the Received chain,likely_phishing,75
+H04-payroll-direct-deposit-change,url,https://short.test/Pr0ll,hxxps://short[.]test/Pr0ll,url_shortener,likely_phishing,75
+H04-payroll-direct-deposit-change,domain,short.test,short[.]test,Domain of a flagged URL,likely_phishing,75
+H05-voicemail-svg-script,email,vm@voice-notify.test,vm[@]voice-notify[.]test,From address,likely_phishing,65
+H05-voicemail-svg-script,domain,voice-notify.test,voice-notify[.]test,Sender domain,likely_phishing,65
+H05-voicemail-svg-script,ip,203.0.113.160,203[.]0[.]113[.]160,Origin of the Received chain,likely_phishing,65
+H05-voicemail-svg-script,sha256,ecb07392e11468ec713dbe94853ab86d9730429c02e873c42cf9c64c8473cdc4,ecb07392e11468ec713dbe94853ab86d9730429c02e873c42cf9c64c8473cdc4,Attachment voicemail-0042.svg: svg_script,likely_phishing,65
+H05-voicemail-svg-script,filename,voicemail-0042.svg,voicemail-0042.svg,Flagged attachment name,likely_phishing,65
+H06-parcel-fee-decimal-ip,email,delivery@parcel-notice.test,delivery[@]parcel-notice[.]test,From address,likely_phishing,100
+H06-parcel-fee-decimal-ip,domain,parcel-notice.test,parcel-notice[.]test,Sender domain,likely_phishing,100
+H06-parcel-fee-decimal-ip,ip,198.51.100.61,198[.]51[.]100[.]61,Origin of the Received chain,likely_phishing,100
+H06-parcel-fee-decimal-ip,url,http://3405803853/pay,hxxp://3405803853/pay,url_ip_host; url_obfuscated,likely_phishing,100
+P01-paypal-lookalike-credential,email,service@paypa1-secure.test,service[@]paypa1-secure[.]test,From address,likely_phishing,100
+P01-paypal-lookalike-credential,domain,paypa1-secure.test,paypa1-secure[.]test,Sender domain,likely_phishing,100
+P01-paypal-lookalike-credential,email,bounce@paypa1-secure.test,bounce[@]paypa1-secure[.]test,Return-Path address,likely_phishing,100
+P01-paypal-lookalike-credential,ip,203.0.113.200,203[.]0[.]113[.]200,Origin of the Received chain,likely_phishing,100
+P01-paypal-lookalike-credential,url,https://paypa1-secure.test/signin?id=88213,hxxps://paypa1-secure[.]test/signin?id=88213,url_brand_in_domain; url_text_mismatch,likely_phishing,100
+P01-paypal-lookalike-credential,url,https://www.paypal.com/verify,hxxps://www[.]paypal[.]com/verify,url_login_keywords,likely_phishing,100
+P01-paypal-lookalike-credential,domain,paypal.com,paypal[.]com,Domain of a flagged URL,likely_phishing,100
+P02-microsoft-idn-homograph,email,admin@m365-notices.test,admin[@]m365-notices[.]test,From address,likely_phishing,100
+P02-microsoft-idn-homograph,domain,m365-notices.test,m365-notices[.]test,Sender domain,likely_phishing,100
+P02-microsoft-idn-homograph,ip,198.51.100.211,198[.]51[.]100[.]211,Origin of the Received chain,likely_phishing,100
+P02-microsoft-idn-homograph,url,https://xn--micrsft-djgb.invalid/owa/verify,hxxps://xn--micrsft-djgb[.]invalid/owa/verify,url_idn_homograph; url_suspicious_tld; url_login_keywords,likely_phishing,100
+P02-microsoft-idn-homograph,domain,micrоsоft.invalid,micrоsоft[.]invalid,Domain of a flagged URL,likely_phishing,100
+P03-docusign-html-credential-attachment,email,dse@docusgn-mail.test,dse[@]docusgn-mail[.]test,From address,likely_phishing,100
+P03-docusign-html-credential-attachment,domain,docusgn-mail.test,docusgn-mail[.]test,Sender domain,likely_phishing,100
+P03-docusign-html-credential-attachment,ip,203.0.113.213,203[.]0[.]113[.]213,Origin of the Received chain,likely_phishing,100
+P03-docusign-html-credential-attachment,sha256,5ed86dc5629c0b6b7a30888a73a7e1b45a3a2e19fd5230a939d33c693a362950,5ed86dc5629c0b6b7a30888a73a7e1b45a3a2e19fd5230a939d33c693a362950,"Attachment Agreement-7589.html: html_attachment, html_credential_form",likely_phishing,100
+P03-docusign-html-credential-attachment,filename,Agreement-7589.html,Agreement-7589.html,Flagged attachment name,likely_phishing,100
+P04-remittance-html-smuggling,email,remit@gl-payments.test,remit[@]gl-payments[.]test,From address,likely_phishing,97
+P04-remittance-html-smuggling,domain,gl-payments.test,gl-payments[.]test,Sender domain,likely_phishing,97
+P04-remittance-html-smuggling,ip,198.51.100.230,198[.]51[.]100[.]230,Origin of the Received chain,likely_phishing,97
+P04-remittance-html-smuggling,sha256,5b93c9ef041b56551e02f4aeccc56f3b9c10791f7c9cfd4992927c8bea50b1a3,5b93c9ef041b56551e02f4aeccc56f3b9c10791f7c9cfd4992927c8bea50b1a3,"Attachment Remittance-0041.html: html_attachment, html_smuggling",likely_phishing,97
+P04-remittance-html-smuggling,filename,Remittance-0041.html,Remittance-0041.html,Flagged attachment name,likely_phishing,97
+P05-invoice-double-extension-exe,email,billing@vendor-pay.example,billing[@]vendor-pay[.]example,From address,likely_phishing,100
+P05-invoice-double-extension-exe,domain,vendor-pay.example,vendor-pay[.]example,Sender domain,likely_phishing,100
+P05-invoice-double-extension-exe,ip,198.51.100.77,198[.]51[.]100[.]77,Origin of the Received chain,likely_phishing,100
+P05-invoice-double-extension-exe,sha256,5b7899ea45c5645b69d529a410444d2da7e254edf2b36021926452e0b4be955e,5b7899ea45c5645b69d529a410444d2da7e254edf2b36021926452e0b4be955e,"Attachment Invoice_8841.pdf.exe: attachment_executable, attachment_double_extension, attachment_known_bad",likely_phishing,100
+P05-invoice-double-extension-exe,filename,Invoice_8841.pdf.exe,Invoice_8841.pdf.exe,Flagged attachment name,likely_phishing,100
+P06-purchase-order-macro-docm,email,po@tradelink-co.test,po[@]tradelink-co[.]test,From address,likely_phishing,60
+P06-purchase-order-macro-docm,domain,tradelink-co.test,tradelink-co[.]test,Sender domain,likely_phishing,60
+P06-purchase-order-macro-docm,ip,203.0.113.222,203[.]0[.]113[.]222,Origin of the Received chain,likely_phishing,60
+P06-purchase-order-macro-docm,sha256,2694258d7d71fdb58768187946e79c6827d192a2af8e76153cfab3615c9fde37,2694258d7d71fdb58768187946e79c6827d192a2af8e76153cfab3615c9fde37,Attachment PO-2291.docm: attachment_macro,likely_phishing,60
+P06-purchase-order-macro-docm,filename,PO-2291.docm,PO-2291.docm,Flagged attachment name,likely_phishing,60
+P07-scans-zip-with-scr,email,scanner@officecopy.test,scanner[@]officecopy[.]test,From address,likely_phishing,63
+P07-scans-zip-with-scr,domain,officecopy.test,officecopy[.]test,Sender domain,likely_phishing,63
+P07-scans-zip-with-scr,ip,192.0.2.222,192[.]0[.]2[.]222,Origin of the Received chain,likely_phishing,63
+P07-scans-zip-with-scr,sha256,424690a5bfcb0bacd698acfd6a7e621b3c6a57d30ea85b10accdcccf4c24e766,424690a5bfcb0bacd698acfd6a7e621b3c6a57d30ea85b10accdcccf4c24e766,Attachment scan_0412.zip: archive_contains_executable,likely_phishing,63
+P07-scans-zip-with-scr,filename,scan_0412.zip,scan_0412.zip,Flagged attachment name,likely_phishing,63
+P08-encrypted-zip-exe-password,email,notices@court-docs.test,notices[@]court-docs[.]test,From address,likely_phishing,100
+P08-encrypted-zip-exe-password,domain,court-docs.test,court-docs[.]test,Sender domain,likely_phishing,100
+P08-encrypted-zip-exe-password,ip,203.0.113.231,203[.]0[.]113[.]231,Origin of the Received chain,likely_phishing,100
+P08-encrypted-zip-exe-password,sha256,16999801695f738d6e2ad9519da9fa7cd37c118f1f3c3cae4c34095293066460,16999801695f738d6e2ad9519da9fa7cd37c118f1f3c3cae4c34095293066460,"Attachment subpoena.zip: archive_contains_executable, archive_encrypted, archive_password_hint",likely_phishing,100
+P08-encrypted-zip-exe-password,filename,subpoena.zip,subpoena.zip,Flagged attachment name,likely_phishing,100
+P09-ceo-gift-card-bec,email,priya.raman.ceo@freemail.example,priya[.]raman[.]ceo[@]freemail[.]example,From address,likely_phishing,85
+P09-ceo-gift-card-bec,domain,freemail.example,freemail[.]example,Sender domain,likely_phishing,85
+P09-ceo-gift-card-bec,ip,198.51.100.12,198[.]51[.]100[.]12,Origin of the Received chain,likely_phishing,85
+P10-cfo-vendor-bank-change-lookalike,email,marcus.cole@northwind-analytlcs.example,marcus[.]cole[@]northwind-analytlcs[.]example,From address,likely_phishing,100
+P10-cfo-vendor-bank-change-lookalike,domain,northwind-analytlcs.example,northwind-analytlcs[.]example,Sender domain,likely_phishing,100
+P10-cfo-vendor-bank-change-lookalike,email,m.cole.finance@freemail.example,m[.]cole[.]finance[@]freemail[.]example,Reply-To address,likely_phishing,100
+P10-cfo-vendor-bank-change-lookalike,domain,freemail.example,freemail[.]example,Reply-To domain,likely_phishing,100
+P10-cfo-vendor-bank-change-lookalike,ip,198.51.100.99,198[.]51[.]100[.]99,Origin of the Received chain,likely_phishing,100
+P11-helpdesk-password-reset-spoof,email,helpdesk@northwind-analytics-support.test,helpdesk[@]northwind-analytics-support[.]test,From address,likely_phishing,87
+P11-helpdesk-password-reset-spoof,domain,northwind-analytics-support.test,northwind-analytics-support[.]test,Sender domain,likely_phishing,87
+P11-helpdesk-password-reset-spoof,ip,203.0.113.240,203[.]0[.]113[.]240,Origin of the Received chain,likely_phishing,87
+P11-helpdesk-password-reset-spoof,url,https://sso.northwind-analytics-support.test/login?user=alex.morgan,hxxps://sso[.]northwind-analytics-support[.]test/login?user=alex.morgan,url_brand_in_domain,likely_phishing,87
+P12-mfa-qr-code-phish,email,no-reply@secure-notify.test,no-reply[@]secure-notify[.]test,From address,likely_phishing,100
+P12-mfa-qr-code-phish,domain,secure-notify.test,secure-notify[.]test,Sender domain,likely_phishing,100
+P12-mfa-qr-code-phish,ip,198.51.100.188,198[.]51[.]100[.]188,Origin of the Received chain,likely_phishing,100
+P13-amazon-userinfo-ip-url,email,orders@amaz0n-delivery.test,orders[@]amaz0n-delivery[.]test,From address,likely_phishing,100
+P13-amazon-userinfo-ip-url,domain,amaz0n-delivery.test,amaz0n-delivery[.]test,Sender domain,likely_phishing,100
+P13-amazon-userinfo-ip-url,ip,203.0.113.19,203[.]0[.]113[.]19,Origin of the Received chain,likely_phishing,100
+P13-amazon-userinfo-ip-url,url,http://www.amazon.com@0xCB007150/orders/fix,hxxp://www[.]amazon[.]com@0xCB007150/orders/fix,url_ip_host; url_obfuscated; url_userinfo,likely_phishing,100
+P14-netflix-open-redirect-billing,email,billing@nf-account-help.test,billing[@]nf-account-help[.]test,From address,likely_phishing,100
+P14-netflix-open-redirect-billing,domain,nf-account-help.test,nf-account-help[.]test,Sender domain,likely_phishing,100
+P14-netflix-open-redirect-billing,ip,198.51.100.120,198[.]51[.]100[.]120,Origin of the Received chain,likely_phishing,100
+P14-netflix-open-redirect-billing,url,https://trusted-news.example/out?redirect=https%3A%2F%2Fnetf1ix-billing.test%2Flogin,hxxps://trusted-news[.]example/out?redirect=https%3A%2F%2Fnetf1ix-billing.test%2Flogin,url_redirect_param; url_login_keywords,likely_phishing,100
+P14-netflix-open-redirect-billing,domain,trusted-news.example,trusted-news[.]example,Domain of a flagged URL,likely_phishing,100
+S01-partner-encrypted-zip,email,ops@eastgate-logistics.example,ops[@]eastgate-logistics[.]example,From address,suspicious,28
+S01-partner-encrypted-zip,domain,eastgate-logistics.example,eastgate-logistics[.]example,Sender domain,suspicious,28
+S01-partner-encrypted-zip,ip,192.0.2.150,192[.]0[.]2[.]150,Origin of the Received chain,suspicious,28
+S01-partner-encrypted-zip,sha256,bb1ab7caf9e1c421035c73cbf7e6fde325470e78ad0c76b0d05160365fe33a3f,bb1ab7caf9e1c421035c73cbf7e6fde325470e78ad0c76b0d05160365fe33a3f,"Attachment PO-4471-docs.zip: archive_encrypted, archive_password_hint",suspicious,28
+S01-partner-encrypted-zip,filename,PO-4471-docs.zip,PO-4471-docs.zip,Flagged attachment name,suspicious,28
+S02-shared-doc-unauth-shortlink,email,sam.whitlock@example.net,sam[.]whitlock[@]example[.]net,From address,suspicious,25
+S02-shared-doc-unauth-shortlink,domain,example.net,example[.]net,Sender domain,suspicious,25
+S02-shared-doc-unauth-shortlink,ip,198.51.100.200,198[.]51[.]100[.]200,Origin of the Received chain,suspicious,25
+S02-shared-doc-unauth-shortlink,url,https://short.test/Qx81Lm,hxxps://short[.]test/Qx81Lm,url_shortener,suspicious,25
+S02-shared-doc-unauth-shortlink,domain,short.test,short[.]test,Domain of a flagged URL,suspicious,25
+S03-unknown-vendor-invoice-reply-to,email,billing@brightpath-supplies.example,billing[@]brightpath-supplies[.]example,From address,suspicious,28
+S03-unknown-vendor-invoice-reply-to,domain,brightpath-supplies.example,brightpath-supplies[.]example,Sender domain,suspicious,28
+S03-unknown-vendor-invoice-reply-to,email,collections@quickpay-desk.example,collections[@]quickpay-desk[.]example,Reply-To address,suspicious,28
+S03-unknown-vendor-invoice-reply-to,domain,quickpay-desk.example,quickpay-desk[.]example,Reply-To domain,suspicious,28
+S03-unknown-vendor-invoice-reply-to,ip,192.0.2.201,192[.]0[.]2[.]201,Origin of the Received chain,suspicious,28

@@ -1,0 +1,38 @@
+Return-Path: <hr@northwind-analytics.example>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Mon, 09 Mar 2026
+ 08:30:07 +0000
+Received: from mail-hr.northwind-analytics.example
+ (mail-hr.northwind-analytics.example [10.20.1.9]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Mon, 09 Mar 2026
+ 08:30:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=pass
+ smtp.mailfrom=northwind-analytics.example; dkim=pass
+ header.d=northwind-analytics.example header.s=sel1; dmarc=pass
+ header.from=northwind-analytics.example
+X-Synthetic-Sample: yes
+From: "Human Resources" <hr@northwind-analytics.example>
+To: alex.morgan@northwind-analytics.example
+Subject: URGENT: benefits enrolment closes in 3 days - action required
+Date: Mon, 09 Mar 2026 08:30:00 +0000
+Message-ID: <hr-20260309-01@northwind-analytics.example>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="=_synthetic_alt_7f3a"
+
+--=_synthetic_alt_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Hello team,
+
+Benefits enrolment closes within 3 days. Action required: choose your plan at https://hr.northwind-analytics.example/enrol
+
+Human Resources
+
+--=_synthetic_alt_7f3a
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+<html><body style="font-family:Arial"><h2>Benefits enrolment</h2><p>Enrolment closes within 3 days. Action required.</p><p><a href="https://hr.northwind-analytics.example/enrol">Choose your plan</a></p><p style="color:#888;font-size:11px">Synthetic sample for testing.</p></body></html>
+--=_synthetic_alt_7f3a--

@@ -1,0 +1,32 @@
+Return-Path: <orders@amaz0n-delivery.test>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Tue, 17 Mar 2026
+ 11:11:07 +0000
+Received: from amaz0n-delivery.test (amaz0n-delivery.test [203.0.113.19]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Tue, 17 Mar 2026
+ 11:11:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=fail
+ smtp.mailfrom=amaz0n-delivery.test; dmarc=fail
+ header.from=amaz0n-delivery.test
+X-Synthetic-Sample: yes
+From: "Amazon Orders" <orders@amaz0n-delivery.test>
+To: alex.morgan@northwind-analytics.example
+Subject: Problem with your order
+Date: Tue, 17 Mar 2026 11:11:00 +0000
+Message-ID: <am.1771@amaz0n-delivery.test>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="=_synthetic_alt_7f3a"
+
+--=_synthetic_alt_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+There is a problem with your payment. Update your payment details: http://www.amazon.com@0xCB007150/orders/fix
+
+--=_synthetic_alt_7f3a
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+<html><body style="font-family:Arial"><h2>Order problem</h2><p>There is a problem with your payment.</p><p><a href="http://www.amazon.com@0xCB007150/orders/fix">https://www.amazon.com/orders</a></p><p style="color:#888;font-size:11px">Synthetic sample for testing.</p></body></html>
+--=_synthetic_alt_7f3a--

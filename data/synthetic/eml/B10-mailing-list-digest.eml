@@ -1,0 +1,28 @@
+Return-Path: <nettalk-bounces@lists.example.net>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Sat, 21 Mar 2026
+ 10:05:07 +0000
+Received: from lists.example.net (lists.example.net [203.0.113.120]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Sat, 21 Mar 2026
+ 10:05:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=pass
+ smtp.mailfrom=nettalk-bounces@lists.example.net; dkim=pass
+ header.d=example.org header.s=k2; dmarc=pass header.from=example.org
+X-Synthetic-Sample: yes
+From: "Bob Fisher" <bob@example.org>
+To: alex.morgan@northwind-analytics.example
+Reply-To: nettalk@lists.example.net
+Subject: [nettalk] re: switch firmware 4.2 rollout
+Date: Sat, 21 Mar 2026 10:05:00 +0000
+Message-ID: <list.31772@lists.example.net>
+List-Id: <nettalk.lists.example.net>
+List-Unsubscribe: <mailto:nettalk-leave@lists.example.net>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+We rolled 4.2 to the lab racks last night, no regressions so far.
+-- 
+nettalk mailing list
+

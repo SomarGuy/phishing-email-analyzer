@@ -1,0 +1,40 @@
+Return-Path: <bounce+4411@esp-mail.example>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Tue, 03 Mar 2026
+ 09:14:07 +0000
+Received: from out7.esp-mail.example (out7.esp-mail.example [198.51.100.23])
+ by mx1.northwind-analytics.example with ESMTPS id D4E5F6; Tue, 03 Mar 2026
+ 09:14:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=pass
+ smtp.mailfrom=bounce+4411@esp-mail.example; dkim=pass
+ header.d=harbourgazette.example header.s=s2026; dmarc=pass
+ header.from=harbourgazette.example
+X-Synthetic-Sample: yes
+From: "Harbour Gazette" <newsletter@harbourgazette.example>
+To: alex.morgan@northwind-analytics.example
+Subject: This week: harbour dredging, new ferry timetable
+Date: Tue, 03 Mar 2026 09:14:00 +0000
+Message-ID: <20260303.0914.4411@harbourgazette.example>
+List-Id: <weekly.harbourgazette.example>
+List-Unsubscribe: <https://click.esp-mail.example/unsub/4411>
+Precedence: bulk
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="=_synthetic_alt_7f3a"
+
+--=_synthetic_alt_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Harbour Gazette - weekly digest
+
+Read the ferry timetable: https://click.esp-mail.example/c?u=https%3A%2F%2Fharbourgazette.example%2Fferry&id=4411
+Offer ends today: 10% off annual subscriptions.
+Unsubscribe: https://click.esp-mail.example/unsub/4411
+
+--=_synthetic_alt_7f3a
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+<html><body style="font-family:Arial"><h2>Harbour Gazette - weekly digest</h2><p><a href="https://click.esp-mail.example/c?u=https%3A%2F%2Fharbourgazette.example%2Fferry&amp;id=4411">Read the ferry timetable</a></p><p>Offer ends today: 10% off annual subscriptions.</p><p><a href="https://click.esp-mail.example/unsub/4411">Unsubscribe</a></p><p style="color:#888;font-size:11px">Synthetic sample for testing.</p></body></html>
+--=_synthetic_alt_7f3a--

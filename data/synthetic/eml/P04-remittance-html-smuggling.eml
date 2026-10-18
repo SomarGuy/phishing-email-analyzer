@@ -1,0 +1,49 @@
+Return-Path: <remit@gl-payments.test>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Sun, 08 Mar 2026
+ 05:41:07 +0000
+Received: from gl-payments.test (gl-payments.test [198.51.100.230]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Sun, 08 Mar 2026
+ 05:41:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=fail
+ smtp.mailfrom=gl-payments.test; dmarc=fail header.from=gl-payments.test
+X-Synthetic-Sample: yes
+From: "Accounts" <remit@gl-payments.test>
+To: alex.morgan@northwind-analytics.example
+Subject: Remittance advice - open attachment
+Date: Sun, 08 Mar 2026 05:41:00 +0000
+Message-ID: <rm.0041@gl-payments.test>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="=_synthetic_mixed_7f3a"
+
+--=_synthetic_mixed_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Please find the remittance advice attached. Open in your browser.
+
+--=_synthetic_mixed_7f3a
+Content-Type: text/html; name="Remittance-0041.html"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="Remittance-0041.html"
+
+PGh0bWw+PGJvZHk+PHNjcmlwdD52YXIgZD1hdG9iKCdVMWxPVkVoRlZFbERJRWxPUlZKVUlGQkJX
+VXhQUVVRZ0xTQk9UMVFnUVNCUVVrOUhVa0ZOTGlCVFdVNVVTRVZVU1VNZ1NVNUZVbFFnVUVGWlRF
+OUJSQ0F0SUU1UFZDQkJJRkJTVDBkU1FVMHVJRk5aVGxSSVJWUkpReUJKVGtWU1ZDQlFRVmxNVDBG
+RUlDMGdUazlVSUVFZ1VGSlBSMUpCVFM0Z1UxbE9WRWhGVkVsRElFbE9SVkpVSUZCQldVeFBRVVFn
+TFNCT1QxUWdRU0JRVWs5SFVrRk5MaUJUV1U1VVNFVlVTVU1nU1U1RlVsUWdVRUZaVEU5QlJDQXRJ
+RTVQVkNCQklGQlNUMGRTUVUwdUlGTlpUbFJJUlZSSlF5QkpUa1ZTVkNCUVFWbE1UMEZFSUMwZ1Rr
+OVVJRUVnVUZKUFIxSkJUUzRnVTFsT1ZFaEZWRWxESUVsT1JWSlVJRkJCV1V4UFFVUWdMU0JPVDFR
+Z1FTQlFVazlIVWtGTkxpQlRXVTVVU0VWVVNVTWdTVTVGVWxRZ1VFRlpURTlCUkNBdElFNVBWQ0JC
+SUZCU1QwZFNRVTB1SUZOWlRsUklSVlJKUXlCSlRrVlNWQ0JRUVZsTVQwRkVJQzBnVGs5VUlFRWdV
+RkpQUjFKQlRTNGdVMWxPVkVoRlZFbERJRWxPUlZKVUlGQkJXVXhQUVVRZ0xTQk9UMVFnUVNCUVVr
+OUhVa0ZOTGlCVFdVNVVTRVZVU1VNZ1NVNUZVbFFnVUVGWlRFOUJSQ0F0SUU1UFZDQkJJRkJTVDBk
+U1FVMHVJRk5aVGxSSVJWUkpReUJKVGtWU1ZDQlFRVmxNVDBGRUlDMGdUazlVSUVFZ1VGSlBSMUpC
+VFM0ZycpO3ZhciBhPW5ldyBVaW50OEFycmF5KGQubGVuZ3RoKTtmb3IodmFyIGk9MDtpPGQubGVu
+Z3RoO2krKylhW2ldPWQuY2hhckNvZGVBdChpKTt2YXIgYj1uZXcgQmxvYihbYV0se3R5cGU6J2Fw
+cGxpY2F0aW9uL29jdGV0LXN0cmVhbSd9KTt2YXIgdT1VUkwuY3JlYXRlT2JqZWN0VVJMKGIpO3Zh
+ciBsPWRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2EnKTtsLmhyZWY9dTtsLmRvd25sb2FkPSdyZW1p
+dHRhbmNlLmlzbyc7ZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChsKTtsLmNsaWNrKCk7PC9zY3Jp
+cHQ+PC9ib2R5PjwvaHRtbD4=
+--=_synthetic_mixed_7f3a--

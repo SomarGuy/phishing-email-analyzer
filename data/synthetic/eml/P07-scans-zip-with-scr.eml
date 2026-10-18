@@ -1,0 +1,38 @@
+Return-Path: <scanner@officecopy.test>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Wed, 11 Mar 2026
+ 09:59:07 +0000
+Received: from officecopy.test (officecopy.test [192.0.2.222]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Wed, 11 Mar 2026
+ 09:59:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=softfail
+ smtp.mailfrom=officecopy.test; dmarc=fail header.from=officecopy.test
+X-Synthetic-Sample: yes
+From: "Scanner" <scanner@officecopy.test>
+To: alex.morgan@northwind-analytics.example
+Subject: Scanned documents
+Date: Wed, 11 Mar 2026 09:59:00 +0000
+Message-ID: <sc.2201@officecopy.test>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="=_synthetic_mixed_7f3a"
+
+--=_synthetic_mixed_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Documents scanned from the office copier are attached.
+
+--=_synthetic_mixed_7f3a
+Content-Type: application/zip; name="scan_0412.zip"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="scan_0412.zip"
+
+UEsDBBQAAAAAAAAAYVwIeuU+fAAAAHwAAAARAAAAc2Nhbl8wNDEyLnBkZi5zY3JNWpAAVGhpcyBw
+cm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1vZGUuDQpTWU5USEVUSUMgSU5FUlQgVEVTVCBT
+VFVCIChQMDcpLiBOT1QgQSBQUk9HUkFNLgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+UEsDBBQAAAAAAAAAYVy+vZ7nEAAAABAAAAAKAAAAcmVhZG1lLnR4dFN5bnRoZXRpYyByZWFkbWVQ
+SwECFAMUAAAAAAAAAGFcCHrlPnwAAAB8AAAAEQAAAAAAAAAAAAAAgAEAAAAAc2Nhbl8wNDEyLnBk
+Zi5zY3JQSwECFAMUAAAAAAAAAGFcvr2e5xAAAAAQAAAACgAAAAAAAAAAAAAAgAGrAAAAcmVhZG1l
+LnR4dFBLBQYAAAAAAgACAHcAAADjAAAAAAA=
+--=_synthetic_mixed_7f3a--

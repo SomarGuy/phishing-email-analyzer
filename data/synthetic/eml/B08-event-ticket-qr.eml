@@ -1,0 +1,46 @@
+Return-Path: <tickets@riverside-events.example>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Wed, 18 Mar 2026
+ 12:40:07 +0000
+Received: from mail.riverside-events.example (mail.riverside-events.example
+ [192.0.2.90]) by mx1.northwind-analytics.example with ESMTPS id D4E5F6;
+ Wed, 18 Mar 2026 12:40:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=pass
+ smtp.mailfrom=riverside-events.example; dkim=pass
+ header.d=riverside-events.example header.s=r1; dmarc=pass
+ header.from=riverside-events.example
+X-Synthetic-Sample: yes
+From: "Riverside Events" <tickets@riverside-events.example>
+To: alex.morgan@northwind-analytics.example
+Subject: Your ticket for Saturday
+Date: Wed, 18 Mar 2026 12:40:00 +0000
+Message-ID: <tk.5521@riverside-events.example>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="=_synthetic_mixed_7f3a"
+
+--=_synthetic_mixed_7f3a
+Content-Type: multipart/alternative; boundary="=_synthetic_alt_7f3a"
+
+--=_synthetic_alt_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Scan the QR code at the door. Gates open at 18:00.
+
+--=_synthetic_alt_7f3a
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+<html><body style="font-family:Arial"><h2>Your ticket</h2><p>Scan the QR code at the door.</p><img src="cid:ticketqr" alt="ticket QR"><p style="color:#888;font-size:11px">Synthetic sample for testing.</p></body></html>
+--=_synthetic_alt_7f3a--
+
+--=_synthetic_mixed_7f3a
+Content-Type: image/png; name="ticket-qr.png"
+Content-Transfer-Encoding: base64
+Content-ID: <ticketqr>
+Content-Disposition: inline; filename="ticket-qr.png"
+
+iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVR4nGP4//8/AAX+Av4N70a4
+AAAAAElFTkSuQmCC
+--=_synthetic_mixed_7f3a--

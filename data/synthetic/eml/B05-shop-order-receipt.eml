@@ -1,0 +1,36 @@
+Return-Path: <orders@lanternbooks.example>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Thu, 12 Mar 2026
+ 11:03:07 +0000
+Received: from mailer.lanternbooks.example (mailer.lanternbooks.example
+ [192.0.2.61]) by mx1.northwind-analytics.example with ESMTPS id D4E5F6;
+ Thu, 12 Mar 2026 11:03:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=pass
+ smtp.mailfrom=lanternbooks.example; dkim=pass header.d=lanternbooks.example
+ header.s=m1; dmarc=pass header.from=lanternbooks.example
+X-Synthetic-Sample: yes
+From: "Lantern Books" <orders@lanternbooks.example>
+To: alex.morgan@northwind-analytics.example
+Subject: Your order #LB-20931 - receipt attached
+Date: Thu, 12 Mar 2026 11:03:00 +0000
+Message-ID: <order.20931@lanternbooks.example>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="=_synthetic_mixed_7f3a"
+
+--=_synthetic_mixed_7f3a
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Thanks for your order. Invoice attached (PDF).
+Track it at https://www.lanternbooks.example/orders/20931
+
+--=_synthetic_mixed_7f3a
+Content-Type: application/pdf; name="Invoice-LB-20931.pdf"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="Invoice-LB-20931.pdf"
+
+JVBERi0xLjQKJSBTWU5USEVUSUMgU0FNUExFOiByZWNlaXB0CjEgMCBvYmoKPDwgL1R5cGUgL0Nh
+dGFsb2cgL1BhZ2VzIDIgMCBSID4+CmVuZG9iagoyIDAgb2JqCjw8IC9UeXBlIC9QYWdlcyAvS2lk
+cyBbXSAvQ291bnQgMCA+PgplbmRvYmoKdHJhaWxlcgo8PCAvUm9vdCAxIDAgUiA+PgolJUVPRgo=
+--=_synthetic_mixed_7f3a--

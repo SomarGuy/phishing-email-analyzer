@@ -1,0 +1,27 @@
+Return-Path: <hello@xn--caf-du-nord-dbb.example>
+Received: from mx1.northwind-analytics.example
+ (mx1.northwind-analytics.example [10.20.0.5]) by
+ mbx1.northwind-analytics.example with LMTP id A1B2C3; Sat, 28 Mar 2026
+ 08:20:07 +0000
+Received: from mail.xn--caf-du-nord-dbb.example
+ (mail.xn--caf-du-nord-dbb.example [203.0.113.150]) by
+ mx1.northwind-analytics.example with ESMTPS id D4E5F6; Sat, 28 Mar 2026
+ 08:20:05 +0000
+Authentication-Results: mx1.northwind-analytics.example; spf=pass
+ smtp.mailfrom=xn--caf-du-nord-dbb.example; dkim=pass
+ header.d=xn--caf-du-nord-dbb.example header.s=c1; dmarc=pass
+ header.from=xn--caf-du-nord-dbb.example
+X-Synthetic-Sample: yes
+From: "=?utf-8?B?Q2Fmw6kgZHUgTm9yZA==?=" <hello@xn--caf-du-nord-dbb.example>
+To: alex.morgan@northwind-analytics.example
+Subject:
+ =?utf-8?B?TWVudSDOs865zrEgz4TOt869IM61zrLOtM6/zrzOrM60zrEgLSB3ZWVrbHkgc3BlY2lhbHM=?=
+Date: Sat, 28 Mar 2026 08:20:00 +0000
+Message-ID: <n.88@xn--caf-du-nord-dbb.example>
+List-Unsubscribe: <https://xn--caf-du-nord-dbb.example/unsub>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: base64
+
+RGVhciBjdXN0b21lciwKClRoaXMgd2VlazogzrzOv8+Fz4POsc66zqzPgiBhbmQgY3LDqG1lIGJy
+w7tsw6llLiBCb29rOiBodHRwczovL3huLS1jYWYtZHUtbm9yZC1kYmIuZXhhbXBsZS9ib29rCg==
